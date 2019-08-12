@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/huller/Desktop/push_swap/checker_includes/checker.h
+stdlib.h
+-
+../libft/libft/includes/libft.h
+/Users/huller/Desktop/push_swap/libft/libft/includes/libft.h
+
+/Users/huller/Desktop/push_swap/checker_srcs/main.c
+../checker_includes/checker.h
+/Users/huller/Desktop/push_swap/checker_includes/checker.h
+
+/Users/huller/Desktop/push_swap/checker_srcs/reader.c
+../checker_includes/checker.h
+/Users/huller/Desktop/push_swap/checker_includes/checker.h
+
+/Users/huller/Desktop/push_swap/libft/libft/includes/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+
