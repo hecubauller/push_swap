@@ -14,9 +14,32 @@
 #define CHECKER_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include "../libft/libft/includes/libft.h"
+# include "../libft/includes/ft_printf.h"
 
 # define ERROR -1
+# define SUCCESS 1
+# define FAIL 0
+
+/*
+ * MASKS
+ */
+
+# define SA		(1u << 0u)
+# define SB		(1u << 1u)
+# define SS		(1u << 2u)
+# define PA		(1u << 3u)
+# define PB		(1u << 4u)
+# define RA		(1u << 5u)
+# define RB		(1u << 6u)
+# define RR		(1u << 7u)
+# define RRA	(1u << 8u)
+# define RRB	(1u << 9u)
+# define RRR	(1u << 10u)
+
+# define MAX_INTEGER 2147483647
+# define MIN_INTEGER -2147483648
 
 /*
  * STRUCTURES
@@ -39,7 +62,8 @@ typedef struct			s_instr
  * FUNCTIONS
  */
 
-int		ft_reader_str(t_stack **s, t_instr **in, char **argv, int *fd);
-int		ft_reader(t_stack **s, t_instr **in, char **argv, int *fd);
+int			ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b);
+void		ft_newlist(t_stack **a);
+t_stack		**ft_nextlist(t_stack **a);
 
 #endif

@@ -15,12 +15,10 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	int				j;
 	unsigned char	*p;
 	unsigned char	*b;
 
 	i = 0;
-	j = 0;
 	p = ((unsigned char *)dst);
 	b = ((unsigned char *)src);
 	while (i < n && b[i] != (unsigned char)c)

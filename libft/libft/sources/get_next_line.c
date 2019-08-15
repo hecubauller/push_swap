@@ -92,7 +92,7 @@ int				get_next_line(const int fd, char **line)
 		return (ERROR);
 	res = tmp[fd] ? check_n(tmp[fd]) : 0;
 	if (!(*line = create_newstr(tmp[fd],
-		res != FALSE ? res : ft_strlen(tmp[fd]))))
+		res != FALSE ? res : (int)ft_strlen(tmp[fd]))))
 		return (ERROR);
 	if (check_n(tmp[fd]) == FALSE && !**line && !bite)
 		return (END_FFILE);

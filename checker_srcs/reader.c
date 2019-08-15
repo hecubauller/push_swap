@@ -12,17 +12,48 @@
 
 #include "../checker_includes/checker.h"
 
-int		ft_reader_str(t_stack **s, t_instr **in, char **argv, int *fd)
+t_stack	**ft_nextlist(t_stack **a)
 {
-	int		res;
+	t_stack **tmp;
 
-	res = ft_atoi(argv[1]);
-	ft_printf("%d\n, res");
+	tmp = a;
+	if (!((*a)->next = (struct s_stack *)malloc(sizeof(struct s_stack))))
+		exit (FAIL);
+	(*a)->prev = tmp;
+	(*a)->nb = 0;
+	return (tmp);
 }
 
-int		ft_reader(t_stack **s, t_instr **in, char **argv, int *fd)
+void	ft_newlist(t_stack **a)
 {
-	if (!(*argv + 2))
-		if (!(ft_reader_str(&s, &in, &argv, &fd)))
+	(*a)->nb = 0;
+	if (!((*a)->next = (struct s_stack *)malloc(sizeof(struct s_stack))))
+		exit (FAIL);
+	(*a)->prev = NULL;
+}
+
+int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
+{
+	int 	i;
+	int 	cnt;
+	char 	*chckr;
+
+	i = -1;
+	cnt = -1;
+	if (!(chckr = (char *)malloc(sizeof(char) * 10)))
+		return (FAIL);
+	chckr[9] = '\0';
+	chckr = "./checker";
+	if (!(ft_strcmp(argv[0], chckr)))
+		cnt++;
+	while (argv[++cnt]
+	{
+		while (argv[cnt][i] && argv[cnt][i] >= 0 && argv[cnt][i] <= 9)
+			++i;
+		if (argv[cnt][i])
 			return (ERROR);
+	}
+	ft_newlist(a);
+	ft_newlist(b);
+	while ()
 }
