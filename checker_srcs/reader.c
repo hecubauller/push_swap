@@ -12,16 +12,44 @@
 
 #include "../checker_includes/checker.h"
 
-t_stack	**ft_nextlist(t_stack **a)
+void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
 {
-	t_stack **tmp;
+	t_stack		*tmp2;
 
-	tmp = a;
-	if (!((*a)->next = (struct s_stack *)malloc(sizeof(struct s_stack))))
-		exit (FAIL);
-	(*a)->prev = tmp;
-	(*a)->nb = 0;
-	return (tmp);
+	while (argv[tmp])
+	{
+		(*a)->nb = ft_atoi(argv[tmp]);
+		tmp2 = (*a);
+		if (!((*a)->next = (struct s_stack *)malloc(sizeof(struct s_stack))))
+			exit (FAIL);
+		(*a) = (*a)->next;
+		(*a)->prev = tmp2;
+		(*a)->nb = 0;
+		++tmp;
+	}
+}
+
+int		ft_check_dubl(char **argv, int tmp)
+{
+	int 	cnt;
+	int 	cnt2;
+	int 	cnst;
+
+	cnt = tmp;
+	cnst = tmp;
+	cnt2 = tmp;
+	while (argv[tmp])
+	{
+		cnt2 = cnst;
+		while (argv[cnt2])
+		{
+			cnt2 == tmp ? ++cnt2 : 0;
+			if (ft_strcmp(argv[tmp], argv[cnt2]))
+				return (ERROR);
+			++cnt2;
+		}
+		++tmp;
+	}
 }
 
 void	ft_newlist(t_stack **a)
@@ -34,9 +62,10 @@ void	ft_newlist(t_stack **a)
 
 int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 {
-	int 	i;
-	int 	cnt;
-	char 	*chckr;
+	int 		i;
+	int 		cnt;
+	int 		tmp;
+	char 		*chckr;
 
 	i = -1;
 	cnt = -1;
@@ -46,6 +75,7 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 	chckr = "./checker";
 	if (!(ft_strcmp(argv[0], chckr)))
 		cnt++;
+	tmp = cnt;
 	while (argv[++cnt]
 	{
 		while (argv[cnt][i] && argv[cnt][i] >= 0 && argv[cnt][i] <= 9)
@@ -53,7 +83,9 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 		if (argv[cnt][i])
 			return (ERROR);
 	}
+	if (!(ft_check_dubl(argv, tmp)))
+		return (ERROR);
 	ft_newlist(a);
 	ft_newlist(b);
-	while ()
+	ft_add_nbrs(tmp, a, argv);
 }

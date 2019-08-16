@@ -64,6 +64,7 @@ typedef struct			s_instr
 
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b);
 void		ft_newlist(t_stack **a);
-t_stack		**ft_nextlist(t_stack **a);
+void		ft_add_nbrs(int tmp, t_stack **a, char **argv);
+int			ft_check_dubl(char **argv, int tmp);
 
 #endif
