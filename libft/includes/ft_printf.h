@@ -6,7 +6,7 @@
 /*   By: shunt <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 22:49:05 by shunt             #+#    #+#             */
-/*   Updated: 2019/06/02 22:50:07 by shunt            ###   ########.fr       */
+/*   Updated: 2019/08/18 21:52:52 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <inttypes.h>
 # include <stdlib.h>
-# include "../libft/includes/libft.h"
+# include "libft.h"
 
 /*
 **  DIFFERENT

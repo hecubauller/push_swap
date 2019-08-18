@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
-/*   Updated: 2019/08/12 18:22:02 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/19 01:16:58 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 # include <stdlib.h>
 # include <stdio.h>
-# include "../libft/libft/includes/libft.h"
-# include "../libft/includes/ft_printf.h"
+# include "../libft/includes/libft.h"
+# include "../includes/ft_printf.h"
+# include "../includes/get_next_line.h"
 
+# define OK 2
+# define KO 3
 # define ERROR -1
 # define SUCCESS 1
 # define FAIL 0
@@ -48,6 +51,7 @@
 typedef struct			s_stack
 {
 	int 				nb;
+	int 				size;
 	struct s_stack		*next;
 	struct s_stack		*prev;
 }						t_stack;
@@ -62,9 +66,13 @@ typedef struct			s_instr
  * FUNCTIONS
  */
 
-int			ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b);
-void		ft_newlist(t_stack **a);
-void		ft_add_nbrs(int tmp, t_stack **a, char **argv);
+int			ft_get_input();
+void		ft_put_result(int res);
+void		ft_newlist_ch(t_stack **a);
+int 		ft_check_valid_instr(char **line);
 int			ft_check_dubl(char **argv, int tmp);
+int 		ft_check_output(t_stack **a, t_stack **b);
+void		ft_add_nbrs(int tmp, t_stack **a, char **argv);
+int			ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b);
 
 #endif
