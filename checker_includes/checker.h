@@ -59,6 +59,7 @@ typedef struct			s_stack
 typedef struct			s_instr
 {
 	short int			inst;
+	int 				split;
 	struct s_stack		*next;
 }						t_instr;
 
@@ -69,6 +70,7 @@ typedef struct			s_instr
 int			ft_get_input();
 void		ft_put_result(int res);
 void		ft_newlist_ch(t_stack **a);
+void 		ft_int_checker(char *tmp, int nb);
 int 		ft_check_valid_instr(char **line);
 int			ft_check_dubl(char **argv, int tmp);
 int 		ft_check_output(t_stack **a, t_stack **b);

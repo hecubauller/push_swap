@@ -12,16 +12,38 @@
 
 #include "../checker_includes/checker.h"
 
+void 	ft_int_checker(char *tmp, int nb)
+{
+	char	*res_nb;
+	int		pos;
+	int 	neg;
+
+	res_nb = ft_itoa(nb);
+	if (ft_strcmp(tmp, res_nb))
+	{
+		pos = 0;
+		if (*res_nb == '+')
+			pos = 1;
+		if (*res_nb == '-')
+			neg = -1;
+		if (pos && ((++*res_nb == '-') || *res_nb == '+'))
+		{
+			ft_printf("Error\n");
+			exit(0);
+		}
+		while (*res_nb == '0')
+			res_nb++;
+	}
+}
+
 void	ft_put_result(int res)
 {
-	if (res == SUCCESS)
-		ft_printf("\nSUCCESS\n");
 	if (res == ERROR)
-		ft_putstr("Error");
+		ft_putstr("Error\n");
 	if (res == OK)
-		ft_putstr("OK");
+		ft_putstr("OK\n");
 	if (res == KO)
-		ft_putstr("KO");
+		ft_putstr("KO\n");
 }
 
 int 	ft_check_output(t_stack **a, t_stack **b)

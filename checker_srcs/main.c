@@ -22,25 +22,30 @@ int main(int argc, char **argv)
 
 	res = 0;
 	av_str = NULL;
+	in = (t_instr *)malloc(sizeof(t_instr));
+	in->split = 0;
 	if (argc == 1)
 		return (0);
-	if (argc == 2)
+	if (argc == 2 && ft_strchr(argv[1], ' '))
+	{
 		av_str = ft_strsplit(argv[1], ' ');
+		in->split++;
+	}
 	if ((ft_reader_argv(&a, &in, (av_str ? av_str : argv), &b) == ERROR))
 	{
-		ft_putstr("Error");
+		ft_putstr("Error\n");
 		return (0);
 	}
 	if ((ft_get_input() == ERROR))
 	{
-		ft_putstr("Error");
+		ft_putstr("Error\n");
 		return (0);
 	}
 	res = ft_check_output(&a, &b);
 	if (res == OK)
-		ft_putstr("OK");
+		ft_putstr("OK\n");
 	if (res == KO)
-		ft_putstr("KO");
+		ft_putstr("KO\n");
 	//ft_put_result(res);
 	return (SUCCESS);
 }

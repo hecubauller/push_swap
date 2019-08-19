@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] == '0')
 		i++;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9' && dig++ < 19)
+	while (str[i] && str[i] >= '0' && str[i] <= '9' && dig++ < 19)
 		res = res * 10 + (unsigned long long)(str[i++] - 48);
 	if (res > 9223372036854775807 || dig > 19)
 		return (negative == -1 ? 0 : -1);

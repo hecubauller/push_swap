@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.o"
   "CMakeFiles/push_swap.dir/checker_srcs/main.c.o"
   "CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/add_z.c.o"
@@ -124,7 +125,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/libft/sources/t_str.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/wzrs.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/zrs.c.o"
-  "CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.o"
   "push_swap.pdb"
   "push_swap"
 )

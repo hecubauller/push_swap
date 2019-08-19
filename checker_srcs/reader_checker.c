@@ -27,13 +27,16 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
 {
 	t_stack		*tmp2;
 	t_stack		*begin;
+	char 		*tmp_str;
 	int 		s;
 
 	begin = (*a);
 	s = 0;
 	while (argv[tmp])
 	{
+		tmp_str = argv[tmp];
 		(*a)->nb = ft_atoi(argv[tmp]);
+		ft_int_checker(tmp_str, (*a)->nb);
 		tmp2 = (*a);
 		if (argv[tmp + 1])
 		{
@@ -100,7 +103,7 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 
 	i = 0;
 	cnt = 0;
-	tmp = 1;
+	tmp = ((*in)->split ? 0 : 1);
 	while (argv[++cnt])
 	{
 		i = 0;
