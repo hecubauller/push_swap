@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 05:41:06 by huller            #+#    #+#             */
-/*   Updated: 2019/08/20 08:06:48 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:17:10 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,22 +107,20 @@ void	ft_ss(t_stack **a, t_stack **b)
 			(*a)->nb = (*a)->next->nb;
 			(*a)->next->nb = tmp;
 		}
-		while (*a)
-		{
-			ft_printf("%d ", (*a)->nb);
-			(*a) = (*a)->next;
-		}
 		if ((*b) && (*b)->next)
 		{
 			tmp = (*b)->nb;
 			(*b)->nb = (*b)->next->nb;
 			(*b)->next->nb = tmp;
 		}
-		while (*a)
+		while ((*a)->next)
 		{
 			ft_printf("%d ", (*a)->nb);
 			(*a) = (*a)->next;
 		}
+		ft_printf("%d ", (*a)->nb);
+		while ((*a)->prev)
+			(*a) = (*a)->prev;
 	}
 }
 
@@ -137,11 +135,14 @@ void	ft_sa(t_stack **x)
 		(*x)->nb = (*x)->next->nb;
 		(*x)->next->nb = tmp;
 	}
-	while (*x)
+	while ((*x)->next)
 	{
 		ft_printf("%d ", (*x)->nb);
 		(*x) = (*x)->next;
 	}
+	ft_printf("%d ", (*x)->nb);
+	while ((*x)->prev)
+		(*x) = (*x)->prev;
 }
 
 void	ft_appl_instr(char **line, t_instr *in, t_stack **a, t_stack **b)

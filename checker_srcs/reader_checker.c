@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/08/20 06:43:39 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/20 10:04:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	ft_newlist_ch(t_stack **a)
 		exit(FAIL);
 	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
 		exit (FAIL);
-	(*a)->nb = 0;
+	(*a)->nb = 9;
 	(*a)->size = 0;
 	(*a)->prev = NULL;
 }
