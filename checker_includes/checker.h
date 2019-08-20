@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
-/*   Updated: 2019/08/19 01:16:58 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/20 07:43:02 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct			s_stack
 
 typedef struct			s_instr
 {
-	short int			inst;
+	unsigned short int	inst;
 	int 				split;
 	struct s_stack		*next;
 }						t_instr;
@@ -67,14 +67,26 @@ typedef struct			s_instr
  * FUNCTIONS
  */
 
-int			ft_get_input();
+void		ft_sa(t_stack **x);
+void		ft_ra(t_stack **x);
+void		ft_rra(t_stack **x);
+void		ft_ss(t_stack **a, t_stack **b);
+void		ft_rr(t_stack **a, t_stack **b);
+void		ft_rrb(t_stack **a, t_stack **b);
+void		ft_rrr(t_stack **a, t_stack **b);
+void		ft_pa(t_stack **a, t_stack **b);
+void		ft_pb(t_stack **a, t_stack **b);
+
 void		ft_put_result(int res);
+void		ft_free_lsts(t_stack **a);
 void		ft_newlist_ch(t_stack **a);
-void 		ft_int_checker(char *tmp, int nb);
-int 		ft_check_valid_instr(char **line);
+int			ft_int_checker(char *tmp, int nb);
 int			ft_check_dubl(char **argv, int tmp);
 int 		ft_check_output(t_stack **a, t_stack **b);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv);
+int 		ft_check_valid_instr(char **line, t_instr *in);
+int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
+void		ft_appl_instr(char **line, t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b);
 
 #endif

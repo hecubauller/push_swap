@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/08/19 01:43:26 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/20 06:46:38 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 	av_str = NULL;
 	in = (t_instr *)malloc(sizeof(t_instr));
 	in->split = 0;
+	in->inst = 0;
 	if (argc == 1)
 		return (0);
 	if (argc == 2 && ft_strchr(argv[1], ' '))
@@ -36,7 +37,7 @@ int main(int argc, char **argv)
 		ft_putstr("Error\n");
 		return (0);
 	}
-	if ((ft_get_input() == ERROR))
+	if ((ft_get_input(in, &a, &b) == ERROR))
 	{
 		ft_putstr("Error\n");
 		return (0);

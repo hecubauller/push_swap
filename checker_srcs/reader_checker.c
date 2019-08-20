@@ -6,21 +6,39 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/08/19 01:35:21 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/20 06:43:39 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_includes/checker.h"
 
-int 	ft_check_valid_instr(char **line)
+int 	ft_check_valid_instr(char **line, t_instr *in)
 {
-	if (ft_strcmp(*line, "sa") && ft_strcmp(*line, "sb") &&
-		ft_strcmp(*line, "ss") && ft_strcmp(*line, "ra") &&
-		ft_strcmp(*line, "rb") && ft_strcmp(*line, "rr") &&
-		ft_strcmp(*line, "rra") && ft_strcmp(*line, "rrb") &&
-		ft_strcmp(*line, "rrr") && ft_strcmp(*line, "pa") &&
-		ft_strcmp(*line, "pb"))
+	if (!ft_strcmp(*line, "sa"))
+		in->inst |= SA;
+	else if (!ft_strcmp(*line, "sb"))
+		in->inst |= SB;
+	else if (!ft_strcmp(*line, "ss"))
+		in->inst |= SS;
+	else if (!ft_strcmp(*line, "ra"))
+		in->inst |= RA;
+	else if (!ft_strcmp(*line, "rb"))
+		in->inst |= RB;
+	else if (!ft_strcmp(*line, "rr"))
+		in->inst |= RR;
+	else if (!ft_strcmp(*line, "rra"))
+		in->inst |= RRA;
+	else if (!ft_strcmp(*line, "rrb"))
+		in->inst |= RRB;
+	else if (!ft_strcmp(*line, "rrr"))
+		in->inst |= RRR;
+	else if (!ft_strcmp(*line, "pa"))
+		in->inst |= PA;
+	else if (!ft_strcmp(*line, "pb"))
+		in->inst |= PB;
+	else
 		return (ERROR);
+	return (SUCCESS);
 }
 
 void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
@@ -36,11 +54,15 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
 	{
 		tmp_str = argv[tmp];
 		(*a)->nb = ft_atoi(argv[tmp]);
-		ft_int_checker(tmp_str, (*a)->nb);
+		if ((ft_int_checker(tmp_str, (*a)->nb) == ERROR))
+		{
+			ft_free_lsts(a);
+			ft_put_result(ERROR);
+		}
 		tmp2 = (*a);
 		if (argv[tmp + 1])
 		{
-			if (!((*a)->next = (t_stack *) malloc(sizeof(t_stack))))
+			if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
 				exit(FAIL);
 			(*a) = (*a)->next;
 			(*a)->prev = tmp2;
