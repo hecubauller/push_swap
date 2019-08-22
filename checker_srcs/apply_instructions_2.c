@@ -6,19 +6,20 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 06:28:58 by huller            #+#    #+#             */
-/*   Updated: 2019/08/20 10:30:04 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/22 05:49:22 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_includes/checker.h"
 
-void	ft_rra(t_stack **x)
+void	ft_rra(t_stack **x, t_instr *instr)
 {
 	int 		tmp;
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
 
 	tmp = 0;
+	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
 		tmp_s = (*x);
@@ -29,25 +30,20 @@ void	ft_rra(t_stack **x)
 		(*x)->prev = NULL;
 		tmp_s2 = (*x);
 		tmp_s->prev = tmp_s2;
-		while ((*x)->next)
-		{
-			ft_printf("%d ", (*x)->nb);
-			(*x) = (*x)->next;
-		}
-		ft_printf("%d ", (*x)->nb);
 		while ((*x)->prev)
 			(*x) = (*x)->prev;
 	}
 }
 
-void	ft_rrr(t_stack **a, t_stack **b)
+void	ft_rrr(t_stack **a, t_stack **b, t_instr *instr)
 {
 	int 		tmp;
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
 
 	tmp = 0;
-	if ((*a) && (*a)->next) //оптимизировать: свопать нб, а не ссылки
+	instr->inst = 0;
+	if ((*a) && (*a)->next)
 	{
 		tmp_s = (*a);
 		while ((*a)->next)
@@ -57,13 +53,7 @@ void	ft_rrr(t_stack **a, t_stack **b)
 		(*a)->prev = NULL;
 		tmp_s2 = (*a);
 		tmp_s->prev = tmp_s2;
-		while ((*a)->next)
-		{
-			ft_printf("%d ", (*a)->nb);
-			(*a) = (*a)->next;
-		}
-		ft_printf("%d ", (*a)->nb);
-		while ((*a)->prev)
+		while ((*a) && (*a)->prev)
 			(*a) = (*a)->prev;
 	}
 	if ((*b) && (*b)->next)
@@ -76,41 +66,77 @@ void	ft_rrr(t_stack **a, t_stack **b)
 		(*b)->prev = NULL;
 		tmp_s2 = (*b);
 		tmp_s->prev = tmp_s2;
-		while ((*b)->next)
-		{
-			ft_printf("%d ", (*b)->nb);
-			(*b) = (*b)->next;
-		}
-		ft_printf("%d ", (*b)->nb);
-		while ((*b)->prev)
+		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
 
 }
 
-void	ft_pa(t_stack **a, t_stack **b)
+void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
 {
-	int 		tmp;
+	t_stack		*tmp_s;
 
-	tmp = 0;
+	instr->inst = 0;
 	if (*b)
 	{
-		(*a)->prev = (*b);
-		(*b)->next = (*a);
-		(*b)->prev = NULL; //хуйня какая-то
-		while ((*a)->next)
+		if (!(*a))
 		{
-			ft_printf("%d ", (*a)->nb);
-			(*a) = (*a)->next;
+			tmp_s = (*b);
+			(*b) = (*b)->next;
+			(*b)->prev = NULL;
+			(*a) = tmp_s;
+			(*a)->next = NULL;
+			(*a)->next = NULL;
+
 		}
-		ft_printf("%d ", (*a)->nb);
-		while ((*a)->prev)
+		else if (*a)
+		{
+			(*a)->prev = (*b);
+			tmp_s = (*b)->next;
+			(*a)->prev->next = (*a);
 			(*a) = (*a)->prev;
+			(*b) = tmp_s;
+			(*b) ? (*b)->prev = NULL : 0;
+		}
+		instr->size_a++;
+		while ((*a) && (*a)->prev)
+			(*a) = (*a)->prev;
+		while ((*b) && (*b)->prev)
+			(*b) = (*b)->prev;
 	}
 
 }
 
-void	ft_pb(t_stack **a, t_stack **b)
+void	ft_pb(t_stack **a, t_stack **b, t_instr *instr)
 {
+	t_stack		*tmp_s;
 
+	instr->inst = 0;
+	if (*a)
+	{
+		if (!(*b))
+		{
+			tmp_s = (*a);
+			(*a) = (*a)->next;
+			(*a)->prev = NULL;
+			(*b) = tmp_s;
+			(*b)->next = NULL;
+			(*b)->next = NULL;
+
+		}
+		else if (*b)
+		{
+			(*b)->prev = (*a);
+			tmp_s = (*a)->next;
+			(*b)->prev->next = (*b);
+			(*b) = (*b)->prev;
+			(*a) = tmp_s;
+			(*a) ? (*a)->prev = NULL : 0;
+		}
+		instr->size_b++;
+		while ((*a) && (*a)->prev)
+			(*a) = (*a)->prev;
+		while ((*b) && (*b)->prev)
+			(*b) = (*b)->prev;
+	}
 }

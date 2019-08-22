@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/08/20 06:51:59 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/22 06:02:16 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ void	ft_free_lsts(t_stack **a)
 {
 	t_stack	*tmp;
 
-	while((*a)->prev)
+	while((*a)->next)
 	{
 		tmp = *a;
-		(*a) = (*a)->prev;
+		(*a) = (*a)->next;
 		free(*a);
 	}
-	free(*a);
 }
 
 int 	ft_int_checker(char *tmp, int nb)
@@ -71,9 +70,9 @@ void	ft_put_result(int res)
 		ft_putstr("KO\n");
 }
 
-int 	ft_check_output(t_stack **a, t_stack **b)
+int 	ft_check_output(t_stack **a, t_stack **b, t_instr *in)
 {
-	if (!(*b)->size)
+	if (!(in->size_b))
 	{
 		while ((*a)->prev)
 			(*a) = (*a)->prev;
@@ -100,6 +99,7 @@ int		ft_get_input(t_instr *in, t_stack **a, t_stack **b)
 			ft_free_lsts(a);
 			//ft_free_lsts(b);
 			ft_put_result(ERROR);
+			exit (0);
 		}
 		ft_appl_instr(&line, in, a, b);
 	}

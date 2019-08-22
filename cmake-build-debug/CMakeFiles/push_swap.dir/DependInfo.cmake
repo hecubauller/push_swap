@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/huller/Desktop/push_swap/checker_srcs/get_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.o"
   "/Users/huller/Desktop/push_swap/checker_srcs/main.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/main.c.o"
   "/Users/huller/Desktop/push_swap/checker_srcs/reader_checker.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o"
+  "/Users/huller/Desktop/push_swap/checker_srcs/visualizer.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o"
   "/Users/huller/Desktop/push_swap/libft/sources/add_z.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/sources/add_z.c.o"
   "/Users/huller/Desktop/push_swap/libft/sources/apply_flags.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/sources/apply_flags.c.o"
   "/Users/huller/Desktop/push_swap/libft/sources/c_str.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/sources/c_str.c.o"

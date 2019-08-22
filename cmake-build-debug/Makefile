@@ -258,6 +258,33 @@ checker_srcs/reader_checker.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.s
 .PHONY : checker_srcs/reader_checker.c.s
 
+checker_srcs/visualizer.o: checker_srcs/visualizer.c.o
+
+.PHONY : checker_srcs/visualizer.o
+
+# target to build an object file
+checker_srcs/visualizer.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o
+.PHONY : checker_srcs/visualizer.c.o
+
+checker_srcs/visualizer.i: checker_srcs/visualizer.c.i
+
+.PHONY : checker_srcs/visualizer.i
+
+# target to preprocess a source file
+checker_srcs/visualizer.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.i
+.PHONY : checker_srcs/visualizer.c.i
+
+checker_srcs/visualizer.s: checker_srcs/visualizer.c.s
+
+.PHONY : checker_srcs/visualizer.s
+
+# target to generate assembly for a file
+checker_srcs/visualizer.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.s
+.PHONY : checker_srcs/visualizer.c.s
+
 libft/sources/add_z.o: libft/sources/add_z.c.o
 
 .PHONY : libft/sources/add_z.o
@@ -3603,6 +3630,9 @@ help:
 	@echo "... checker_srcs/reader_checker.o"
 	@echo "... checker_srcs/reader_checker.i"
 	@echo "... checker_srcs/reader_checker.s"
+	@echo "... checker_srcs/visualizer.o"
+	@echo "... checker_srcs/visualizer.i"
+	@echo "... checker_srcs/visualizer.s"
 	@echo "... libft/sources/add_z.o"
 	@echo "... libft/sources/add_z.i"
 	@echo "... libft/sources/add_z.s"

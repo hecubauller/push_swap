@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/08/20 10:04:12 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/22 05:17:00 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int 	ft_check_valid_instr(char **line, t_instr *in)
 	return (SUCCESS);
 }
 
-void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
+void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 {
 	t_stack		*tmp2;
 	t_stack		*begin;
@@ -59,6 +59,7 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
 			ft_free_lsts(a);
 			ft_put_result(ERROR);
 		}
+		in->size_a++;
 		tmp2 = (*a);
 		if (argv[tmp + 1])
 		{
@@ -71,12 +72,6 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv)
 		else
 			(*a)->next = NULL;
 		++tmp;
-	}
-	(*a) = begin;
-	while (*a)
-	{
-		ft_printf("%d ", (*a)->nb);
-		(*a) = (*a)->next;
 	}
 	(*a) = begin;
 }
@@ -111,8 +106,7 @@ void	ft_newlist_ch(t_stack **a)
 		exit(FAIL);
 	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
 		exit (FAIL);
-	(*a)->nb = 9;
-	(*a)->size = 0;
+	(*a)->nb = 0;
 	(*a)->prev = NULL;
 }
 
@@ -126,6 +120,8 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 	i = 0;
 	cnt = 0;
 	tmp = ((*in)->split ? 0 : 1);
+	(*in)->size_a = 0;
+	(*in)->size_b = 0;
 	while (argv[++cnt])
 	{
 		i = 0;
@@ -138,7 +134,6 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 	if ((ft_check_dubl(argv, tmp) == ERROR))
 		return (ERROR);
 	ft_newlist_ch(a);
-	ft_newlist_ch(b);
-	ft_add_nbrs(tmp, a, argv);
+	ft_add_nbrs(tmp, a, argv, *in);
 	return (SUCCESS);
 }

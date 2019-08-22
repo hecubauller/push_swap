@@ -36,6 +36,13 @@ CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o
  /Users/huller/Desktop/push_swap/checker_includes/checker.h
  /Users/huller/Desktop/push_swap/checker_srcs/reader_checker.c
  /Users/huller/Desktop/push_swap/libft/includes/libft.h
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o
+ ../libft/includes/ft_printf.h
+ ../libft/includes/get_next_line.h
+ ../libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/checker_includes/checker.h
+ /Users/huller/Desktop/push_swap/checker_srcs/visualizer.c
+ /Users/huller/Desktop/push_swap/libft/includes/libft.h
 CMakeFiles/push_swap.dir/libft/sources/add_z.c.o
  ../libft/includes/ft_printf.h
  ../libft/includes/libft.h

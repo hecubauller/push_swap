@@ -102,6 +102,9 @@
 		<Unit filename="/Users/huller/Desktop/push_swap/checker_srcs/reader_checker.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/checker_srcs/visualizer.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/libft/includes/ft_printf.h">
 			<Option target="push_swap"/>
 		</Unit>

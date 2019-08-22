@@ -36,6 +36,13 @@ CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o: ../checker_includes/ch
 CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o: ../checker_srcs/reader_checker.c
 CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o: ../libft/includes/libft.h
 
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../checker_includes/checker.h
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../checker_srcs/visualizer.c
+CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o: ../libft/includes/libft.h
+
 CMakeFiles/push_swap.dir/libft/sources/add_z.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/libft/sources/add_z.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/libft/sources/add_z.c.o: ../libft/sources/add_z.c
