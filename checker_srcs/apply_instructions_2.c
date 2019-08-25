@@ -99,6 +99,7 @@ void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
 			(*b) ? (*b)->prev = NULL : 0;
 		}
 		instr->size_a++;
+		instr->size_b--;
 		while ((*a) && (*a)->prev)
 			(*a) = (*a)->prev;
 		while ((*b) && (*b)->prev)
@@ -134,6 +135,7 @@ void	ft_pb(t_stack **a, t_stack **b, t_instr *instr)
 			(*a) ? (*a)->prev = NULL : 0;
 		}
 		instr->size_b++;
+		instr->size_a--;
 		while ((*a) && (*a)->prev)
 			(*a) = (*a)->prev;
 		while ((*b) && (*b)->prev)

@@ -46,26 +46,6 @@ stdio.h
 ../includes/get_next_line.h
 /Users/huller/Desktop/push_swap/includes/get_next_line.h
 
-/Users/huller/Desktop/push_swap/checker_srcs/apply_instructions.c
-../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
-
-/Users/huller/Desktop/push_swap/checker_srcs/apply_instructions_2.c
-../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
-
-/Users/huller/Desktop/push_swap/checker_srcs/get_instructions.c
-../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
-
-/Users/huller/Desktop/push_swap/checker_srcs/main.c
-../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
-
-/Users/huller/Desktop/push_swap/checker_srcs/reader_checker.c
-../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
-
 /Users/huller/Desktop/push_swap/checker_srcs/visualizer.c
 ../checker_includes/checker.h
 /Users/huller/Desktop/push_swap/checker_includes/checker.h
