@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="734c04e9-49c1-4e81-b909-66c32ecb2ca0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checker_srcs/apply_instructions_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/checker_srcs/apply_instructions_2.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checker_srcs/visualizer.c" beforeDir="false" afterPath="$PROJECT_DIR$/checker_srcs/visualizer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/push_swap" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +46,8 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/checker_srcs/reader_checker.c">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="876">
-                          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+                        <state relative-caret-position="372">
+                          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
                         </state>
                       </provider>
                     </entry>
@@ -91,8 +86,8 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/checker_srcs/visualizer.c">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="408">
-                          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+                        <state relative-caret-position="510">
+                          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
                         </state>
                       </provider>
                     </entry>
@@ -106,8 +101,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/checker_srcs/get_instructions.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="832">
-                      <caret line="94" selection-start-line="94" selection-end-line="94" />
+                    <state relative-caret-position="1108">
+                      <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
                     </state>
                   </provider>
                 </entry>
@@ -263,12 +258,12 @@
       <workItem from="1566283310824" duration="3052000" />
       <workItem from="1566430115902" duration="12265000" />
       <workItem from="1566538795764" duration="1097000" />
-      <workItem from="1566695130301" duration="4662000" />
+      <workItem from="1566695130301" duration="5341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31728000" />
+    <option name="totallyTimeSpent" value="32407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1201" y="23" width="1999" height="1772" extended-state="0" />
@@ -416,20 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/checker_srcs/reader_checker.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker_srcs/get_instructions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/checker_srcs/apply_instructions.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2422">
@@ -444,10 +425,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/checker_srcs/get_instructions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1108">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker_srcs/reader_checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/checker_srcs/visualizer.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="510">
+          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
         </state>
       </provider>
     </entry>
