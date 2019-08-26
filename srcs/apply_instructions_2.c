@@ -30,6 +30,7 @@ void	ft_rra(t_stack **x, t_instr *instr)
 		(*x)->prev = NULL;
 		tmp_s2 = (*x);
 		tmp_s->prev = tmp_s2;
+		tmp_s2->next = tmp_s;
 		while ((*x)->prev)
 			(*x) = (*x)->prev;
 	}

@@ -29,9 +29,7 @@ void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 			(*a) = (*a)->next;
 		(*a)->next = tmp_s;
 		(*a)->next->next = NULL;
-		(*a)->next->prev = tmp_s2;
-		while ((*a) && (*a)->prev)
-			(*a) = (*a)->prev;
+		(*a)->next->prev = (*a);
 		while ((*a) && (*a)->prev)
 			(*a) = (*a)->prev;
 	}
@@ -44,9 +42,7 @@ void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 			(*b) = (*b)->next;
 		(*b)->next = tmp_s;
 		(*b)->next->next = NULL;
-		(*b)->next->prev = tmp_s2;
-		while ((*b) && (*b)->prev)
-			(*b) = (*b)->prev;
+		(*b)->next->prev = (*b);
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
@@ -69,7 +65,7 @@ void	ft_ra(t_stack **x, t_instr *instr)
 			(*x) = (*x)->next;
 		(*x)->next = tmp_s;
 		(*x)->next->next = NULL;
-		(*x)->next->prev = tmp_s2;
+		(*x)->next->prev = (*x);
 		while ((*x) && (*x)->prev)
 			(*x) = (*x)->prev;
 		while ((*x) && (*x)->prev)

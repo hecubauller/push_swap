@@ -1,10 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o"
-  "CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o"
-  "CMakeFiles/push_swap.dir/srcs/checker.c.o"
-  "CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
-  "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
-  "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/add_z.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/apply_flags.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/c_str.c.o"
@@ -128,6 +122,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/libft/sources/t_str.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/wzrs.c.o"
   "CMakeFiles/push_swap.dir/libft/sources/zrs.c.o"
+  "CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o"
+  "CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o"
+  "CMakeFiles/push_swap.dir/srcs/checker.c.o"
+  "CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
+  "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
+  "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
   "push_swap.pdb"
   "push_swap"
 )

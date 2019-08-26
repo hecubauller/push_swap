@@ -58,6 +58,7 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 		{
 			ft_free_lsts(a);
 			ft_put_result(ERROR);
+			exit (-1);
 		}
 		in->size_a++;
 		tmp2 = (*a);
@@ -104,10 +105,10 @@ int		ft_check_dubl(char **argv, int tmp)
 			cnt == tmp ? ++cnt : 0;
 			if (argv[cnt])
 			{
-				if (!(ft_strcmp(argv[tmp], argv[cnt]))) //сега при параметре " "
+				if (!(ft_strcmp(argv[tmp], argv[cnt])))
 					return (ERROR);
 			}
-			++cnt; //не плюсовтаь когда стоит в конце (сравнивает последнее число)
+			++cnt;
 		}
 		++tmp;
 	}

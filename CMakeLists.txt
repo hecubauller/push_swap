@@ -3,17 +3,11 @@ project(push_swap C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(checker_includes)
+include_directories(includes)
 include_directories(libft/includes)
 
 add_executable(push_swap
         includes/checker.h
-        srcs/apply_instructions.c
-        srcs/apply_instructions_2.c
-        srcs/checker.c
-        srcs/get_instructions.c
-        srcs/reader_checker.c
-        srcs/visualizer.c
         libft/includes/ft_printf.h
         libft/includes/get_next_line.h
         libft/includes/libft.h
@@ -139,4 +133,10 @@ add_executable(push_swap
         libft/sources/str_ml.c
         libft/sources/t_str.c
         libft/sources/wzrs.c
-        libft/sources/zrs.c)
+        libft/sources/zrs.c
+        srcs/apply_instructions.c
+        srcs/apply_instructions_2.c
+        srcs/checker.c
+        srcs/get_instructions.c
+        srcs/reader_checker.c
+        srcs/visualizer.c)

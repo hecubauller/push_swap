@@ -14,13 +14,9 @@
 
 int		ft_put_out(t_rd **read, t_out **output)
 {
-	unsigned long	i;
-	int				b;
 	unsigned long	strlen;
 	char			*tmp;
 
-	i = 0;
-	b = -1;
 	if ((*read)->mod)
 	{
 		strlen = ft_strlen((*read)->mod) + (*read)->zero;
