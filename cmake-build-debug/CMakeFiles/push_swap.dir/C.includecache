@@ -54,7 +54,7 @@ unistd.h
 string.h
 -
 
-/home/anastasiia/Desktop/push_swap/srcs/apply_instructions.c
+/home/anastasiia/Desktop/push_swap/srcs/get_instructions.c
 ../includes/checker.h
 /home/anastasiia/Desktop/push_swap/includes/checker.h
 

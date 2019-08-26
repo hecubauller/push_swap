@@ -119,8 +119,6 @@ void	ft_newlist_ch(t_stack **a)
 {
 	if (!((*a) = (t_stack *)malloc(sizeof(t_stack))))
 		exit(FAIL);
-	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
-		exit (FAIL);
 	(*a)->nb = 0;
 	(*a)->prev = NULL;
 }

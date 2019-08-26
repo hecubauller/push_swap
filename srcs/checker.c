@@ -54,6 +54,8 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	res = ft_check_output(&a, in);
+	ft_free_lsts(&a);
+	ft_free_lsts(&b);
 	if (res == OK)
 		ft_putstr("OK\n");
 	if (res == KO)

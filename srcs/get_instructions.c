@@ -14,14 +14,15 @@
 
 void	ft_free_lsts(t_stack **a)
 {
-	t_stack	*tmp;
+	t_stack *tmp;
 
-	while((*a)->next)
+	while ((*a) && (*a)->next)
 	{
 		tmp = *a;
 		(*a) = (*a)->next;
-		free(*a);
+		free(tmp);
 	}
+	free(*a);
 }
 
 int 	ft_int_checker(char *tmp, int nb)
@@ -37,7 +38,7 @@ int 	ft_int_checker(char *tmp, int nb)
 	k = -1;
 	res_nb = ft_itoa(nb);
 	if (!(cmp_str = (char *)malloc(sizeof(char) * ft_strlen(tmp))))
-		ft_put_result(ERROR);
+		exit(ERROR);
 	if (ft_strcmp(tmp, res_nb))
 	{
 		pos = 0;
@@ -57,6 +58,8 @@ int 	ft_int_checker(char *tmp, int nb)
 		if (ft_strcmp(res_nb, cmp_str))
 			return (ERROR);
 	}
+	free(res_nb);
+	free(cmp_str);
 	return (SUCCESS);
 }
 
@@ -98,11 +101,13 @@ int		ft_get_input(t_instr *in, t_stack **a, t_stack **b)
 		if ((ft_check_valid_instr(&line, in)) == ERROR)
 		{
 			ft_free_lsts(a);
-			//ft_free_lsts(b); //нужно отфришить b
+			ft_free_lsts(b);
 			ft_put_result(ERROR);
 			exit (0);
 		}
 		ft_appl_instr(in, a, b);
+		free(line);
 	}
+	free(line);
 	return (SUCCESS);
 }
