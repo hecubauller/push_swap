@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/anastasiia/Desktop/push_swap
+CMAKE_SOURCE_DIR = /Users/huller/Desktop/push_swap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/anastasiia/Desktop/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/huller/Desktop/push_swap/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/anastasiia/Desktop/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2019.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,168 +122,6 @@ push_swap: cmake_check_build_system
 push_swap/fast:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/build
 .PHONY : push_swap/fast
-
-checker_srcs/apply_instructions.o: checker_srcs/apply_instructions.c.o
-
-.PHONY : checker_srcs/apply_instructions.o
-
-# target to build an object file
-checker_srcs/apply_instructions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions.c.o
-.PHONY : checker_srcs/apply_instructions.c.o
-
-checker_srcs/apply_instructions.i: checker_srcs/apply_instructions.c.i
-
-.PHONY : checker_srcs/apply_instructions.i
-
-# target to preprocess a source file
-checker_srcs/apply_instructions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions.c.i
-.PHONY : checker_srcs/apply_instructions.c.i
-
-checker_srcs/apply_instructions.s: checker_srcs/apply_instructions.c.s
-
-.PHONY : checker_srcs/apply_instructions.s
-
-# target to generate assembly for a file
-checker_srcs/apply_instructions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions.c.s
-.PHONY : checker_srcs/apply_instructions.c.s
-
-checker_srcs/apply_instructions_2.o: checker_srcs/apply_instructions_2.c.o
-
-.PHONY : checker_srcs/apply_instructions_2.o
-
-# target to build an object file
-checker_srcs/apply_instructions_2.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.o
-.PHONY : checker_srcs/apply_instructions_2.c.o
-
-checker_srcs/apply_instructions_2.i: checker_srcs/apply_instructions_2.c.i
-
-.PHONY : checker_srcs/apply_instructions_2.i
-
-# target to preprocess a source file
-checker_srcs/apply_instructions_2.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.i
-.PHONY : checker_srcs/apply_instructions_2.c.i
-
-checker_srcs/apply_instructions_2.s: checker_srcs/apply_instructions_2.c.s
-
-.PHONY : checker_srcs/apply_instructions_2.s
-
-# target to generate assembly for a file
-checker_srcs/apply_instructions_2.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.s
-.PHONY : checker_srcs/apply_instructions_2.c.s
-
-checker_srcs/checker.o: checker_srcs/checker.c.o
-
-.PHONY : checker_srcs/checker.o
-
-# target to build an object file
-checker_srcs/checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.o
-.PHONY : checker_srcs/checker.c.o
-
-checker_srcs/checker.i: checker_srcs/checker.c.i
-
-.PHONY : checker_srcs/checker.i
-
-# target to preprocess a source file
-checker_srcs/checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.i
-.PHONY : checker_srcs/checker.c.i
-
-checker_srcs/checker.s: checker_srcs/checker.c.s
-
-.PHONY : checker_srcs/checker.s
-
-# target to generate assembly for a file
-checker_srcs/checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.s
-.PHONY : checker_srcs/checker.c.s
-
-checker_srcs/get_instructions.o: checker_srcs/get_instructions.c.o
-
-.PHONY : checker_srcs/get_instructions.o
-
-# target to build an object file
-checker_srcs/get_instructions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.o
-.PHONY : checker_srcs/get_instructions.c.o
-
-checker_srcs/get_instructions.i: checker_srcs/get_instructions.c.i
-
-.PHONY : checker_srcs/get_instructions.i
-
-# target to preprocess a source file
-checker_srcs/get_instructions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.i
-.PHONY : checker_srcs/get_instructions.c.i
-
-checker_srcs/get_instructions.s: checker_srcs/get_instructions.c.s
-
-.PHONY : checker_srcs/get_instructions.s
-
-# target to generate assembly for a file
-checker_srcs/get_instructions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.s
-.PHONY : checker_srcs/get_instructions.c.s
-
-checker_srcs/reader_checker.o: checker_srcs/reader_checker.c.o
-
-.PHONY : checker_srcs/reader_checker.o
-
-# target to build an object file
-checker_srcs/reader_checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.o
-.PHONY : checker_srcs/reader_checker.c.o
-
-checker_srcs/reader_checker.i: checker_srcs/reader_checker.c.i
-
-.PHONY : checker_srcs/reader_checker.i
-
-# target to preprocess a source file
-checker_srcs/reader_checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.i
-.PHONY : checker_srcs/reader_checker.c.i
-
-checker_srcs/reader_checker.s: checker_srcs/reader_checker.c.s
-
-.PHONY : checker_srcs/reader_checker.s
-
-# target to generate assembly for a file
-checker_srcs/reader_checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/reader_checker.c.s
-.PHONY : checker_srcs/reader_checker.c.s
-
-checker_srcs/visualizer.o: checker_srcs/visualizer.c.o
-
-.PHONY : checker_srcs/visualizer.o
-
-# target to build an object file
-checker_srcs/visualizer.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.o
-.PHONY : checker_srcs/visualizer.c.o
-
-checker_srcs/visualizer.i: checker_srcs/visualizer.c.i
-
-.PHONY : checker_srcs/visualizer.i
-
-# target to preprocess a source file
-checker_srcs/visualizer.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.i
-.PHONY : checker_srcs/visualizer.c.i
-
-checker_srcs/visualizer.s: checker_srcs/visualizer.c.s
-
-.PHONY : checker_srcs/visualizer.s
-
-# target to generate assembly for a file
-checker_srcs/visualizer.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/visualizer.c.s
-.PHONY : checker_srcs/visualizer.c.s
 
 libft/sources/add_z.o: libft/sources/add_z.c.o
 
@@ -3606,6 +3444,168 @@ libft/sources/zrs.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/libft/sources/zrs.c.s
 .PHONY : libft/sources/zrs.c.s
 
+srcs/apply_instructions.o: srcs/apply_instructions.c.o
+
+.PHONY : srcs/apply_instructions.o
+
+# target to build an object file
+srcs/apply_instructions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o
+.PHONY : srcs/apply_instructions.c.o
+
+srcs/apply_instructions.i: srcs/apply_instructions.c.i
+
+.PHONY : srcs/apply_instructions.i
+
+# target to preprocess a source file
+srcs/apply_instructions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions.c.i
+.PHONY : srcs/apply_instructions.c.i
+
+srcs/apply_instructions.s: srcs/apply_instructions.c.s
+
+.PHONY : srcs/apply_instructions.s
+
+# target to generate assembly for a file
+srcs/apply_instructions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions.c.s
+.PHONY : srcs/apply_instructions.c.s
+
+srcs/apply_instructions_2.o: srcs/apply_instructions_2.c.o
+
+.PHONY : srcs/apply_instructions_2.o
+
+# target to build an object file
+srcs/apply_instructions_2.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o
+.PHONY : srcs/apply_instructions_2.c.o
+
+srcs/apply_instructions_2.i: srcs/apply_instructions_2.c.i
+
+.PHONY : srcs/apply_instructions_2.i
+
+# target to preprocess a source file
+srcs/apply_instructions_2.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.i
+.PHONY : srcs/apply_instructions_2.c.i
+
+srcs/apply_instructions_2.s: srcs/apply_instructions_2.c.s
+
+.PHONY : srcs/apply_instructions_2.s
+
+# target to generate assembly for a file
+srcs/apply_instructions_2.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.s
+.PHONY : srcs/apply_instructions_2.c.s
+
+srcs/checker.o: srcs/checker.c.o
+
+.PHONY : srcs/checker.o
+
+# target to build an object file
+srcs/checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.o
+.PHONY : srcs/checker.c.o
+
+srcs/checker.i: srcs/checker.c.i
+
+.PHONY : srcs/checker.i
+
+# target to preprocess a source file
+srcs/checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.i
+.PHONY : srcs/checker.c.i
+
+srcs/checker.s: srcs/checker.c.s
+
+.PHONY : srcs/checker.s
+
+# target to generate assembly for a file
+srcs/checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.s
+.PHONY : srcs/checker.c.s
+
+srcs/get_instructions.o: srcs/get_instructions.c.o
+
+.PHONY : srcs/get_instructions.o
+
+# target to build an object file
+srcs/get_instructions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_instructions.c.o
+.PHONY : srcs/get_instructions.c.o
+
+srcs/get_instructions.i: srcs/get_instructions.c.i
+
+.PHONY : srcs/get_instructions.i
+
+# target to preprocess a source file
+srcs/get_instructions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_instructions.c.i
+.PHONY : srcs/get_instructions.c.i
+
+srcs/get_instructions.s: srcs/get_instructions.c.s
+
+.PHONY : srcs/get_instructions.s
+
+# target to generate assembly for a file
+srcs/get_instructions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_instructions.c.s
+.PHONY : srcs/get_instructions.c.s
+
+srcs/reader_checker.o: srcs/reader_checker.c.o
+
+.PHONY : srcs/reader_checker.o
+
+# target to build an object file
+srcs/reader_checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_checker.c.o
+.PHONY : srcs/reader_checker.c.o
+
+srcs/reader_checker.i: srcs/reader_checker.c.i
+
+.PHONY : srcs/reader_checker.i
+
+# target to preprocess a source file
+srcs/reader_checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_checker.c.i
+.PHONY : srcs/reader_checker.c.i
+
+srcs/reader_checker.s: srcs/reader_checker.c.s
+
+.PHONY : srcs/reader_checker.s
+
+# target to generate assembly for a file
+srcs/reader_checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_checker.c.s
+.PHONY : srcs/reader_checker.c.s
+
+srcs/visualizer.o: srcs/visualizer.c.o
+
+.PHONY : srcs/visualizer.o
+
+# target to build an object file
+srcs/visualizer.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/visualizer.c.o
+.PHONY : srcs/visualizer.c.o
+
+srcs/visualizer.i: srcs/visualizer.c.i
+
+.PHONY : srcs/visualizer.i
+
+# target to preprocess a source file
+srcs/visualizer.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/visualizer.c.i
+.PHONY : srcs/visualizer.c.i
+
+srcs/visualizer.s: srcs/visualizer.c.s
+
+.PHONY : srcs/visualizer.s
+
+# target to generate assembly for a file
+srcs/visualizer.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/visualizer.c.s
+.PHONY : srcs/visualizer.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3613,26 +3613,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... push_swap"
 	@echo "... edit_cache"
-	@echo "... checker_srcs/apply_instructions.o"
-	@echo "... checker_srcs/apply_instructions.i"
-	@echo "... checker_srcs/apply_instructions.s"
-	@echo "... checker_srcs/apply_instructions_2.o"
-	@echo "... checker_srcs/apply_instructions_2.i"
-	@echo "... checker_srcs/apply_instructions_2.s"
-	@echo "... checker_srcs/checker.o"
-	@echo "... checker_srcs/checker.i"
-	@echo "... checker_srcs/checker.s"
-	@echo "... checker_srcs/get_instructions.o"
-	@echo "... checker_srcs/get_instructions.i"
-	@echo "... checker_srcs/get_instructions.s"
-	@echo "... checker_srcs/reader_checker.o"
-	@echo "... checker_srcs/reader_checker.i"
-	@echo "... checker_srcs/reader_checker.s"
-	@echo "... checker_srcs/visualizer.o"
-	@echo "... checker_srcs/visualizer.i"
-	@echo "... checker_srcs/visualizer.s"
+	@echo "... push_swap"
 	@echo "... libft/sources/add_z.o"
 	@echo "... libft/sources/add_z.i"
 	@echo "... libft/sources/add_z.s"
@@ -4002,6 +3984,24 @@ help:
 	@echo "... libft/sources/zrs.o"
 	@echo "... libft/sources/zrs.i"
 	@echo "... libft/sources/zrs.s"
+	@echo "... srcs/apply_instructions.o"
+	@echo "... srcs/apply_instructions.i"
+	@echo "... srcs/apply_instructions.s"
+	@echo "... srcs/apply_instructions_2.o"
+	@echo "... srcs/apply_instructions_2.i"
+	@echo "... srcs/apply_instructions_2.s"
+	@echo "... srcs/checker.o"
+	@echo "... srcs/checker.i"
+	@echo "... srcs/checker.s"
+	@echo "... srcs/get_instructions.o"
+	@echo "... srcs/get_instructions.i"
+	@echo "... srcs/get_instructions.s"
+	@echo "... srcs/reader_checker.o"
+	@echo "... srcs/reader_checker.i"
+	@echo "... srcs/reader_checker.s"
+	@echo "... srcs/visualizer.o"
+	@echo "... srcs/visualizer.i"
+	@echo "... srcs/visualizer.s"
 .PHONY : help
 
 

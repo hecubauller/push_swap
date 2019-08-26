@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 18:14:41 by doberyn           #+#    #+#              #
-#    Updated: 2019/08/20 04:41:36 by huller           ###   ########.fr        #
+#    Updated: 2019/08/26 06:27:29 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ BLUE = \033[34m
 PINK = \033[35m
 AQUA = \033[36m
 GREY = \033[37m
+MAG  =   \x1B[35m
+RES  = \x1B[0m
 UNDERLINE = \033[4m
 
 NAME = libft.a
@@ -64,7 +66,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@echo -n .
 
 $(NAME): $(OBJ)
-	@echo "\n$(YELLOW)LIBFT IS READY!"
+	@echo "\n$(YELLOW)LIBFT IS READY!$(RES)"
 	@ar -rc $(NAME) $?
 	@ranlib $(NAME)
 	

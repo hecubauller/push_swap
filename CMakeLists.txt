@@ -7,13 +7,13 @@ include_directories(checker_includes)
 include_directories(libft/includes)
 
 add_executable(push_swap
-        checker_includes/checker.h
-        checker_srcs/apply_instructions.c
-        checker_srcs/apply_instructions_2.c
-        checker_srcs/get_instructions.c
-        checker_srcs/checker.c
-        checker_srcs/reader_checker.c
-        checker_srcs/visualizer.c
+        includes/checker.h
+        srcs/apply_instructions.c
+        srcs/apply_instructions_2.c
+        srcs/checker.c
+        srcs/get_instructions.c
+        srcs/reader_checker.c
+        srcs/visualizer.c
         libft/includes/ft_printf.h
         libft/includes/get_next_line.h
         libft/includes/libft.h
