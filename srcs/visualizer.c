@@ -5,8 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/26 07:01:02 by huller            #+#    #+#             */
+/*   Updated: 2019/08/26 07:01:09 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visualizer.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/26 07:00:59 by huller            #+#    #+#             */
+/*   Updated: 2019/08/26 07:00:59 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visualizer.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/26 07:00:39 by huller            #+#    #+#             */
+/*   Updated: 2019/08/26 07:00:39 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visualizer.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 04:39:47 by huller            #+#    #+#             */
-/*   Updated: 2019/08/26 06:14:07 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/26 06:20:25 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +52,16 @@ void	ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr)
 
 	tmp_a = NULL;
 	tmp_b = NULL;
-	ft_printf(CLR CYN"\n      INITIALIZATION\n"RESET);
-	ft_printf(CLR RED"STACK A:"RESET);
-	ft_printf(CLR YEL"%23s", "STACK B:" RESET);
+	ft_printf(CYN"\n      INITIALIZATION\n"RESET);
+	ft_printf(RED"STACK A:"RESET);
+	ft_printf(YEL"%23s", "STACK B:" RESET);
 	ft_printf(MAG"\n- - - - - - - - - - - - - -"RESET);
 	while ((*a) || (*b))
 	{
-		(*a) ? ft_printf(CLR RED"\n %11d "RESET, (*a)->nb) :
+		(*a) ? ft_printf(RED"\n %11d "RESET, (*a)->nb) :
 			ft_printf("\n             ");
 		ft_printf(MAG "| " RESET);
-		(*b) ? ft_printf(CLR YEL" %11d"RESET, (*b)->nb) : ft_printf(" ");
+		(*b) ? ft_printf(YEL" %11d"RESET, (*b)->nb) : ft_printf(" ");
 		if (*a)
 			(*a) = (*a)->next ? ((*a)->next) : (tmp_a = (*a));
 		if (*b)
@@ -55,15 +88,15 @@ void	ft_vizualize_check(t_stack **a, t_stack **b, t_instr *instr)
 
 	tmp_a = NULL;
 	tmp_b = NULL;
-	ft_printf(CLR RED"\nSTACK A:"RESET);
-	ft_printf(CLR YEL"%23s", "STACK B:" RESET);
+	ft_printf(RED"\nSTACK A:"RESET);
+	ft_printf(YEL"%23s", "STACK B:" RESET);
 	ft_printf(MAG"\n- - - - - - - - - - - - - -"RESET);
 	while ((*a) || (*b))
 	{
-			(*a) ? ft_printf(CLR RED"\n %11d "RESET, (*a)->nb) :
+			(*a) ? ft_printf(RED"\n %11d "RESET, (*a)->nb) :
 				ft_printf("\n             ");
 			ft_printf(MAG "| " RESET);
-			(*b) ? ft_printf(CLR YEL" %11d"RESET, (*b)->nb) : ft_printf(" ");
+			(*b) ? ft_printf(YEL" %11d"RESET, (*b)->nb) : ft_printf(" ");
 			if (*a)
 				(*a) = (*a)->next ? ((*a)->next) : (tmp_a = (*a));
 			if (*b)
