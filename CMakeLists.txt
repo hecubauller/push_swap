@@ -8,9 +8,12 @@ include_directories(libft/includes)
 
 add_executable(push_swap
         checker_includes/checker.h
+        checker_srcs/apply_instructions.c
+        checker_srcs/apply_instructions_2.c
         checker_srcs/get_instructions.c
-        checker_srcs/main.c
+        checker_srcs/checker.c
         checker_srcs/reader_checker.c
+        checker_srcs/visualizer.c
         libft/includes/ft_printf.h
         libft/includes/get_next_line.h
         libft/includes/libft.h
@@ -136,7 +139,4 @@ add_executable(push_swap
         libft/sources/str_ml.c
         libft/sources/t_str.c
         libft/sources/wzrs.c
-        libft/sources/zrs.c
-        checker_srcs/apply_instructions.c
-        checker_srcs/apply_instructions_2.c
-        checker_srcs/visualizer.c)
+        libft/sources/zrs.c)

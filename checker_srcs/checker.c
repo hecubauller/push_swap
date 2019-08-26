@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 
 	res = 0;
 	av_str = NULL;
+	b = NULL;
 	in = (t_instr *)malloc(sizeof(t_instr));
 	in->split = 0;
 	in->inst = 0;
@@ -30,11 +31,18 @@ int main(int argc, char **argv)
 		return (0);
 	if (!(ft_strcmp(argv[1], "-v")))
 		in->viz = 1;
-	if (argc == 2 && ft_strchr(argv[1], ' '))
+	if (argc == 2 && !in->viz && ft_strchr(argv[1], ' '))
 	{
 		av_str = ft_strsplit(argv[1], ' ');
 		in->split++;
 	}
+	else if (argc == 3 && in->viz && ft_strchr(argv[2], ' '))
+	{
+		av_str = ft_strsplit(argv[2], ' ');
+		in->split += 2;
+	}
+	else if (in->viz && argc > 3)
+		in->viz = 2;
 	if ((ft_reader_argv(&a, &in, (av_str ? av_str : argv), &b) == ERROR))
 	{
 		ft_putstr("Error\n");

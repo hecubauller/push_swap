@@ -73,6 +73,12 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 			(*a)->next = NULL;
 		++tmp;
 	}
+	if (in->size_a == 1)
+	{
+		ft_free_lsts(a);
+		ft_put_result(ERROR);
+		exit (-1);
+	}
 	(*a) = begin;
 }
 
@@ -112,14 +118,19 @@ void	ft_newlist_ch(t_stack **a)
 
 int		ft_reader_argv(t_stack **a, t_instr **in, char **argv, t_stack **b)
 {
-	int 		i;
-	int 		cnt;
-	int 		tmp;
-	char 		*chckr;
+	int i;
+	int cnt;
+	int tmp;
+	char *chckr;
 
 	i = 0;
 	cnt = 0;
-	tmp = ((*in)->split ? 0 : 1);
+	tmp = (*in)->split ? 0 : 1;
+	if ((*in)->viz == 2)
+	{
+		++cnt;
+		++tmp;
+	}
 	(*in)->size_a = 0;
 	(*in)->size_b = 0;
 	while (argv[++cnt])

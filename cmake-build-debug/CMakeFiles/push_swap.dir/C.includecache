@@ -34,23 +34,23 @@ unistd.h
 string.h
 -
 
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
+/home/anastasiia/Desktop/push_swap/checker_includes/checker.h
 stdlib.h
 -
 stdio.h
 -
 ../libft/includes/libft.h
-/Users/huller/Desktop/push_swap/libft/includes/libft.h
+/home/anastasiia/Desktop/push_swap/libft/includes/libft.h
 ../includes/ft_printf.h
-/Users/huller/Desktop/push_swap/includes/ft_printf.h
+/home/anastasiia/Desktop/push_swap/includes/ft_printf.h
 ../includes/get_next_line.h
-/Users/huller/Desktop/push_swap/includes/get_next_line.h
+/home/anastasiia/Desktop/push_swap/includes/get_next_line.h
 
-/Users/huller/Desktop/push_swap/checker_srcs/visualizer.c
+/home/anastasiia/Desktop/push_swap/checker_srcs/checker.c
 ../checker_includes/checker.h
-/Users/huller/Desktop/push_swap/checker_includes/checker.h
+/home/anastasiia/Desktop/push_swap/checker_includes/checker.h
 
-/Users/huller/Desktop/push_swap/libft/includes/libft.h
+/home/anastasiia/Desktop/push_swap/libft/includes/libft.h
 stdlib.h
 -
 unistd.h

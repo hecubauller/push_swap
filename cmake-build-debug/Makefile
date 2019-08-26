@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /opt/clion-2019.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /opt/clion-2019.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/huller/Desktop/push_swap
+CMAKE_SOURCE_DIR = /home/anastasiia/Desktop/push_swap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/huller/Desktop/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /home/anastasiia/Desktop/push_swap/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/huller/Desktop/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2019.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2019.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +177,33 @@ checker_srcs/apply_instructions_2.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/apply_instructions_2.c.s
 .PHONY : checker_srcs/apply_instructions_2.c.s
 
+checker_srcs/checker.o: checker_srcs/checker.c.o
+
+.PHONY : checker_srcs/checker.o
+
+# target to build an object file
+checker_srcs/checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.o
+.PHONY : checker_srcs/checker.c.o
+
+checker_srcs/checker.i: checker_srcs/checker.c.i
+
+.PHONY : checker_srcs/checker.i
+
+# target to preprocess a source file
+checker_srcs/checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.i
+.PHONY : checker_srcs/checker.c.i
+
+checker_srcs/checker.s: checker_srcs/checker.c.s
+
+.PHONY : checker_srcs/checker.s
+
+# target to generate assembly for a file
+checker_srcs/checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/checker.c.s
+.PHONY : checker_srcs/checker.c.s
+
 checker_srcs/get_instructions.o: checker_srcs/get_instructions.c.o
 
 .PHONY : checker_srcs/get_instructions.o
@@ -203,33 +230,6 @@ checker_srcs/get_instructions.s: checker_srcs/get_instructions.c.s
 checker_srcs/get_instructions.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/get_instructions.c.s
 .PHONY : checker_srcs/get_instructions.c.s
-
-checker_srcs/main.o: checker_srcs/main.c.o
-
-.PHONY : checker_srcs/main.o
-
-# target to build an object file
-checker_srcs/main.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/main.c.o
-.PHONY : checker_srcs/main.c.o
-
-checker_srcs/main.i: checker_srcs/main.c.i
-
-.PHONY : checker_srcs/main.i
-
-# target to preprocess a source file
-checker_srcs/main.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/main.c.i
-.PHONY : checker_srcs/main.c.i
-
-checker_srcs/main.s: checker_srcs/main.c.s
-
-.PHONY : checker_srcs/main.s
-
-# target to generate assembly for a file
-checker_srcs/main.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker_srcs/main.c.s
-.PHONY : checker_srcs/main.c.s
 
 checker_srcs/reader_checker.o: checker_srcs/reader_checker.c.o
 
@@ -3613,20 +3613,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... push_swap"
+	@echo "... edit_cache"
 	@echo "... checker_srcs/apply_instructions.o"
 	@echo "... checker_srcs/apply_instructions.i"
 	@echo "... checker_srcs/apply_instructions.s"
 	@echo "... checker_srcs/apply_instructions_2.o"
 	@echo "... checker_srcs/apply_instructions_2.i"
 	@echo "... checker_srcs/apply_instructions_2.s"
+	@echo "... checker_srcs/checker.o"
+	@echo "... checker_srcs/checker.i"
+	@echo "... checker_srcs/checker.s"
 	@echo "... checker_srcs/get_instructions.o"
 	@echo "... checker_srcs/get_instructions.i"
 	@echo "... checker_srcs/get_instructions.s"
-	@echo "... checker_srcs/main.o"
-	@echo "... checker_srcs/main.i"
-	@echo "... checker_srcs/main.s"
 	@echo "... checker_srcs/reader_checker.o"
 	@echo "... checker_srcs/reader_checker.i"
 	@echo "... checker_srcs/reader_checker.s"

@@ -145,5 +145,5 @@ void	ft_appl_instr(char **line, t_instr *in, t_stack **a, t_stack **b)
 		ft_pa(a, b, in);
 	else if (in->inst & PB)
 		ft_pb(a, b, in);
-	/*(*in).viz ? */ft_vizualize_check(a, b, in)/* : 0*/;
+	(*in).viz ? ft_vizualize_check(a, b, in) : 0;
 }

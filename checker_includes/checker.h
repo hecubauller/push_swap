@@ -96,6 +96,7 @@ int			ft_check_dubl(char **argv, int tmp);
 int 		ft_check_valid_instr(char **line, t_instr *in);
 int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
 int 		ft_check_output(t_stack **a, t_stack **b, t_instr *in);
+void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
 void		ft_vizualize_check(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_appl_instr(char **line, t_instr *in, t_stack **a, t_stack **b);

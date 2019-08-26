@@ -92,6 +92,7 @@ int		ft_get_input(t_instr *in, t_stack **a, t_stack **b)
 {
 	char 		*line;
 
+	(*in).viz ? ft_vizualize_init(a, b, in) : 0;
 	while (get_next_line(0, &line))
 	{
 		if ((ft_check_valid_instr(&line, in)) == ERROR)
