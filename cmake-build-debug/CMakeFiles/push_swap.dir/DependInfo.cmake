@@ -130,7 +130,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/huller/Desktop/push_swap/srcs/apply_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o"
   "/Users/huller/Desktop/push_swap/srcs/apply_instructions_2.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o"
   "/Users/huller/Desktop/push_swap/srcs/begin_algorithm.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o"
-  "/Users/huller/Desktop/push_swap/srcs/checker.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/checker.c.o"
   "/Users/huller/Desktop/push_swap/srcs/get_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
   "/Users/huller/Desktop/push_swap/srcs/push_swap.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/push_swap.c.o"
   "/Users/huller/Desktop/push_swap/srcs/reader_checker.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"

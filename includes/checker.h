@@ -19,6 +19,13 @@
 # include "../includes/ft_printf.h"
 # include "../includes/get_next_line.h"
 
+# define F_RA 9
+# define F_RRA 8
+# define S_RA 7
+# define S_RRA 6
+
+# define RA_IS 5
+# define RRA_IS 4
 # define OK 2
 # define KO 3
 # define ERROR -1
@@ -86,6 +93,8 @@ typedef struct			s_alg
 	int 				rra_f;
 	int 				rra_s;
 	int					res;
+	int 				act_for_f;
+	int 				act_for_s;
 
 }						t_alg;
 

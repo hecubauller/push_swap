@@ -124,7 +124,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/libft/sources/zrs.c.o"
   "CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o"
   "CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o"
-  "CMakeFiles/push_swap.dir/srcs/checker.c.o"
   "CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
   "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
   "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"

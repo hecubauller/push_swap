@@ -136,7 +136,6 @@ add_executable(push_swap
         libft/sources/zrs.c
         srcs/apply_instructions.c
         srcs/apply_instructions_2.c
-        srcs/checker.c
         srcs/get_instructions.c
         srcs/reader_checker.c
         srcs/visualizer.c

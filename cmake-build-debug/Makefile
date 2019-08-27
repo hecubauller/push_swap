@@ -3525,33 +3525,6 @@ srcs/begin_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.s
 .PHONY : srcs/begin_algorithm.c.s
 
-srcs/checker.o: srcs/checker.c.o
-
-.PHONY : srcs/checker.o
-
-# target to build an object file
-srcs/checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.o
-.PHONY : srcs/checker.c.o
-
-srcs/checker.i: srcs/checker.c.i
-
-.PHONY : srcs/checker.i
-
-# target to preprocess a source file
-srcs/checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.i
-.PHONY : srcs/checker.c.i
-
-srcs/checker.s: srcs/checker.c.s
-
-.PHONY : srcs/checker.s
-
-# target to generate assembly for a file
-srcs/checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.s
-.PHONY : srcs/checker.c.s
-
 srcs/get_instructions.o: srcs/get_instructions.c.o
 
 .PHONY : srcs/get_instructions.o
@@ -4047,9 +4020,6 @@ help:
 	@echo "... srcs/begin_algorithm.o"
 	@echo "... srcs/begin_algorithm.i"
 	@echo "... srcs/begin_algorithm.s"
-	@echo "... srcs/checker.o"
-	@echo "... srcs/checker.i"
-	@echo "... srcs/checker.s"
 	@echo "... srcs/get_instructions.o"
 	@echo "... srcs/get_instructions.i"
 	@echo "... srcs/get_instructions.s"

@@ -1682,22 +1682,9 @@ CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/huller/Desktop/push_swap/srcs/apply_instructions_2.c -o CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.s
 
-CMakeFiles/push_swap.dir/srcs/checker.c.o: CMakeFiles/push_swap.dir/flags.make
-CMakeFiles/push_swap.dir/srcs/checker.c.o: ../srcs/checker.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/push_swap.dir/srcs/checker.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/checker.c.o   -c /Users/huller/Desktop/push_swap/srcs/checker.c
-
-CMakeFiles/push_swap.dir/srcs/checker.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push_swap.dir/srcs/checker.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/huller/Desktop/push_swap/srcs/checker.c > CMakeFiles/push_swap.dir/srcs/checker.c.i
-
-CMakeFiles/push_swap.dir/srcs/checker.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap.dir/srcs/checker.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/huller/Desktop/push_swap/srcs/checker.c -o CMakeFiles/push_swap.dir/srcs/checker.c.s
-
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: CMakeFiles/push_swap.dir/flags.make
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../srcs/get_instructions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/get_instructions.c.o   -c /Users/huller/Desktop/push_swap/srcs/get_instructions.c
 
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.i: cmake_force
@@ -1710,7 +1697,7 @@ CMakeFiles/push_swap.dir/srcs/get_instructions.c.s: cmake_force
 
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: CMakeFiles/push_swap.dir/flags.make
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../srcs/reader_checker.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/reader_checker.c.o   -c /Users/huller/Desktop/push_swap/srcs/reader_checker.c
 
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.i: cmake_force
@@ -1723,7 +1710,7 @@ CMakeFiles/push_swap.dir/srcs/reader_checker.c.s: cmake_force
 
 CMakeFiles/push_swap.dir/srcs/visualizer.c.o: CMakeFiles/push_swap.dir/flags.make
 CMakeFiles/push_swap.dir/srcs/visualizer.c.o: ../srcs/visualizer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/visualizer.c.o   -c /Users/huller/Desktop/push_swap/srcs/visualizer.c
 
 CMakeFiles/push_swap.dir/srcs/visualizer.c.i: cmake_force
@@ -1736,7 +1723,7 @@ CMakeFiles/push_swap.dir/srcs/visualizer.c.s: cmake_force
 
 CMakeFiles/push_swap.dir/srcs/push_swap.c.o: CMakeFiles/push_swap.dir/flags.make
 CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../srcs/push_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/push_swap.dir/srcs/push_swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/push_swap.dir/srcs/push_swap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/push_swap.c.o   -c /Users/huller/Desktop/push_swap/srcs/push_swap.c
 
 CMakeFiles/push_swap.dir/srcs/push_swap.c.i: cmake_force
@@ -1749,7 +1736,7 @@ CMakeFiles/push_swap.dir/srcs/push_swap.c.s: cmake_force
 
 CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o: CMakeFiles/push_swap.dir/flags.make
 CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o: ../srcs/begin_algorithm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o   -c /Users/huller/Desktop/push_swap/srcs/begin_algorithm.c
 
 CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.i: cmake_force
@@ -1887,7 +1874,6 @@ push_swap_OBJECTS = \
 "CMakeFiles/push_swap.dir/libft/sources/zrs.c.o" \
 "CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o" \
 "CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o" \
-"CMakeFiles/push_swap.dir/srcs/checker.c.o" \
 "CMakeFiles/push_swap.dir/srcs/get_instructions.c.o" \
 "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o" \
 "CMakeFiles/push_swap.dir/srcs/visualizer.c.o" \
@@ -2022,7 +2008,6 @@ push_swap: CMakeFiles/push_swap.dir/libft/sources/wzrs.c.o
 push_swap: CMakeFiles/push_swap.dir/libft/sources/zrs.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o
-push_swap: CMakeFiles/push_swap.dir/srcs/checker.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/get_instructions.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/reader_checker.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/visualizer.c.o
@@ -2030,7 +2015,7 @@ push_swap: CMakeFiles/push_swap.dir/srcs/push_swap.c.o
 push_swap: CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o
 push_swap: CMakeFiles/push_swap.dir/build.make
 push_swap: CMakeFiles/push_swap.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Linking C executable push_swap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Linking C executable push_swap"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/push_swap.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
