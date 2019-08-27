@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
-/*   Updated: 2019/08/27 05:33:42 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/27 07:58:38 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,21 @@ typedef struct			s_instr
 	struct s_stack		*next;
 }						t_instr;
 
+typedef struct			s_alg
+{
+	int 				chunks; //amount of chunks
+	int 				hold_first;
+	int 				hold_second;
+	int 				cnt;
+	int 				place[2]; //строки где находятся в стеке листы
+	int 				ra_f;
+	int 				ra_s;
+	int 				rra_f;
+	int 				rra_s;
+	int					res;
+
+}						t_alg;
+
 /*
  * FUNCTIONS
  */
@@ -101,9 +116,11 @@ int		 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b);
 int 		ft_algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
 void		ft_appl_instr(t_instr *in, t_stack **a, t_stack **b);
+int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
+int		 	ft_alg_five_hundred(t_instr *in, t_stack **a, t_stack **b);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
-void		ft_vizualize_check(t_stack **a, t_stack **b, t_instr *instr);
+void	 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q);
 
 #endif
