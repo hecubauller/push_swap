@@ -6,12 +6,13 @@
 #    By: huller <huller@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/26 05:09:33 by huller            #+#    #+#              #
-#    Updated: 2019/08/26 06:28:15 by huller           ###   ########.fr        #
+#    Updated: 2019/08/27 05:47:17 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 GRN         =   \x1B[32m
+RED         =   \033[31m
 MAG         =   \x1B[35m
 RES         =   \x1B[0m
 
@@ -21,13 +22,13 @@ NAME2			=	push_swap
 # CHECKER
 
 SRC1_PATH		=	srcs/
-OBJ1_PATH		=	srcs_checker/obj/
+OBJ1_PATH		=	srcs/obj/
 INC1_PATH		=	includes/
 
 # PUSH_SWAP
 
 SRC2_PATH		=	srcs/
-OBJ2_PATH		=	srcs_checker/obj/
+OBJ2_PATH		=	srcs/obj/
 INC2_PATH		=	includes/
 
 # LIBFT
@@ -44,7 +45,9 @@ INC1_NAME		=	checker.h
 
 # PUSH_SWAP
 
-SRC2_NAME		=	push_swap.c\
+SRC2_NAME		=	push_swap.c reader_checker.c get_instructions.c\
+					begin_algorithm.c apply_instructions.c apply_instructions_2.c\
+					visualizer.c\
 
 OBJ2_NAME		=	$(SRC2_NAME:.c=.o)
 INC2_NAME		=	checker.h
@@ -84,13 +87,13 @@ $(LIB_NAME):
 $(NAME1):			$(LIB) $(OBJ1)
 					@gcc -Wall -Wextra -Werror \
 						$(OBJ1) -L $(LIB_PATH) -lft -o $(NAME1)
-					@echo "$(GRN)CHECKER IS READY!$(RES)"
+					@echo "$(GRN)'Checker' is ready.$(RES)"
 # PUSH_SWAP
 
 $(NAME2):			$(LIB) $(OBJ2)
 					@gcc -Wall -Wextra -Werror \
 						$(OBJ2) -L $(LIB_PATH) -lft -o $(NAME2)
-					@echo "$(GRN)PUSH SWAP IS READY!$(RES)"
+					@echo "$(GRN)'Push Swap' is ready.$(RES)"
 
 # LIBFT
 
@@ -116,7 +119,7 @@ clean:
 
 fclean:				clean
 					@rm -f $(NAME1) $(NAME2)
-					@echo "$(MAG)Delete [ $(NAME1) ] OK"
-					@echo "Delete [ $(NAME2) ] OK$(RES)"
+					@echo "$(RED)'Checker' is deleted."
+					@echo "'Push Swap' is deleted.$(RES)"
 
 re:					fclean all

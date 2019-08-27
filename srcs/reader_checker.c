@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/08/26 06:50:29 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/27 04:51:41 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,8 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	t_stack		*tmp2;
 	t_stack		*begin;
 	char 		*tmp_str;
-	int 		s;
 
 	begin = (*a);
-	s = 0;
 	while (argv[tmp])
 	{
 		tmp_str = argv[tmp];
@@ -58,7 +56,7 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 		{
 			ft_free_lsts(a);
 			ft_put_result(ERROR);
-			exit (-1);
+			exit (FAIL);
 		}
 		in->size_a++;
 		tmp2 = (*a);
@@ -78,7 +76,7 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	{
 		ft_free_lsts(a);
 		ft_put_result(ERROR);
-		exit (-1);
+		exit (FAIL);
 	}
 	(*a) = begin;
 }

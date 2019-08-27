@@ -128,6 +128,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
   "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
   "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
+  "CMakeFiles/push_swap.dir/srcs/push_swap.c.o"
+  "CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o"
   "push_swap.pdb"
   "push_swap"
 )

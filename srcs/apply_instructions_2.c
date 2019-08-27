@@ -34,6 +34,32 @@ void	ft_rra(t_stack **x, t_instr *instr)
 		while ((*x)->prev)
 			(*x) = (*x)->prev;
 	}
+	instr->push_swap ? ft_putstr("rra\n") : 0;
+}
+
+void	ft_rrb(t_stack **x, t_instr *instr)
+{
+	int 		tmp;
+	t_stack		*tmp_s;
+	t_stack		*tmp_s2;
+
+	tmp = 0;
+	instr->inst = 0;
+	if ((*x) && (*x)->next)
+	{
+		tmp_s = (*x);
+		while ((*x)->next)
+			(*x) = (*x)->next;
+		(*x)->next = tmp_s;
+		(*x)->prev->next = NULL;
+		(*x)->prev = NULL;
+		tmp_s2 = (*x);
+		tmp_s->prev = tmp_s2;
+		tmp_s2->next = tmp_s;
+		while ((*x)->prev)
+			(*x) = (*x)->prev;
+	}
+	instr->push_swap ? ft_putstr("rrb\n") : 0;
 }
 
 void	ft_rrr(t_stack **a, t_stack **b, t_instr *instr)
@@ -70,6 +96,7 @@ void	ft_rrr(t_stack **a, t_stack **b, t_instr *instr)
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
+	instr->push_swap ? ft_putstr("rrr\n") : 0;
 
 }
 
@@ -106,6 +133,7 @@ void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
+	instr->push_swap ? ft_putstr("pa\n") : 0;
 
 }
 
@@ -142,4 +170,5 @@ void	ft_pb(t_stack **a, t_stack **b, t_instr *instr)
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
+	instr->push_swap ? ft_putstr("pb\n") : 0;
 }

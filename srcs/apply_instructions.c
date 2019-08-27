@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 05:41:06 by huller            #+#    #+#             */
-/*   Updated: 2019/08/22 05:30:23 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/27 05:33:42 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
+	instr->push_swap ? ft_putstr("rr\n") : 0;
 }
 
 void	ft_ra(t_stack **x, t_instr *instr)
@@ -71,7 +72,33 @@ void	ft_ra(t_stack **x, t_instr *instr)
 		while ((*x) && (*x)->prev)
 			(*x) = (*x)->prev;
 	}
+	instr->push_swap ? ft_putstr("ra\n") : 0;
+}
 
+void	ft_rb(t_stack **x, t_instr *instr)
+{
+	int 		tmp;
+	t_stack		*tmp_s;
+	t_stack		*tmp_s2;
+
+	tmp = 0;
+	instr->inst = 0;
+	if ((*x) && (*x)->next)
+	{
+		tmp_s = (*x);
+		(*x)->next->prev = NULL;
+		tmp_s2 = (*x)->next;
+		while ((*x)->next)
+			(*x) = (*x)->next;
+		(*x)->next = tmp_s;
+		(*x)->next->next = NULL;
+		(*x)->next->prev = (*x);
+		while ((*x) && (*x)->prev)
+			(*x) = (*x)->prev;
+		while ((*x) && (*x)->prev)
+			(*x) = (*x)->prev;
+	}
+	instr->push_swap ? ft_putstr("rb\n") : 0;
 }
 
 void	ft_ss(t_stack **a, t_stack **b, t_instr *instr)
@@ -99,6 +126,24 @@ void	ft_ss(t_stack **a, t_stack **b, t_instr *instr)
 		while ((*b) && (*b)->prev)
 			(*b) = (*b)->prev;
 	}
+	instr->push_swap ? ft_putstr("ss\n") : 0;
+}
+
+void	ft_sb(t_stack **x, t_instr *instr)
+{
+	int 		tmp;
+
+	tmp = 0;
+	instr->inst = 0;
+	if ((*x) && (*x)->next)
+	{
+		tmp = (*x)->nb;
+		(*x)->nb = (*x)->next->nb;
+		(*x)->next->nb = tmp;
+	}
+	while ((*x) && (*x)->prev)
+		(*x) = (*x)->prev;
+	instr->push_swap ? ft_putstr("sb\n") : 0;
 }
 
 void	ft_sa(t_stack **x, t_instr *instr)
@@ -115,6 +160,7 @@ void	ft_sa(t_stack **x, t_instr *instr)
 	}
 	while ((*x) && (*x)->prev)
 		(*x) = (*x)->prev;
+	instr->push_swap ? ft_putstr("sa\n") : 0;
 }
 
 void	ft_appl_instr(t_instr *in, t_stack **a, t_stack **b)
@@ -122,19 +168,19 @@ void	ft_appl_instr(t_instr *in, t_stack **a, t_stack **b)
 	if (in->inst & SA)
 		ft_sa(a, in);
 	else if (in->inst & SB)
-		ft_sa(b, in);
+		ft_sb(b, in);
 	else if (in->inst & SS)
 		ft_ss(a, b, in);
 	else if (in->inst & RA)
 		ft_ra(a, in);
 	else if (in->inst & RB)
-		ft_ra(b, in);
+		ft_rb(b, in);
 	else if (in->inst & RR)
 		ft_rr(a, b, in);
 	else if (in->inst & RRA)
 		ft_rra(a, in);
 	else if (in->inst & RRB)
-		ft_rra(b, in);
+		ft_rrb(b, in);
 	else if (in->inst & RRR)
 		ft_rrr(a, b, in);
 	else if (in->inst & PA)

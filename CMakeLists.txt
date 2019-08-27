@@ -139,4 +139,6 @@ add_executable(push_swap
         srcs/checker.c
         srcs/get_instructions.c
         srcs/reader_checker.c
-        srcs/visualizer.c)
+        srcs/visualizer.c
+        srcs/push_swap.c
+        srcs/begin_algorithm.c)

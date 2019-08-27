@@ -6,7 +6,7 @@
 #    By: sleonia <sleonia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 18:14:41 by doberyn           #+#    #+#              #
-#    Updated: 2019/08/26 06:27:29 by huller           ###   ########.fr        #
+#    Updated: 2019/08/27 04:29:44 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,10 +63,10 @@ all: $(NAME)
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
 	@gcc -Wall -Werror -Wextra $(INC) -o $@ -c $<
-	@echo -n .
+	@echo -n •
 
 $(NAME): $(OBJ)
-	@echo "\n$(YELLOW)LIBFT IS READY!$(RES)"
+	@echo "\n$(YELLOW)'Libft' is ready.$(RES)"
 	@ar -rc $(NAME) $?
 	@ranlib $(NAME)
 	
@@ -79,6 +79,6 @@ clean:
 fclean: clean
 	@rm -rf $(OBJ_PATH)
 	@rm -f $(NAME)
-	@echo "$(MAG)Delete [ $(NAME) ] OK$(RES)"
+	@echo "$(RED)'Libft' is deleted.$(RES)"
 
 re: fclean all	

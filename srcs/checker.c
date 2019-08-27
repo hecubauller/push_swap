@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/08/26 05:57:07 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/27 05:01:48 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,22 @@ int main(int argc, char **argv)
 		in->viz = 2;
 	if ((ft_reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
 	{
+		ft_free_lsts(&a);
 		ft_putstr("Error\n");
+		free(in);
 		return (0);
 	}
 	if ((ft_get_input(in, &a, &b) == ERROR))
 	{
 		ft_putstr("Error\n");
+		ft_free_lsts(&a);
+		free(in);
 		return (0);
 	}
 	res = ft_check_output(&a, in);
 	ft_free_lsts(&a);
 	ft_free_lsts(&b);
+	free(in);
 	if (res == OK)
 		ft_putstr("OK\n");
 	if (res == KO)
