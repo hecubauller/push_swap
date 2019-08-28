@@ -86,7 +86,8 @@ typedef struct			s_alg
 	int 				chunks; //amount of chunks
 	int 				hold_first;
 	int 				hold_second;
-	int 				cnt;
+	t_stack				*cnt_up;
+	t_stack				*cnt_dwn;
 	int 				place[2]; //строки где находятся в стеке листы
 	int 				ra_f;
 	int 				ra_s;
@@ -95,6 +96,8 @@ typedef struct			s_alg
 	int					res;
 	int 				act_for_f;
 	int 				act_for_s;
+	int 				max;
+	int 				min;
 
 }						t_alg;
 
@@ -102,6 +105,7 @@ typedef struct			s_alg
  * FUNCTIONS
  */
 
+void	ft_create_maxs(t_alg **q, int **arofch);
 void		ft_sa(t_stack **x, t_instr *instr);
 void		ft_sb(t_stack **x, t_instr *instr);
 void		ft_ra(t_stack **x, t_instr *instr);
@@ -113,8 +117,10 @@ void		ft_rr(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_pa(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_pb(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_rrr(t_stack **a, t_stack **b, t_instr *instr);
-
 void		ft_put_result(int res);
+
+t_stack		*ft_turn_begin(t_stack **x);
+t_stack		*ft_turn_end(t_stack **x);
 void		ft_free_lsts(t_stack **a);
 void		ft_newlist_ch(t_stack **a);
 int			ft_int_checker(char *tmp, int nb);
@@ -127,7 +133,7 @@ int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
 void		ft_appl_instr(t_instr *in, t_stack **a, t_stack **b);
 int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
-int		 	ft_alg_five_hundred(t_instr *in, t_stack **a, t_stack **b);
+void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
 void	 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q);
