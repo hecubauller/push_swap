@@ -5,8 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
+/*   Updated: 2019/08/29 09:52:02 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   begin_algorithm.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/29 09:12:58 by huller            #+#    #+#             */
+/*   Updated: 2019/08/29 09:12:58 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   begin_algorithm.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 05:13:38 by huller            #+#    #+#             */
-/*   Updated: 2019/08/27 10:31:08 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/29 09:05:01 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,26 +92,45 @@ void 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q)
 	}
 }
 
-void	ft_create_maxs(t_alg **q, int **arofch)
+void	ft_create_maxs(t_alg **q, int **arofch, t_stack **a)
 {
 	int		cnt;
+	int 	i;
 	int 	cnt_ar;
+	int 	prev_nb;
+	int 	res;
 
-	cnt = -1;
-	cnt_ar = 0;
+	cnt = 0;
+	cnt_ar = 0; //?
+	i = -1;
+	res = 0;
+	prev_nb = (*q)->min;
 	while (++cnt <= (*q)->chunks)
 	{
-		if ()
+		res = 0;
+		while ((*a))
+		{
+			if ((*a)->nb > (*q)->min && (*a)->nb < (*q)->max &&
+				(*a)->nb > prev_nb)
+				res = (*a)->nb;
+			(*a)->next ? (*a) = (*a)->next : break;
+		}
+		*arofch[++i] = res;
 	}
+	ft_turn_begin(a);
 }
 
 void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 {
 	int 	cnt_chunk;
+	int 	prev_nb;
 	int 	*arofch;
+	int 	i;
 
+	i = 0;
 	(*q)->max = 0;
-	(*q)->min = (*q)->max;
+	(*q)->min = 0;
+	prev_nb = 0;
 	(*q)->chunks = ((*in)->size_a % 10) ? (*in)->size_a / 10 + 1 : (*in)->size_a / 10; //количество чанков
 	if (!(arofch = (int *)malloc(sizeof(int) * (*q)->chunks)))
 		return ;
@@ -107,16 +148,27 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
 		(*a) = (*a)->next;
 	}
-	ft_create_maxs(q, &arofch);
-	ft_turn_begin(a);
+	ft_create_maxs(q, &arofch, a); //создание max's чанков
+	prev_nb = (*q)->min;
 	while ((*in)->size_a) //пока стек А не будет пустым
 	{
 		cnt_chunk = 10;
 		(*q)->cnt_up = (*a); //счетчик сверху
 		(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
-		while ((*q)->cnt_up != (*q)->cnt_dwn && cnt_chunk) // пока счетчики не пересекутся
+		while ((*q)->cnt_up != (*q)->cnt_dwn && --cnt_chunk) // пока счетчики не пересекутся
 		{
-			if ((*q)->cnt_up->nb => (*q)->min && (*q)->cnt_dwn->nb <= (*q)->max)
+			if ((*q)->cnt_up->nb >= (*q)->min && (*q)->cnt_up->nb <= arofch[i] &&
+					(*q)->cnt_up->nb >= prev_nb)// ? prev_nb
+			{
+				;
+			}
+			else
+				(*q)->cnt_up = (*q)->cnt_up->next;
+			if ((*q)->cnt_dwn->nb >= (*q)->min && (*q)->cnt_dwn->nb <= arofch[i] &&
+				(*q)->cnt_dwn->nb > prev_nb)
+				;
+			else
+				(*q)->cnt_dwn = (*q)->cnt_dwn->prev;
 		}
 	}
 }
@@ -139,41 +191,39 @@ int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
 	q->place[0] = -1;
 	q->place[1] = -1;
 
-	ft_check_size(a, b, in, &q);
-
-
-		while ((*a)->prev)
-			(*a) = (*a)->prev;
-		ft_how_long(in, a, b, &q);
-		if ((*q).res == F_RA || (*q).res == F_RRA)
-		{
-			while (((*q).res == F_RA) && (*a)->nb != q->hold_first)
-				ft_ra(a, in);
-			while (((*q).res == F_RRA) && (*a)->nb != q->hold_first)
-				ft_rra(a, in);
-		}
-		if ((*q).res == S_RA || (*q).res == S_RRA)
-		{
-			while (((*q).res == S_RA) && (*a)->nb != q->hold_first)
-				ft_ra(a, in);
-			while (((*q).res == S_RRA) && (*a)->nb != q->hold_first)
-				ft_rra(a, in);
-		}
-		if ((*b) && (*a) && (*b)->nb < (*a)->nb)
-			ft_pb(a, b, in); //push to Stack B
-		else
-		{
-			ft_pb(a, b, in);
-			ft_sb(b, in);
-		}
-		while (((*a) && (*a)->next) || ((*b) && (*b)->next))
-		{
-			ft_putstr("\n");
-			(*a) ? ft_printf("a: %d ", (*a)->nb) : ft_printf("a: ");
-			(*b) ? ft_printf("\nb: %d ", (*b)->nb) : ft_printf(" ");
-			(*a) = (*a)->next;
-			(*b) = (*b)->next;
-		}
+	ft_check_size(a, b, &in, &q);
+	while ((*a)->prev)
+		(*a) = (*a)->prev;
+	ft_how_long(in, a, b, &q); //какое значение оптимальнее двигать вверх
+	if ((*q).res == F_RA || (*q).res == F_RRA)
+	{
+		while (((*q).res == F_RA) && (*a)->nb != q->hold_first)
+			ft_ra(a, in);
+		while (((*q).res == F_RRA) && (*a)->nb != q->hold_first)
+			ft_rra(a, in);
+	}
+	if ((*q).res == S_RA || (*q).res == S_RRA)
+	{
+		while (((*q).res == S_RA) && (*a)->nb != q->hold_first)
+			ft_ra(a, in);
+		while (((*q).res == S_RRA) && (*a)->nb != q->hold_first)
+			ft_rra(a, in);
+	}
+	if ((*b) && (*a) && (*b)->nb < (*a)->nb)
+		ft_pb(a, b, in); //push to Stack B
+	else
+	{
+		ft_pb(a, b, in);
+		ft_sb(b, in);
+	}
+	while (((*a) && (*a)->next) || ((*b) && (*b)->next))
+	{
+		ft_putstr("\n");
+		(*a) ? ft_printf("a: %d ", (*a)->nb) : ft_printf("a: ");
+		(*b) ? ft_printf("\nb: %d ", (*b)->nb) : ft_printf(" ");
+		(*a) = (*a)->next;
+		(*b) = (*b)->next;
+	}
 	}
 	return (SUCCESS);
 }
