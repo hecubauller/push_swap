@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/08/29 09:52:02 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/30 20:39:32 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -92,30 +92,59 @@ void 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q)
 	}
 }
 
-void	ft_create_maxs(t_alg **q, int **arofch, t_stack **a)
+void	ft_quick_sort(int **ar, t_stack **a, t_alg **q, t_instr **in)
+{
+	int 	i; //beginning
+	int 	j; //end
+	int 	p; //middle
+	int 	tmp;
+
+	p = (*in)->size_a / 2;
+	tmp = 0;
+	i = -1;
+	j = (*in)->size_a;
+	while (++i < p && --j > p)
+	{
+		if ( *ar[i] >= *ar[j])
+		{
+			tmp = *ar[i];
+			*ar[i] = *ar[j];
+			*ar[j] = tmp;
+		}
+	}
+
+
+
+}
+
+void	ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in)
 {
 	int		cnt;
 	int 	i;
-	int 	cnt_ar;
-	int 	prev_nb;
+	int 	*ar;
+	int 	prev_max;
 	int 	res;
 
-	cnt = 0;
-	cnt_ar = 0; //?
+	cnt = 10;
 	i = -1;
 	res = 0;
-	prev_nb = (*q)->min;
-	while (++cnt <= (*q)->chunks)
+	prev_max = (*q)->min;
+	if (!(ar = (int *)malloc(sizeof(int) * (*in)->size_a)))
+		return ;
+	ft_quick_sort(&ar, a, q, in);
+	while (++i <= (*q)->chunks)
 	{
 		res = 0;
-		while ((*a))
+		i = 0;
+		cnt = 10;
+		while (--cnt) //10 numbers
 		{
-			if ((*a)->nb > (*q)->min && (*a)->nb < (*q)->max &&
-				(*a)->nb > prev_nb)
-				res = (*a)->nb;
-			(*a)->next ? (*a) = (*a)->next : break;
+			while (*a)
+			{
+
+			}
 		}
-		*arofch[++i] = res;
+		*arofch[i] = prev_max;
 	}
 	ft_turn_begin(a);
 }
@@ -148,7 +177,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
 		(*a) = (*a)->next;
 	}
-	ft_create_maxs(q, &arofch, a); //создание max's чанков
+	ft_create_maxs(q, &arofch, a, in); //создание max's чанков
 	prev_nb = (*q)->min;
 	while ((*in)->size_a) //пока стек А не будет пустым
 	{

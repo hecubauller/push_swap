@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
-/*   Updated: 2019/08/29 09:16:20 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/30 20:30:58 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ typedef struct			s_alg
 
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
+void	ft_quick_sort(int **ar, t_stack **a, t_alg **q, t_instr **in);
 void		ft_free_lsts(t_stack **a);
 void		ft_newlist_ch(t_stack **a);
 t_stack		*ft_turn_begin(t_stack **x);
@@ -128,7 +129,7 @@ void		ft_rrr(t_stack **a, t_stack **b, t_instr *instr);
 int		 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b);
 int 		ft_algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
-void		ft_create_maxs(t_alg **q, int **arofch, t_stack **a);
+void		ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in);
 void		ft_appl_instr(t_instr *in, t_stack **a, t_stack **b);
 int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
