@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/08/30 20:39:32 by huller           ###   ########.fr       */
+/*   Updated: 2019/08/31 12:50:01 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -92,29 +92,63 @@ void 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q)
 	}
 }
 
-void	ft_quick_sort(int **ar, t_stack **a, t_alg **q, t_instr **in)
+void	ft_create_array(int **ar, t_stack **a, t_alg **q, t_instr **in)
 {
-	int 	i; //beginning
-	int 	j; //end
-	int 	p; //middle
-	int 	tmp;
+	int i;
 
-	p = (*in)->size_a / 2;
-	tmp = 0;
 	i = -1;
-	j = (*in)->size_a;
-	while (++i < p && --j > p)
+	while ((*a) && (*a)->next)
 	{
-		if ( *ar[i] >= *ar[j])
+		*ar[++i] = (*a)->nb;
+		(*a) = (*a)->next;
+	}
+	*ar[++i] = (*a)->nb;
+	ft_turn_begin(a);
+}
+
+
+int 	ft_partition(int l, int h, int **ar)
+{
+	int pivot;
+	int i;
+	int tmp;
+	int j;
+
+	i = 0;
+	j = h;
+	tmp = 0;
+	pivot = *ar[l];
+	while (i < j)
+	{
+		while (*ar[i] <= pivot || *ar[j] > pivot)
+			*ar[i] <= pivot ? i++ : j--;
+		if (i < j)
 		{
 			tmp = *ar[i];
 			*ar[i] = *ar[j];
 			*ar[j] = tmp;
 		}
+		tmp = *ar[l];
+		*ar[l] = *ar[j];
+		*ar[j] = tmp;
+		return (j);
 	}
 
+}
+void	ft_quick_sort(int **ar, int l, int h)
+{
+	int 	j; //end
+	int 	i; //beginning
+	int 	tmp;
+	int 	p;
 
-
+	tmp = 0;
+	if (l < h)
+	{
+		j = ft_partition(l, h, ar);
+		ft_quick_sort(ar, l, j);
+		ft_quick_sort(ar, j + 1, h);
+	}
 }
 
 void	ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in)
@@ -131,7 +165,8 @@ void	ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in)
 	prev_max = (*q)->min;
 	if (!(ar = (int *)malloc(sizeof(int) * (*in)->size_a)))
 		return ;
-	ft_quick_sort(&ar, a, q, in);
+	ft_create_array(&ar, a, q, in);
+	ft_quick_sort(&ar, 0, (*in)->size_a);
 	while (++i <= (*q)->chunks)
 	{
 		res = 0;

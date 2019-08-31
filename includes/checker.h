@@ -3,6 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
+/*   Updated: 2019/08/31 13:24:52 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/31 13:24:51 by huller            #+#    #+#             */
+/*   Updated: 2019/08/31 13:24:51 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/31 13:24:51 by huller            #+#    #+#             */
+/*   Updated: 2019/08/31 13:24:51 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/31 12:42:08 by huller            #+#    #+#             */
+/*   Updated: 2019/08/31 12:45:46 by huller           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
@@ -107,7 +151,7 @@ typedef struct			s_alg
 
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
-void	ft_quick_sort(int **ar, t_stack **a, t_alg **q, t_instr **in);
+void	ft_create_array(int **ar, t_stack **a, t_alg **q, t_instr **in);
 void		ft_free_lsts(t_stack **a);
 void		ft_newlist_ch(t_stack **a);
 t_stack		*ft_turn_begin(t_stack **x);
@@ -115,6 +159,7 @@ int			ft_int_checker(char *tmp, int nb);
 void		ft_sa(t_stack **x, t_instr *instr);
 void		ft_sb(t_stack **x, t_instr *instr);
 void		ft_ra(t_stack **x, t_instr *instr);
+int 	ft_partition(int l, int h, int **ar);
 void		ft_rb(t_stack **x, t_instr *instr);
 void		ft_rrb(t_stack **x, t_instr *instr);
 void		ft_rra(t_stack **x, t_instr *instr);
@@ -129,13 +174,14 @@ void		ft_rrr(t_stack **a, t_stack **b, t_instr *instr);
 int		 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b);
 int 		ft_algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
-void		ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in);
 void		ft_appl_instr(t_instr *in, t_stack **a, t_stack **b);
 int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
+void	ft_quick_sort(int **ar, int l, int h);
 void	 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q);
 void		ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
+void		ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in);
 
 #endif
