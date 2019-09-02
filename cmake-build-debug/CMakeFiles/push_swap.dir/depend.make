@@ -464,6 +464,12 @@ CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../includes/checker.h
 CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../srcs/push_swap.c
 
+CMakeFiles/push_swap.dir/srcs/quick_sort.c.o: ../includes/checker.h
+CMakeFiles/push_swap.dir/srcs/quick_sort.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/push_swap.dir/srcs/quick_sort.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/push_swap.dir/srcs/quick_sort.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/quick_sort.c.o: ../srcs/quick_sort.c
+
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../libft/includes/libft.h

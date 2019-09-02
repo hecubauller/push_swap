@@ -134,7 +134,6 @@ add_executable(push_swap
         libft/sources/t_str.c
         libft/sources/wzrs.c
         libft/sources/zrs.c
-        libft/Makefile
         srcs/apply_instructions.c
         srcs/apply_instructions_2.c
         srcs/begin_algorithm.c
@@ -142,5 +141,4 @@ add_executable(push_swap
         srcs/push_swap.c
         srcs/reader_checker.c
         srcs/visualizer.c
-        author
-        Makefile)
+        srcs/quick_sort.c)

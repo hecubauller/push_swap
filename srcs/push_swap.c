@@ -12,6 +12,20 @@
 
 #include "../includes/checker.h"
 
+t_stack	*ft_turn_end(t_stack **x)
+{
+	while ((*x) && (*x)->next)
+		(*x) = (*x)->next;
+	return (*x);
+}
+
+t_stack	*ft_turn_begin(t_stack **x)
+{
+	while ((*x) && (*x)->prev)
+		(*x) = (*x)->prev;
+	return (*x);
+}
+
 int main(int argc, char **argv)
 {
 	t_stack 	*a;
