@@ -6,51 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/08/31 13:24:52 by huller           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/31 13:24:51 by huller            #+#    #+#             */
-/*   Updated: 2019/08/31 13:24:51 by huller           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/31 13:24:51 by huller            #+#    #+#             */
-/*   Updated: 2019/08/31 13:24:51 by huller           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/31 12:42:08 by huller            #+#    #+#             */
-/*   Updated: 2019/08/31 12:45:46 by huller           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 18:22:01 by huller            #+#    #+#             */
-/*   Updated: 2019/08/30 20:30:58 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/02 13:35:28 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +95,7 @@ typedef struct			s_alg
 	int 				rra_s;
 	int					res;
 	int 				act_for_f;
+	int 				*ar_of_mx;
 	int 				act_for_s;
 	int 				max; // максимальное значение в массиве
 	int 				min; //минимальное значение в массиве
@@ -151,7 +108,6 @@ typedef struct			s_alg
 
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
-void	ft_create_array(int **ar, t_stack **a, t_alg **q, t_instr **in);
 void		ft_free_lsts(t_stack **a);
 void		ft_newlist_ch(t_stack **a);
 t_stack		*ft_turn_begin(t_stack **x);
@@ -159,13 +115,16 @@ int			ft_int_checker(char *tmp, int nb);
 void		ft_sa(t_stack **x, t_instr *instr);
 void		ft_sb(t_stack **x, t_instr *instr);
 void		ft_ra(t_stack **x, t_instr *instr);
-int 	ft_partition(int l, int h, int **ar);
 void		ft_rb(t_stack **x, t_instr *instr);
 void		ft_rrb(t_stack **x, t_instr *instr);
 void		ft_rra(t_stack **x, t_instr *instr);
 int			ft_check_dubl(char **argv, int tmp);
+void	 	ft_how_long(t_instr *in, t_alg **q);
+int 		ft_partition(int l, int h, int *ar);
+void		ft_quick_sort(int *ar, int l, int h);
 int 		ft_check_output(t_stack **a, t_instr *in);
 int 		ft_check_valid_instr(char **line, t_instr *in);
+void 		ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_ss(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_rr(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_pa(t_stack **a, t_stack **b, t_instr *instr);
@@ -179,9 +138,9 @@ int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
-void	ft_quick_sort(int **ar, int l, int h);
-void	 	ft_how_long(t_instr *in, t_stack **a, t_stack **b, t_alg **q);
+void		ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
+void		ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in);
 void		ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
-void		ft_create_maxs(t_alg **q, int **arofch, t_stack **a, t_instr **in);
+void		ft_create_maxs(t_alg **q, t_stack **a, t_instr **in);
 
 #endif
