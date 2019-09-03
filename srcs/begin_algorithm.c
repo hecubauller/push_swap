@@ -16,11 +16,13 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
 	int 	tmp;
 	int 	cnt;
+	int 	tmp2;
 	int 	act;
 	int 	cycle;
 
 	cnt = 11;
 	tmp = 0;
+	tmp2 = 0;
 	cycle = 0;
 	act = 0;
 	if (!(*b)) //if 'b' is empty
@@ -39,21 +41,23 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	{
 		while ((*b) && --cnt)
 		{
-			if ((*b)->nb > (*a)->nb && (*b)->next->nb < (*b)->nb &&
-				(*a)->nb > (*b)->next->nb)
+			if ((*b)->nb > (*a)->nb && (((*b)->next->nb < (*b)->nb &&
+				(*a)->nb > (*b)->next->nb) || !(*b)->next))
 			{
 				tmp = (*b)->nb;
 				cycle <= ((*in).size_a / 2) ? (act = RA_IS) : (act = RRA_IS);
 				ft_turn_begin(b);
+				tmp2 = (*b)->nb;
 				while ((*b)->nb != tmp) //подкручиваем стек
 					(act == RA_IS) ? ft_ra(b, in) : ft_rra(b, in);
-				(act == RA_IS) ? ft_ra(b, in) : ft_rra(b, in);
+				//(act == RA_IS) ? ft_ra(b, in) : ft_rra(b, in);
 				ft_pb(a, b, in);
-				ft_rra(b, in);
+				while ((*b)->nb != tmp2)
+					ft_rra(b, in);
 			}
 			else
 			{
-				(*b)->next ? (*b) = (*b)->next : break;
+				(*b)->next ? (*b) = (*b)->next : return ;
 				cycle++;
 			}
 		}
