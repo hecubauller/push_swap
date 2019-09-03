@@ -14,17 +14,13 @@
 
 void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 {
-	int 		tmp;
 	t_stack		*tmp_s;
-	t_stack		*tmp_s2;
 
-	tmp = 0;
 	instr->inst = 0;
 	if ((*a) && (*a)->next)
 	{
 		tmp_s = (*a);
 		(*a)->next->prev = NULL;
-		tmp_s2 = (*a)->next;
 		while ((*a)->next)
 			(*a) = (*a)->next;
 		(*a)->next = tmp_s;
@@ -37,7 +33,6 @@ void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 	{
 		tmp_s = (*b);
 		(*b)->next->prev = NULL;
-		tmp_s2 = (*b)->next;
 		while ((*b)->next)
 			(*b) = (*b)->next;
 		(*b)->next = tmp_s;
@@ -51,17 +46,13 @@ void	ft_rr(t_stack **a, t_stack **b, t_instr *instr)
 
 void	ft_ra(t_stack **x, t_instr *instr)
 {
-	int 		tmp;
 	t_stack		*tmp_s;
-	t_stack		*tmp_s2;
 
-	tmp = 0;
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
 		tmp_s = (*x);
 		(*x)->next->prev = NULL;
-		tmp_s2 = (*x)->next;
 		while ((*x)->next)
 			(*x) = (*x)->next;
 		(*x)->next = tmp_s;
@@ -77,17 +68,13 @@ void	ft_ra(t_stack **x, t_instr *instr)
 
 void	ft_rb(t_stack **x, t_instr *instr)
 {
-	int 		tmp;
 	t_stack		*tmp_s;
-	t_stack		*tmp_s2;
 
-	tmp = 0;
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
 		tmp_s = (*x);
 		(*x)->next->prev = NULL;
-		tmp_s2 = (*x)->next;
 		while ((*x)->next)
 			(*x) = (*x)->next;
 		(*x)->next = tmp_s;
@@ -148,15 +135,17 @@ void	ft_sb(t_stack **x, t_instr *instr)
 
 void	ft_sa(t_stack **x, t_instr *instr)
 {
-	int 		tmp;
-
-	tmp = 0;
+	t_stack		*tmp_s;
+	t_stack		*tmp_s2;
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
-		tmp = (*x)->nb;
-		(*x)->nb = (*x)->next->nb;
-		(*x)->next->nb = tmp;
+		tmp_s = (*x);
+		tmp_s2 = (*x)->next->prev; //FINISH SA & SB
+		(*x) = (*x)->next;
+		(*x)->prev = tmp_s->prev;
+		tmp_s->prev = tmp_s2;
+		(*x)->next = tmp_s;
 	}
 	while ((*x) && (*x)->prev)
 		(*x) = (*x)->prev;

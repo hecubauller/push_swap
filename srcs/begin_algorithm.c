@@ -57,7 +57,10 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 			}
 			else
 			{
-				(*b)->next ? (*b) = (*b)->next : return ;
+				if ((*b)->next)
+					(*b) = (*b)->next;
+				else
+					break;
 				cycle++;
 			}
 		}
@@ -73,13 +76,14 @@ void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 		while (((*q)->res == F_RRA) && (*a)->nb != (*q)->hold_first)
 			ft_rra(a, in);
 	}
-	if ((*q)->res == S_RA || (*q)->res == S_RRA)
+	else if ((*q)->res == S_RA || (*q)->res == S_RRA)
 	{
-		while (((*q)->res == S_RA) && (*a)->nb != (*q)->hold_first)
+		while (((*q)->res == S_RA) && (*a)->nb != (*q)->hold_second)
 			ft_ra(a, in);
-		while (((*q)->res == S_RRA) && (*a)->nb != (*q)->hold_first)
+		while (((*q)->res == S_RRA) && (*a)->nb != (*q)->hold_second)
 			ft_rra(a, in);
 	}
+	(*q)->res = 0;
 	ft_check_b(a, b, in, q); //push to b
 }
 
@@ -129,10 +133,10 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		ft_turn_begin(a);
 		(*q)->cnt_up = (*a); //счетчик сверху
 		(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
+		x = 0;
+		y = 0;
 		while ((*q)->cnt_up != (*q)->cnt_dwn && (!x || !y)) // пока счетчики не пересекутся
 		{
-			x = 0;
-			y = 0;
 			if ((*q)->cnt_up->nb >= minimum && (*q)->cnt_up->nb <= (*q)->ar_of_mx[i])
 			{
 				(*q)->hold_first = (*q)->cnt_up->nb;
