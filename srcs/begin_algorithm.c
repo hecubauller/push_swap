@@ -150,11 +150,10 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	prev_nb = (*q)->min;
 	minimum = (*q)->min;
 	int s = -1;
-	int bj = 2;
-	ft_putstr(RED "maximums: "RESET);
-	while (--bj)
-		ft_printf("%d ", (*q)->ar_of_mx[++s]);
-	ft_putstr("\n");
+//	ft_putstr(RED "maximums: "RESET);
+//	while ((*q)->ar_of_mx[++s])
+//		ft_printf("%d ", (*q)->ar_of_mx[s]);
+//	ft_putstr("\n");
 	while ((*in)->size_a) //пока стек А не будет пустым
 	{
 		ft_turn_begin(a);
@@ -184,9 +183,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			ft_how_long(*in, q); //какое значение оптимальнее двигать вверх
 			ft_turn_begin(a);
 		}
-
-		//ft_push_up(a, b, *in, q);
-
+		ft_push_up(a, b, *in, q);
 		if (!(*a))
 			ft_push_a(a, b, *in);
 	}
@@ -233,14 +230,43 @@ int 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b)
 	return (SUCCESS);
 }
 
+void	ft_alg_two(t_instr *in, t_stack **a, t_stack **b)
+{
+	if ((*a)->nb > (*a)->next->nb)
+		ft_sa(a, in);
+}
+
+int 	ft_is_sorted(t_instr *in, t_stack **a, t_stack **b)
+{
+	while ((*a) && (*a)->next && (*a)->nb < (*a)->next->nb)
+		(*a) = (*a)->next;
+	if ((*a)->prev && (*a)->nb > (*a)->prev->nb && !(*a)->next)
+	{
+		ft_turn_begin(a);
+		return (SUCCESS);
+	}
+	else
+	{
+		ft_turn_begin(a);
+		return (FAIL);
+	}
+}
+
 int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
 {
-	if ((*in).size_a == 3)
+	if (ft_is_sorted(in, a, b))
+		return (SUCCESS);
+	if ((*in).size_a == 2)
+	{
+		ft_alg_two(in, a, b);
+		return (SUCCESS);
+	}
+	else if ((*in).size_a == 3)
 	{
 		ft_alg_three(in, a, b);
 		return (SUCCESS);
 	}
 	else
 		ft_alg_hundred(in, a, b);
-	return (ERROR);
+	return (SUCCESS);
 }

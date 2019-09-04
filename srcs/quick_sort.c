@@ -31,10 +31,10 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	ft_create_array(ar, a, q, in);
 	ft_quick_sort(ar, 0, (*in)->size_a);
 	i = -1;
-	ft_putstr(GRN"sorted array: "RESET);
-	while (++i != 5 )
-		ft_printf("%d ", ar[i]);
-	ft_putstr("\n");
+//	ft_putstr(GRN"sorted array: "RESET);
+//	while (++i != 6)
+//		ft_printf("%d ", ar[i]);
+//	ft_putstr("\n");
 	i = -1;
 	if ((*q)->chunks == 1) //всего 1 чанк
 		(*q)->ar_of_mx[0] = (*q)->max;
@@ -47,6 +47,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 		}
 		(*q)->ar_of_mx[++i] = (*q)->max;
 	}
+	free(ar);
 }
 
 void 	ft_how_long(t_instr *in, t_alg **q)
