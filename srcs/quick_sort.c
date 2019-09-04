@@ -32,7 +32,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	ft_quick_sort(ar, 0, (*in)->size_a);
 	i = -1;
 	ft_putstr(GRN"sorted array: "RESET);
-	while (++i != 16 )
+	while (++i != 5 )
 		ft_printf("%d ", ar[i]);
 	ft_putstr("\n");
 	i = -1;

@@ -15,6 +15,8 @@
 void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
 	int 	tmp;
+	t_stack	*tmp_s;
+	t_stack	*tmp_s2;
 	int 	cnt;
 	int 	tmp2;
 	int 	act;
@@ -25,6 +27,8 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	tmp2 = 0;
 	cycle = 0;
 	act = 0;
+	tmp_s = NULL;
+	tmp_s2 = NULL;
 	if (!(*b)) //if 'b' is empty
 		ft_pb(a, b, in);
 	else if ((*b) && !(*b)->next) //if there is only one list
@@ -39,21 +43,34 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	}
 	else //more than 1 list in stack 'b'
 	{
-		while ((*b) && --cnt)
+		while ((*b) && --cnt && (*a))
 		{
-			if ((*b)->nb > (*a)->nb && (((*b)->next->nb < (*b)->nb &&
-				(*a)->nb > (*b)->next->nb) || !(*b)->next))
+			tmp_s2 = (*b);
+			while ((*b) && (*b)->next && (*a)->nb < (*b)->nb)
+			{
+				(*b) = (*b)->next;
+				tmp_s = (*b);
+			}
+			while ((*b)->nb != tmp_s2->nb)
+				(*b) = (*b)->prev;
+			if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb)
+			{
+				ft_pb(a, b, in);
+				ft_rb(b, in);
+			}
+			else if ((*b)->nb > (*a)->nb && (!(*b)->next || (((*b)->next->nb < (*b)->nb &&
+				(*a)->nb > (*b)->next->nb))))
 			{
 				tmp = (*b)->nb;
 				cycle <= ((*in).size_a / 2) ? (act = RA_IS) : (act = RRA_IS);
 				ft_turn_begin(b);
 				tmp2 = (*b)->nb;
 				while ((*b)->nb != tmp) //подкручиваем стек
-					(act == RA_IS) ? ft_ra(b, in) : ft_rra(b, in);
-				//(act == RA_IS) ? ft_ra(b, in) : ft_rra(b, in);
+					(act == RA_IS) ? ft_rb(b, in) : ft_rrb(b, in);
+				/*(act == RA_IS) ? */ft_rb(b, in)/* : ft_rrb(b, in)*/;
 				ft_pb(a, b, in);
 				while ((*b)->nb != tmp2)
-					ft_rra(b, in);
+					ft_rb(b, in);
 			}
 			else
 			{
@@ -85,6 +102,15 @@ void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	}
 	(*q)->res = 0;
 	ft_check_b(a, b, in, q); //push to b
+}
+
+void	ft_push_a(t_stack **a, t_stack **b, t_instr *in)
+{
+	ft_turn_begin(b);
+	while ((*b))
+		ft_pa(a, b, in);
+	ft_free_lsts(a);
+	exit(0);
 }
 
 void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
@@ -124,10 +150,11 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	prev_nb = (*q)->min;
 	minimum = (*q)->min;
 	int s = -1;
-	int bj = 3;
+	int bj = 2;
 	ft_putstr(RED "maximums: "RESET);
 	while (--bj)
 		ft_printf("%d ", (*q)->ar_of_mx[++s]);
+	ft_putstr("\n");
 	while ((*in)->size_a) //пока стек А не будет пустым
 	{
 		ft_turn_begin(a);
@@ -152,9 +179,16 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			else
 				(*q)->cnt_dwn = (*q)->cnt_dwn->prev;
 		}
-		ft_how_long(*in, q); //какое значение оптимальнее двигать вверх
-		ft_turn_begin(a);
-		ft_push_up(a, b, *in, q);
+		if ((*a) && ((*a)->prev || (*a)->next))
+		{
+			ft_how_long(*in, q); //какое значение оптимальнее двигать вверх
+			ft_turn_begin(a);
+		}
+
+		//ft_push_up(a, b, *in, q);
+
+		if (!(*a))
+			ft_push_a(a, b, *in);
 	}
 }
 
