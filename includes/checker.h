@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/02 13:35:28 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/05 15:42:22 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "../includes/ft_printf.h"
 # include "../includes/get_next_line.h"
 
+# define NTHNG 10
 # define F_RA 9
 # define F_RRA 8
 # define S_RA 7
@@ -108,10 +109,11 @@ typedef struct			s_alg
 
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
-void		ft_alg_two(t_instr *in, t_stack **a, t_stack **b);
 void		ft_free_lsts(t_stack **a);
+void		cnt_place(t_stack **a, t_instr **in, t_alg **q);
 void		ft_newlist_ch(t_stack **a);
 t_stack		*ft_turn_begin(t_stack **x);
+void	 	how_long(t_instr *in, t_alg **q);
 int			ft_int_checker(char *tmp, int nb);
 void		ft_sa(t_stack **x, t_instr *instr);
 void		ft_sb(t_stack **x, t_instr *instr);
@@ -120,29 +122,31 @@ void		ft_rb(t_stack **x, t_instr *instr);
 void		ft_rrb(t_stack **x, t_instr *instr);
 void		ft_rra(t_stack **x, t_instr *instr);
 int			ft_check_dubl(char **argv, int tmp);
-void	 	ft_how_long(t_instr *in, t_alg **q);
-int 		ft_is_sorted(t_instr *in, t_stack **a, t_stack **b);
 int 		ft_partition(int l, int h, int *ar);
 void		ft_quick_sort(int *ar, int l, int h);
 int 		ft_check_output(t_stack **a, t_instr *in);
+void		define_action(t_instr *in, t_alg **q);
 int 		ft_check_valid_instr(char **line, t_instr *in);
-void 		ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_ss(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_rr(t_stack **a, t_stack **b, t_instr *instr);
+int 		alg_five(t_instr *in, t_stack **a, t_stack **b);
 void		ft_pa(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_pb(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_rrr(t_stack **a, t_stack **b, t_instr *instr);
-int		 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b);
+void		ft_alg_two(t_instr *in, t_stack **a, t_stack **b);
+int 		ft_is_sorted(t_instr *in, t_stack **a, t_stack **b);
+int		 	alg_three(t_instr *in, t_stack **a);
 int 		ft_algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			ft_get_input(t_instr *in, t_stack **a, t_stack **b);
 void		ft_appl_instr(t_instr *in, t_stack **a, t_stack **b);
+void		ft_create_maxs(t_alg **q, t_stack **a, t_instr **in);
 int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
+void 		ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in);
 void		ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
-void		ft_create_maxs(t_alg **q, t_stack **a, t_instr **in);
 
 #endif

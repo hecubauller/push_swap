@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/08/29 09:05:01 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 	in->split = 0;
 	in->inst = 0;
 	in->viz = 0;
+	in->push_swap = 0;
 	if (argc == 1)
 		return (0);
 	if (!(ft_strcmp(argv[1], "-v")))

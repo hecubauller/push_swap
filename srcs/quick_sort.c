@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/09/02 13:40:57 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/05 15:59:04 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 		return ;
 	ft_create_array(ar, a, q, in);
 	ft_quick_sort(ar, 0, (*in)->size_a);
-	i = -1;
+//	i = -1;
 //	ft_putstr(GRN"sorted array: "RESET);
 //	while (++i != 6)
 //		ft_printf("%d ", ar[i]);
@@ -50,7 +50,29 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	free(ar);
 }
 
-void 	ft_how_long(t_instr *in, t_alg **q)
+void	cnt_place(t_stack **a, t_instr **in, t_alg **q)
+{
+	int 	cnt;
+	int		cnt2;
+
+	cnt = 0;
+	cnt2 = (*in)->size_a - 1;
+	while ((*a) && (*a)->nb != (*q)->hold_first)
+	{
+		(*a) = (*a)->next;
+		cnt++;
+	}
+	ft_turn_end(a);
+	while ((*a) && (*a)->nb != (*q)->hold_second)
+	{
+		(*a) = (*a)->prev;
+		cnt2--;
+	}
+	(*q)->place[0] = cnt;
+	(*q)->place[1] = cnt2;
+}
+
+void	define_action(t_instr *in, t_alg **q)
 {
 	(*q)->ra_f = 0;
 	(*q)->ra_s = 0;
@@ -59,24 +81,36 @@ void 	ft_how_long(t_instr *in, t_alg **q)
 	(*q)->rra_s = 0;
 	(*q)->act_for_f = -1; //what to do for hold_first
 	(*q)->act_for_s = -1; //what to do for hold_second
-	((*q)->place[0] <= ((*in).size_a / 2)) ? ((*q)->act_for_f = RA_IS) :
-	((*q)->act_for_f = RRA_IS);
-	((*q)->place[1] <= ((*in).size_a / 2)) ? ((*q)->act_for_s = RA_IS) :
-	((*q)->act_for_s = RRA_IS);
-	if ((*q)->act_for_f == RA_IS && (*q)->act_for_f == ((*q)->act_for_s)) // 'ra' is faster for both
+	if ((*q)->place[0] == 0) //если число уже наверху
+		(*q)->act_for_f = NTHNG;
+	else
+		((*q)->place[0] <= ((*in).size_a / 2)) ? ((*q)->act_for_f = RA_IS) :
+			((*q)->act_for_f = RRA_IS);
+	if ((*q)->place[1] == (*in).size_a - 1) //если число в самом внизу
+		(*q)->act_for_s = RRA_IS;
+	else
+		((*q)->place[1] <= ((*in).size_a / 2)) ? ((*q)->act_for_s = RA_IS) :
+			((*q)->act_for_s = RRA_IS);
+}
+
+void 	how_long(t_instr *in, t_alg **q)
+{
+	define_action(in, q);
+	if ((*q)->act_for_f == NTHNG) //ничего не делать со стеком
+		(*q)->res = NTHNG;
+	else if ((*q)->act_for_f == RA_IS && (*q)->act_for_s == RA_IS) // 'ra' is faster for both
 	{
-		if ((*q)->place[0] >= (*q)->place[1]) //if hold_first is faster
+		if ((*q)->place[0] < (*q)->place[1]) //if hold_first is faster
 			(*q)->res = F_RA; //first is faster
 		else
 			(*q)->res = S_RA; //second is faster
-
 	}
-	else if ((*q)->act_for_f == RRA_IS && (*q)->act_for_f == ((*q)->act_for_s)) // 'rra' is faster for both
+	else if ((*q)->act_for_f == RRA_IS && ((*q)->act_for_s == RRA_IS)) // 'rra' is faster for both
 	{
 		if (((*in).size_a - (*q)->place[0]) < (*in).size_a - (*q)->place[1]) //if hold_first is faster
-			(*q)->res = F_RRA; //first is faster
+			(*q)->res = S_RRA; //first is faster
 		else
-			(*q)->res = S_RRA; //second is faster
+			(*q)->res = F_RRA; //second is faster
 	}
 	else if ((*q)->act_for_f > (*q)->act_for_s) // 'ra' for first & 'rra' for second
 	{
@@ -85,12 +119,12 @@ void 	ft_how_long(t_instr *in, t_alg **q)
 		else
 			(*q)->res = S_RRA; //second is faster
 	}
-	else if ((*q)->act_for_f < (*q)->act_for_s) // 'rra' for first & 'ra' for second
+	else if ((*q)->act_for_f == RA_IS && (*q)->act_for_s == RRA_IS)
 	{
-		if (((*in).size_a - (*q)->place[0]) < (*q)->place[1]) //if hold_first is faster
-			(*q)->res = F_RRA; //first is faster
+		if (((*q)->place[0]) < ((*in).size_a - (*q)->place[1] + 1)) //if hold_first is faster
+			(*q)->res = F_RA; //first is faster
 		else
-			(*q)->res = S_RA; //second is faster
+			(*q)->res = S_RRA; //second is faster
 	}
 }
 

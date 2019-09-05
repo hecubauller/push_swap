@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/09/02 13:40:57 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/05 17:08:23 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
 	int 	tmp;
 	t_stack	*tmp_s;
-	t_stack	*tmp_s2;
 	int 	cnt;
 	int 	tmp2;
 	int 	act;
@@ -28,7 +27,6 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	cycle = 0;
 	act = 0;
 	tmp_s = NULL;
-	tmp_s2 = NULL;
 	if (!(*b)) //if 'b' is empty
 		ft_pb(a, b, in);
 	else if ((*b) && !(*b)->next) //if there is only one list
@@ -45,14 +43,12 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	{
 		while ((*b) && --cnt && (*a))
 		{
-			tmp_s2 = (*b);
 			while ((*b) && (*b)->next && (*a)->nb < (*b)->nb)
 			{
 				(*b) = (*b)->next;
 				tmp_s = (*b);
 			}
-			while ((*b)->nb != tmp_s2->nb)
-				(*b) = (*b)->prev;
+			ft_turn_begin(b);
 			if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb)
 			{
 				ft_pb(a, b, in);
@@ -72,6 +68,8 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 				while ((*b)->nb != tmp2)
 					ft_rb(b, in);
 			}
+			else if ((*a)->nb > (*b)->nb)
+				ft_pb(a, b, in);
 			else
 			{
 				if ((*b)->next)
@@ -86,14 +84,16 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 
 void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
-	if ((*q)->res == F_RA || (*q)->res == F_RRA)
+	if ((*q)->res == NTHNG)
+		;
+	else if ((*a) && ((*q)->res == F_RA || (*q)->res == F_RRA))
 	{
 		while (((*q)->res == F_RA) && (*a)->nb != (*q)->hold_first)
 			ft_ra(a, in);
 		while (((*q)->res == F_RRA) && (*a)->nb != (*q)->hold_first)
 			ft_rra(a, in);
 	}
-	else if ((*q)->res == S_RA || (*q)->res == S_RRA)
+	else if ((*a) && ((*q)->res == S_RA || (*q)->res == S_RRA))
 	{
 		while (((*q)->res == S_RA) && (*a)->nb != (*q)->hold_second)
 			ft_ra(a, in);
@@ -119,6 +119,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	int 	prev_nb;
 	int 	minimum;
 	int 	i;
+	int 	j;
 	int 	x;
 	int 	y;
 
@@ -129,6 +130,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	prev_nb = 0;
 	x = 0;
 	y = 0;
+	j = -1;
 	(*q)->chunks = ((*in)->size_a % 10) ? (*in)->size_a / 10 + 1 :
 				(*in)->size_a / 10; //количество чанков
 	(*q)->cnt_up = *a; //счетчик сверху
@@ -140,25 +142,23 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		((*a)->nb > (*q)->max) ? ((*q)->max = (*a)->nb) : 0;
 		((*a) = (*a)->next);
 	}
+	((*a)->nb > (*q)->max) ? ((*q)->max = (*a)->nb) : 0;
 	ft_turn_begin(a);
 	while ((*a) && (*a)->next)// поиск минимума
 	{
 		((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
 		(*a) = (*a)->next;
 	}
+	((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
 	ft_create_maxs(q, a, in); //создание max's чанков
 	prev_nb = (*q)->min;
 	minimum = (*q)->min;
-	int s = -1;
-//	ft_putstr(RED "maximums: "RESET);
-//	while ((*q)->ar_of_mx[++s])
-//		ft_printf("%d ", (*q)->ar_of_mx[s]);
-//	ft_putstr("\n");
 	while ((*in)->size_a) //пока стек А не будет пустым
 	{
 		ft_turn_begin(a);
 		(*q)->cnt_up = (*a); //счетчик сверху
 		(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
+		ft_turn_begin(a);
 		x = 0;
 		y = 0;
 		while ((*q)->cnt_up != (*q)->cnt_dwn && (!x || !y)) // пока счетчики не пересекутся
@@ -178,15 +178,18 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			else
 				(*q)->cnt_dwn = (*q)->cnt_dwn->prev;
 		}
-		if ((*a) && ((*a)->prev || (*a)->next))
+		if ((*a) && (((*a)->prev || (*a)->next)))
 		{
-			ft_how_long(*in, q); //какое значение оптимальнее двигать вверх
+			cnt_place(a, in, q);
+			how_long(*in, q); //какое значение оптимальнее двигать вверх
 			ft_turn_begin(a);
 		}
 		ft_push_up(a, b, *in, q);
-		if (!(*a))
-			ft_push_a(a, b, *in);
+		//minimum = (*q)->ar_of_mx[++j];
+
 	}
+	//free (q);
+	ft_push_a(a, b, *in);
 }
 
 int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
@@ -210,7 +213,7 @@ int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
 	return (SUCCESS);
 }
 
-int 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b)
+int 	alg_three(t_instr *in, t_stack **a)
 {
 	if ((*a)->nb > (*a)->next->nb && (*a)->next->next->nb > (*a)->next->nb &&
 		(*a)->nb < (*a)->next->next->nb)
@@ -225,7 +228,7 @@ int 	ft_alg_three(t_instr *in, t_stack **a, t_stack **b)
 	else if ((*a)->nb < (*a)->next->nb && (*a)->next->next->nb < (*a)->next->nb)
 	{
 		ft_sa(a, in);
-		ft_rra(a, in);
+		ft_ra(a, in);
 	}
 	return (SUCCESS);
 }
@@ -252,6 +255,42 @@ int 	ft_is_sorted(t_instr *in, t_stack **a, t_stack **b)
 	}
 }
 
+int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
+{
+	int tmp;
+	int tmp2;
+
+	tmp = 0;
+	ft_pb(a, b, in);
+	ft_pb(a, b, in);
+	alg_three(in, a);
+	while ((*b))
+	{
+//		if ((*b)->nb < (*b)->next->nb)
+//			ft_sb(b, in);
+		while ((*a)->next && (*b)->nb > (*a)->nb)
+			(*a) = (*a)->next;
+		if (!(*a)->next && (*b)->nb > (*a)->nb)
+		{
+			ft_turn_begin(a);
+			ft_pa(a, b, in);
+			ft_ra(a, in);
+		}
+		else
+		{
+			tmp = (*a)->nb;
+			ft_turn_begin(a);
+			tmp2 = (*a)->nb;
+			while ((*a)->nb != tmp)
+				ft_ra(a, in);
+			ft_pa(a, b, in);
+			while ((*a)->nb != tmp2)
+				ft_ra(a, in);
+		}
+	}
+	return (SUCCESS);
+}
+
 int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
 {
 	if (ft_is_sorted(in, a, b))
@@ -263,7 +302,12 @@ int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
 	}
 	else if ((*in).size_a == 3)
 	{
-		ft_alg_three(in, a, b);
+		alg_three(in, a);
+		return (SUCCESS);
+	}
+	else if ((*in).size_a == 5)
+	{
+		alg_five(in, a, b);
 		return (SUCCESS);
 	}
 	else
