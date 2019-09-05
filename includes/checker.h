@@ -133,7 +133,7 @@ int 		alg_five(t_instr *in, t_stack **a, t_stack **b);
 void		ft_pa(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_pb(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_rrr(t_stack **a, t_stack **b, t_instr *instr);
-void		ft_alg_two(t_instr *in, t_stack **a, t_stack **b);
+void		alg_two(t_instr *in, t_stack **a);
 int 		ft_is_sorted(t_instr *in, t_stack **a, t_stack **b);
 int		 	alg_three(t_instr *in, t_stack **a);
 int 		ft_algorithm(t_instr *in, t_stack **a, t_stack **b);

@@ -41,42 +41,46 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	}
 	else //more than 1 list in stack 'b'
 	{
-		while ((*b) && --cnt && (*a))
+		while ((*b) && --cnt && (*b)->next && (*a)->nb < (*b)->nb)
 		{
-			while ((*b) && (*b)->next && (*a)->nb < (*b)->nb)
+			(*b) = (*b)->next;
+			tmp_s = (*b);
+		}
+		ft_turn_begin(b);
+		if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb)
+		{
+			ft_pb(a, b, in);
+			ft_rb(b, in);
+		}
+		else
+		{
+			cnt = 11;
+			while ((*b) && --cnt && (*a))
 			{
-				(*b) = (*b)->next;
-				tmp_s = (*b);
-			}
-			ft_turn_begin(b);
-			if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb)
-			{
-				ft_pb(a, b, in);
-				ft_rb(b, in);
-			}
-			else if ((*b)->nb > (*a)->nb && (!(*b)->next || (((*b)->next->nb < (*b)->nb &&
-				(*a)->nb > (*b)->next->nb))))
-			{
-				tmp = (*b)->nb;
-				cycle <= ((*in).size_a / 2) ? (act = RA_IS) : (act = RRA_IS);
-				ft_turn_begin(b);
-				tmp2 = (*b)->nb;
-				while ((*b)->nb != tmp) //подкручиваем стек
-					(act == RA_IS) ? ft_rb(b, in) : ft_rrb(b, in);
-				/*(act == RA_IS) ? */ft_rb(b, in)/* : ft_rrb(b, in)*/;
-				ft_pb(a, b, in);
-				while ((*b)->nb != tmp2)
-					ft_rb(b, in);
-			}
-			else if ((*a)->nb > (*b)->nb)
-				ft_pb(a, b, in);
-			else
-			{
-				if ((*b)->next)
-					(*b) = (*b)->next;
-				else
-					break;
-				cycle++;
+				if ((*b)->nb > (*a)->nb &&
+					(!(*b)->next || (((*b)->next->nb<(*b)->nb &&
+					(*a)->nb > (*b)->next->nb))))
+				{
+					tmp = (*b)->nb;
+					cycle <= ((*in).size_a / 2) ? (act = RA_IS)
+												: (act = RRA_IS);
+					ft_turn_begin(b);
+					tmp2 = (*b)->nb;
+					while ((*b)->nb != tmp) //подкручиваем стек
+						(act == RA_IS) ? ft_rb(b, in) : ft_rrb(b, in);
+					/*(act == RA_IS) ? */ft_rb(b, in)/* : ft_rrb(b, in)*/;
+					ft_pb(a, b, in);
+					while ((*b)->nb != tmp2)
+						ft_rb(b, in);
+				} else if ((*a)->nb > (*b)->nb)
+					ft_pb(a, b, in);
+				else {
+					if ((*b)->next)
+						(*b) = (*b)->next;
+					else
+						break;
+					cycle++;
+				}
 			}
 		}
 	}
@@ -215,7 +219,10 @@ int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
 
 int 	alg_three(t_instr *in, t_stack **a)
 {
-	if ((*a)->nb > (*a)->next->nb && (*a)->next->next->nb > (*a)->next->nb &&
+	if ((*a)->nb < (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb &&
+			(*a)->next->next->nb < (*a)->nb)
+		ft_rra(a, in);
+	else if ((*a)->nb > (*a)->next->nb && (*a)->next->next->nb > (*a)->next->nb &&
 		(*a)->nb < (*a)->next->next->nb)
 		ft_sa(a, in);
 	else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb)
@@ -233,7 +240,7 @@ int 	alg_three(t_instr *in, t_stack **a)
 	return (SUCCESS);
 }
 
-void	ft_alg_two(t_instr *in, t_stack **a, t_stack **b)
+void	alg_two(t_instr *in, t_stack **a)
 {
 	if ((*a)->nb > (*a)->next->nb)
 		ft_sa(a, in);
@@ -266,25 +273,58 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 	alg_three(in, a);
 	while ((*b))
 	{
-//		if ((*b)->nb < (*b)->next->nb)
-//			ft_sb(b, in);
-		while ((*a)->next && (*b)->nb > (*a)->nb)
-			(*a) = (*a)->next;
-		if (!(*a)->next && (*b)->nb > (*a)->nb)
-		{
-			ft_turn_begin(a);
+		if ((*b)->nb < (*a)->nb) // 'b' is smaller than all nbrs in 'a'
 			ft_pa(a, b, in);
-			ft_ra(a, in);
-		}
-		else
-		{
+		else if ((*b)->nb > (*a)->next->next->nb && ((*a)->next->next->next ? (*b)->nb > (*a)->next->next->next->nb : 0)) //'b->nb' is bigger than all nbrs in 'a'
+		{ ///хуевое блять уловие с тернарником!!!!!!!!!!!!!!!!!
 			tmp = (*a)->nb;
-			ft_turn_begin(a);
-			tmp2 = (*a)->nb;
+			ft_pa(a, b, in);
+			if ((*b) && (*b)->nb < (*a)->nb && (((*b)->nb > (*a)->next->next->next->nb)))
+			{
+				ft_pa(a, b, in);
+				ft_ra(a, in);
+			}
 			while ((*a)->nb != tmp)
 				ft_ra(a, in);
+		}
+		else if ((*b)->nb > (*a)->nb && (*b)->nb < (*a)->next->nb)
+		{
+			ft_ra(a, in);
 			ft_pa(a, b, in);
-			while ((*a)->nb != tmp2)
+			ft_rra(a, in);
+		}
+		else if ((*b)->nb > (*a)->nb && (*b)->nb > (*a)->next->nb)
+		{
+			tmp = (*a)->nb;
+			ft_rra(a, in);
+			ft_pa(a, b, in);
+			if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb < (*a)->next->next->next->nb)
+			{
+				ft_rra(a, in);
+				ft_pa(a, b, in);
+			}
+			else if ((*b) && (*b)->nb > (*a)->nb && (*b)->nb < (*a)->next->next->next->nb
+				&& (*b)->nb > (*a)->next->nb && (*b)->nb > (*a)->next->next->nb)
+			{
+				ft_rra(a, in);
+				ft_pa(a, b, in);
+				ft_ra(a, in);
+				ft_ra(a, in);
+			}
+			else if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb > (*a)->next->next->next->nb
+				&& (*b)->nb > (*a)->next->next->nb && (*b)->nb > (*a)->next->nb)
+				ft_pa(a, b, in);
+			while ((*a)->nb != tmp)
+				ft_rra(a, in);
+		}
+		else if ((*b)->nb > (*a)->nb) //'b' is bigger than few nbrs
+		{
+			tmp = (*a)->nb;
+			while ((*b)->nb > (*a)->nb)
+				(*a) = (*a)->next;
+			if ((*a)->next)
+			ft_pa(a, b, in);
+			while ((*a)->nb != tmp)
 				ft_ra(a, in);
 		}
 	}
@@ -297,7 +337,7 @@ int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
 		return (SUCCESS);
 	if ((*in).size_a == 2)
 	{
-		ft_alg_two(in, a, b);
+		alg_two(in, a);
 		return (SUCCESS);
 	}
 	else if ((*in).size_a == 3)
