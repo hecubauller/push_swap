@@ -41,7 +41,7 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	}
 	else //more than 1 list in stack 'b'
 	{
-		while ((*b) && --cnt && (*b)->next && (*a)->nb < (*b)->nb)
+		while ((*b) && (*a) && --cnt && (*b)->next && (*a)->nb < (*b)->nb)
 		{
 			(*b) = (*b)->next;
 			tmp_s = (*b);
@@ -122,12 +122,14 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	int 	cnt_chunk;
 	int 	prev_nb;
 	int 	minimum;
+	int 	cnt;
 	int 	i;
 	int 	j;
 	int 	x;
 	int 	y;
 
 	i = 0;
+	cnt = 11;
 	(*q)->max = 0;
 	(*q)->min = (*a)->nb;
 	minimum = (*q)->min;
@@ -157,7 +159,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	ft_create_maxs(q, a, in); //создание max's чанков
 	prev_nb = (*q)->min;
 	minimum = (*q)->min;
-	while ((*in)->size_a) //пока стек А не будет пустым
+	while ((*a)) //пока стек А не будет пустым
 	{
 		ft_turn_begin(a);
 		(*q)->cnt_up = (*a); //счетчик сверху
@@ -189,10 +191,15 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			ft_turn_begin(a);
 		}
 		ft_push_up(a, b, *in, q);
-		//minimum = (*q)->ar_of_mx[++j];
-
+		if (cnt)
+			--cnt;
+		else
+		{
+			++i;
+			minimum = (*q)->ar_of_mx[i]; //неправильное условие
+			cnt = 11;
+		}
 	}
-	//free (q);
 	ft_push_a(a, b, *in);
 }
 

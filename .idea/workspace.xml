@@ -13,11 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="734c04e9-49c1-4e81-b909-66c32ecb2ca0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/quick_sort.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/quick_sort.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/push_swap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/checker.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/checker.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/begin_algorithm.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/begin_algorithm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/begin_algorithm.o" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/obj/begin_algorithm.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/quick_sort.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/quick_sort.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +85,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="push_swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="12 4 3 22 7" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="push_swap" RUN_TARGET_NAME="push_swap">
+    <configuration name="push_swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="23 24 30 48 36 41 40 10 45 32 8 21 33 13 15" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="push_swap" RUN_TARGET_NAME="push_swap">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -144,7 +146,7 @@
       <workItem from="1567700596144" duration="45000" />
       <workItem from="1567700661689" duration="867000" />
       <workItem from="1567706584925" duration="9910000" />
-      <workItem from="1568019565291" duration="1514000" />
+      <workItem from="1568019565291" duration="15155000" />
     </task>
     <servers />
   </component>
@@ -183,8 +185,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/begin_algorithm.c</url>
-          <line>264</line>
-          <option name="timeStamp" value="15" />
+          <line>159</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

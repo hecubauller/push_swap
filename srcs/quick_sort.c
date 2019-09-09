@@ -32,7 +32,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	ft_quick_sort(ar, 0, (*in)->size_a);
 //	i = -1;
 //	ft_putstr(GRN"sorted array: "RESET);
-//	while (++i != 6)
+//	while (++i != 100)
 //		ft_printf("%d ", ar[i]);
 //	ft_putstr("\n");
 	i = -1;
@@ -47,6 +47,11 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 		}
 		(*q)->ar_of_mx[++i] = (*q)->max;
 	}
+//	i = -1;
+//	ft_putstr(GRN"max's: "RESET);
+//	while (++i != 10)
+//		ft_printf("%d ", (*q)->ar_of_mx[i]);
+//	ft_putstr("\n");
 	free(ar);
 }
 
@@ -74,11 +79,7 @@ void	cnt_place(t_stack **a, t_instr **in, t_alg **q)
 
 void	define_action(t_instr *in, t_alg **q)
 {
-	(*q)->ra_f = 0;
-	(*q)->ra_s = 0;
-	(*q)->rra_f = 0;
 	(*q)->res = 0;
-	(*q)->rra_s = 0;
 	(*q)->act_for_f = -1; //what to do for hold_first
 	(*q)->act_for_s = -1; //what to do for hold_second
 	if ((*q)->place[0] == 0) //если число уже наверху
