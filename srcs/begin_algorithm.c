@@ -275,8 +275,8 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 	{
 		if ((*b)->nb < (*a)->nb) // 'b' is smaller than all nbrs in 'a'
 			ft_pa(a, b, in);
-		else if ((*b)->nb > (*a)->next->next->nb && ((*a)->next->next->next ? (*b)->nb > (*a)->next->next->next->nb : 0)) //'b->nb' is bigger than all nbrs in 'a'
-		{ ///хуевое блять уловие с тернарником!!!!!!!!!!!!!!!!!
+		else if ((*b)->nb > (*a)->next->next->nb && (!(*a)->next->next->next || (*b)->nb > (*a)->next->next->next->nb )) //'b->nb' is bigger than all nbrs in 'a'
+		{
 			tmp = (*a)->nb;
 			ft_pa(a, b, in);
 			if ((*b) && (*b)->nb < (*a)->nb && (((*b)->nb > (*a)->next->next->next->nb)))
@@ -296,8 +296,19 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 		else if ((*b)->nb > (*a)->nb && (*b)->nb > (*a)->next->nb)
 		{
 			tmp = (*a)->nb;
-			ft_rra(a, in);
-			ft_pa(a, b, in);
+			if ((*b)->nb > (*a)->next->next->nb)
+			{
+				ft_rra(a, in);
+				ft_pa(a, b, in);
+				ft_ra(a, in);
+				ft_ra(a, in);
+			}
+			else
+			{
+				ft_ra(a, in);
+				ft_ra(a, in);
+				ft_pa(a, b, in);
+			}
 			if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb < (*a)->next->next->next->nb)
 			{
 				ft_rra(a, in);
