@@ -32,7 +32,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	ft_quick_sort(ar, 0, (*in)->size_a);
 //	i = -1;
 //	ft_putstr(GRN"sorted array: "RESET);
-//	while (++i != 100)
+//	while (++i != 15)
 //		ft_printf("%d ", ar[i]);
 //	ft_putstr("\n");
 	i = -1;
@@ -49,7 +49,7 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 	}
 //	i = -1;
 //	ft_putstr(GRN"max's: "RESET);
-//	while (++i != 10)
+//	while (++i != 2)
 //		ft_printf("%d ", (*q)->ar_of_mx[i]);
 //	ft_putstr("\n");
 	free(ar);
@@ -62,17 +62,22 @@ void	cnt_place(t_stack **a, t_instr **in, t_alg **q)
 
 	cnt = 0;
 	cnt2 = (*in)->size_a - 1;
-	while ((*a) && (*a)->nb != (*q)->hold_first)
+	while ((*a) && (*a)->next && (*a)->nb != (*q)->hold_first)
 	{
 		(*a) = (*a)->next;
 		cnt++;
 	}
+	(!(*a)->next && (*a)->nb != (*q)->hold_first) ? (cnt = -1) : (cnt++);
 	ft_turn_end(a);
-	while ((*a) && (*a)->nb != (*q)->hold_second)
+	while ((*a) && (*a)->next && (*a)->nb != (*q)->hold_second)
 	{
 		(*a) = (*a)->prev;
 		cnt2--;
 	}
+	if (!(*a)->next && (*a)->nb != (*q)->hold_second)
+		cnt = -1;
+	else if (cnt)
+		cnt--;
 	(*q)->place[0] = cnt;
 	(*q)->place[1] = cnt2;
 }
@@ -84,6 +89,10 @@ void	define_action(t_instr *in, t_alg **q)
 	(*q)->act_for_s = -1; //what to do for hold_second
 	if ((*q)->place[0] == 0) //если число уже наверху
 		(*q)->act_for_f = NTHNG;
+	else if ((*q)->place[0] == -1)
+		(*q)->act_for_f = 0;
+	else if ((*q)->place[1] == -1)
+		(*q)->act_for_s = 0;
 	else
 		((*q)->place[0] <= ((*in).size_a / 2)) ? ((*q)->act_for_f = RA_IS) :
 			((*q)->act_for_f = RRA_IS);
@@ -127,6 +136,10 @@ void 	how_long(t_instr *in, t_alg **q)
 		else
 			(*q)->res = S_RRA; //second is faster
 	}
+	else if ((*q)->act_for_f == 0)
+		(*q)->res = ((*q)->place[1] == RA_IS) ? S_RA : S_RRA;
+	else if ((*q)->act_for_s == 0)
+		(*q)->res = ((*q)->place[0] == RA_IS) ? F_RA : F_RRA;
 }
 
 void	ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in)

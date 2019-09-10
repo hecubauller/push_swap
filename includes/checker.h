@@ -143,6 +143,7 @@ void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
 void 		ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in);
+void		create_maxmin(t_stack **a, t_instr **in, t_alg **q);
 void		ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
 
 #endif

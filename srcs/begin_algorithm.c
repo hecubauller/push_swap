@@ -21,17 +21,17 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	int 	act;
 	int 	cycle;
 
-	cnt = 11;
+	cnt = 10;
 	tmp = 0;
 	tmp2 = 0;
-	cycle = 0;
+	cycle = 1;
 	act = 0;
 	tmp_s = NULL;
 	if (!(*b)) //if 'b' is empty
 		ft_pb(a, b, in);
 	else if ((*b) && !(*b)->next) //if there is only one list
 	{
-		if ((*b)->nb > (*a)->nb) //number in 'b' is bigger
+		if ((*a) && (*b) && (*b)->nb > (*a)->nb) //number in 'b' is bigger
 		{
 			ft_pb(a, b, in);
 			ft_sb(b, in);
@@ -41,47 +41,44 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	}
 	else //more than 1 list in stack 'b'
 	{
-		while ((*b) && (*a) && --cnt && (*b)->next && (*a)->nb < (*b)->nb)
+		while ((*b) && (*a) && (*b)->next && (*a)->nb < (*b)->nb)
 		{
 			(*b) = (*b)->next;
 			tmp_s = (*b);
 		}
 		ft_turn_begin(b);
-		if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb)
+		if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb) //если a->nb ньше всех в стеке b
 		{
 			ft_pb(a, b, in);
 			ft_rb(b, in);
 		}
 		else
 		{
-			cnt = 11;
-			while ((*b) && --cnt && (*a))
+			if ((*a) && (*b) && (*b)->nb > (*a)->nb &&
+					((*b)->next && (((*b)->next->nb < (*b)->nb &&
+					(*a)->nb < (*b)->next->nb))))
 			{
-				if ((*b)->nb > (*a)->nb &&
-					(!(*b)->next || (((*b)->next->nb<(*b)->nb &&
-					(*a)->nb > (*b)->next->nb))))
-				{
-					tmp = (*b)->nb;
-					cycle <= ((*in).size_a / 2) ? (act = RA_IS)
-												: (act = RRA_IS);
-					ft_turn_begin(b);
-					tmp2 = (*b)->nb;
-					while ((*b)->nb != tmp) //подкручиваем стек
-						(act == RA_IS) ? ft_rb(b, in) : ft_rrb(b, in);
-					/*(act == RA_IS) ? */ft_rb(b, in)/* : ft_rrb(b, in)*/;
-					ft_pb(a, b, in);
-					while ((*b)->nb != tmp2)
-						ft_rb(b, in);
-				} else if ((*a)->nb > (*b)->nb)
-					ft_pb(a, b, in);
-				else {
-					if ((*b)->next)
-						(*b) = (*b)->next;
-					else
-						break;
-					cycle++;
-				}
+				tmp = (*b)->nb; //beginning
+				while ((*a)->nb < (*b)->nb)
+					(*b) = (*b)->next;
+				tmp2 = (*b)->nb; //push to
+				ft_turn_begin(b);
+				while ((*b)->nb != tmp2)
+					ft_rb(b, in);
+				ft_pb(a, b, in);
+				while ((*b)->nb != tmp)
+					ft_rrb(b, in);
 			}
+			else if ((*a) && (*b) && (*b)->nb > (*a)->nb &&
+				(!(*b)->next || (((*b)->next->nb < (*b)->nb &&
+				(*a)->nb > (*b)->next->nb))))
+			{
+				ft_rb(b, in);
+				ft_pb(a, b, in);
+				ft_rrb(b, in);
+			}
+			else if ((*a) && (*b) && (*a)->nb > (*b)->nb)
+				ft_pb(a, b, in);
 		}
 	}
 }
@@ -105,7 +102,6 @@ void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 			ft_rra(a, in);
 	}
 	(*q)->res = 0;
-	ft_check_b(a, b, in, q); //push to b
 }
 
 void	ft_push_a(t_stack **a, t_stack **b, t_instr *in)
@@ -117,31 +113,14 @@ void	ft_push_a(t_stack **a, t_stack **b, t_instr *in)
 	exit(0);
 }
 
-void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
+void	create_maxmin(t_stack **a, t_instr **in, t_alg **q)
 {
-	int 	cnt_chunk;
-	int 	prev_nb;
-	int 	minimum;
-	int 	cnt;
-	int 	i;
-	int 	j;
-	int 	x;
-	int 	y;
-
-	i = 0;
-	cnt = 11;
 	(*q)->max = 0;
 	(*q)->min = (*a)->nb;
-	minimum = (*q)->min;
-	prev_nb = 0;
-	x = 0;
-	y = 0;
-	j = -1;
 	(*q)->chunks = ((*in)->size_a % 10) ? (*in)->size_a / 10 + 1 :
-				(*in)->size_a / 10; //количество чанков
+				   (*in)->size_a / 10; //количество чанков
 	(*q)->cnt_up = *a; //счетчик сверху
 	(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
-	cnt_chunk = 10;
 	ft_turn_begin(a);
 	while ((*a) && (*a)->next) //поиск максимума
 	{
@@ -156,30 +135,47 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		(*a) = (*a)->next;
 	}
 	((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
+}
+
+void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
+{
+	int 	i;
+	int 	x;
+	int 	y;
+	int 	cnt;
+	int 	minimum;
+
+	i = 0;
+	x = 0;
+	y = 0;
+	cnt = 9;
+	minimum = 0;
+	create_maxmin(a, in, q); //поиск максимума и минимума
 	ft_create_maxs(q, a, in); //создание max's чанков
-	prev_nb = (*q)->min;
-	minimum = (*q)->min;
+	minimum = (*q)->min; //start from the smallest nb
 	while ((*a)) //пока стек А не будет пустым
 	{
+		x = 0;
+		y = 0;
 		ft_turn_begin(a);
 		(*q)->cnt_up = (*a); //счетчик сверху
 		(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
 		ft_turn_begin(a);
-		x = 0;
-		y = 0;
 		while ((*q)->cnt_up != (*q)->cnt_dwn && (!x || !y)) // пока счетчики не пересекутся
 		{
-			if ((*q)->cnt_up->nb >= minimum && (*q)->cnt_up->nb <= (*q)->ar_of_mx[i])
+			if ((*q)->cnt_up->nb >= minimum && (*q)->cnt_up->nb <=
+				(*q)->ar_of_mx[i])
 			{
-				(*q)->hold_first = (*q)->cnt_up->nb;
 				x = 1;
+				(*q)->hold_first = (*q)->cnt_up->nb;
 			}
 			else
 				(*q)->cnt_up = (*q)->cnt_up->next;
-			if ((*q)->cnt_dwn->nb >= minimum && (*q)->cnt_dwn->nb <= (*q)->ar_of_mx[i])
+			if ((*q)->cnt_dwn->nb >= minimum && (*q)->cnt_dwn->nb <=
+				(*q)->ar_of_mx[i])
 			{
-				(*q)->hold_second = (*q)->cnt_dwn->nb;
 				y = 1;
+				(*q)->hold_second = (*q)->cnt_dwn->nb;
 			}
 			else
 				(*q)->cnt_dwn = (*q)->cnt_dwn->prev;
@@ -191,13 +187,14 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			ft_turn_begin(a);
 		}
 		ft_push_up(a, b, *in, q);
+		ft_check_b(a, b, in, q); //push to b
 		if (cnt)
 			--cnt;
 		else
 		{
-			++i;
 			minimum = (*q)->ar_of_mx[i]; //неправильное условие
-			cnt = 11;
+			++i;
+			cnt = 9;
 		}
 	}
 	ft_push_a(a, b, *in);

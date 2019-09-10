@@ -107,11 +107,11 @@ void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
 	instr->inst = 0;
 	if (*b)
 	{
-		if (!(*a))
+		if (!(*a) && (*b))
 		{
 			tmp_s = (*b);
 			(*b) = (*b)->next;
-			(*b)->prev = NULL;
+			(*b) ? (*b)->prev = NULL : 0;
 			(*a) = tmp_s;
 			(*a)->next = NULL;
 			(*a)->next = NULL;
