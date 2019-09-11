@@ -89,7 +89,7 @@ void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 		;
 	else if ((*a) && ((*q)->res == F_RA || (*q)->res == F_RRA))
 	{
-		while (((*q)->res == F_RA) && (*a)->nb != (*q)->hold_first)
+		while (((*q)->res == F_RA) && (*a)->nb != (*q)->hold_first) //infinite loop
 			ft_ra(a, in);
 		while (((*q)->res == F_RRA) && (*a)->nb != (*q)->hold_first)
 			ft_rra(a, in);

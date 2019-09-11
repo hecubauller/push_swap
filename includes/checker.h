@@ -19,6 +19,9 @@
 # include "../includes/ft_printf.h"
 # include "../includes/get_next_line.h"
 
+# define NO_NBRS -90
+# define DONT_LOOKIN_FOR -30
+# define NOT_IN_STACK -20
 # define NTHNG 10
 # define F_RA 9
 # define F_RRA 8
@@ -140,6 +143,7 @@ int			ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b);
 int			ft_reader_argv(t_stack **a, t_instr **in, char **argv);
 void		ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 void		ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
+void		ft_vizualize_check(t_stack **a, t_stack **b, t_instr *instr);
 void 		ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q);
 void		ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in);

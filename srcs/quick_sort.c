@@ -67,17 +67,14 @@ void	cnt_place(t_stack **a, t_instr **in, t_alg **q)
 		(*a) = (*a)->next;
 		cnt++;
 	}
-	(!(*a)->next && (*a)->nb != (*q)->hold_first) ? (cnt = -1) : (cnt++);
+	(!(*a)->next && (*a)->nb != (*q)->hold_first) ? (cnt = NOT_IN_STACK) : 0;
 	ft_turn_end(a);
-	while ((*a) && (*a)->next && (*a)->nb != (*q)->hold_second)
+	while ((*a) && (*a)->prev && (*a)->nb != (*q)->hold_second)
 	{
 		(*a) = (*a)->prev;
 		cnt2--;
 	}
-	if (!(*a)->next && (*a)->nb != (*q)->hold_second)
-		cnt = -1;
-	else if (cnt)
-		cnt--;
+	(!(*a)->prev && (*a)->nb != (*q)->hold_second) ? (cnt2 = NOT_IN_STACK): 0;
 	(*q)->place[0] = cnt;
 	(*q)->place[1] = cnt2;
 }
@@ -87,16 +84,17 @@ void	define_action(t_instr *in, t_alg **q)
 	(*q)->res = 0;
 	(*q)->act_for_f = -1; //what to do for hold_first
 	(*q)->act_for_s = -1; //what to do for hold_second
-	if ((*q)->place[0] == 0) //если число уже наверху
+
+	if ((*q)->place[0] == NOT_IN_STACK)
+		(*q)->act_for_f = DONT_LOOKIN_FOR;
+	else if ((*q)->place[0] == 0) //если число уже наверху
 		(*q)->act_for_f = NTHNG;
-	else if ((*q)->place[0] == -1)
-		(*q)->act_for_f = 0;
-	else if ((*q)->place[1] == -1)
-		(*q)->act_for_s = 0;
 	else
 		((*q)->place[0] <= ((*in).size_a / 2)) ? ((*q)->act_for_f = RA_IS) :
-			((*q)->act_for_f = RRA_IS);
-	if ((*q)->place[1] == (*in).size_a - 1) //если число в самом внизу
+		((*q)->act_for_f = RRA_IS);
+	if ((*q)->place[1] == NOT_IN_STACK)
+		(*q)->act_for_s = DONT_LOOKIN_FOR;
+	else if ((*q)->place[1] == (*in).size_a - 1) //если число в самом внизу
 		(*q)->act_for_s = RRA_IS;
 	else
 		((*q)->place[1] <= ((*in).size_a / 2)) ? ((*q)->act_for_s = RA_IS) :
@@ -108,38 +106,56 @@ void 	how_long(t_instr *in, t_alg **q)
 	define_action(in, q);
 	if ((*q)->act_for_f == NTHNG) //ничего не делать со стеком
 		(*q)->res = NTHNG;
-	else if ((*q)->act_for_f == RA_IS && (*q)->act_for_s == RA_IS) // 'ra' is faster for both
+	else if ((*q)->act_for_f == RA_IS &&
+			 (*q)->act_for_s == RA_IS) // 'ra' is faster for both
 	{
 		if ((*q)->place[0] < (*q)->place[1]) //if hold_first is faster
 			(*q)->res = F_RA; //first is faster
 		else
 			(*q)->res = S_RA; //second is faster
 	}
-	else if ((*q)->act_for_f == RRA_IS && ((*q)->act_for_s == RRA_IS)) // 'rra' is faster for both
+	else if ((*q)->act_for_f == RRA_IS &&
+			   ((*q)->act_for_s == RRA_IS)) // 'rra' is faster for both
 	{
-		if (((*in).size_a - (*q)->place[0]) < (*in).size_a - (*q)->place[1]) //if hold_first is faster
+		if (((*in).size_a - (*q)->place[0]) <
+			(*in).size_a - (*q)->place[1]) //if hold_first is faster
 			(*q)->res = S_RRA; //first is faster
 		else
 			(*q)->res = F_RRA; //second is faster
 	}
-	else if ((*q)->act_for_f > (*q)->act_for_s) // 'ra' for first & 'rra' for second
+	else if ((*q)->act_for_f == RA_IS &&
+			   (*q)->act_for_s == RRA_IS) // 'ra' for first & 'rra' for second
 	{
-		if ((*q)->place[0] <  (*in).size_a - (*q)->place[1]) //if hold_first is faster
+		if ((*q)->place[0] <
+			(*in).size_a - (*q)->place[1]) //if hold_first is faster
 			(*q)->res = F_RA; //first is faster
 		else
 			(*q)->res = S_RRA; //second is faster
 	}
 	else if ((*q)->act_for_f == RA_IS && (*q)->act_for_s == RRA_IS)
 	{
-		if (((*q)->place[0]) < ((*in).size_a - (*q)->place[1] + 1)) //if hold_first is faster
+		if (((*q)->place[0]) <
+			((*in).size_a - (*q)->place[1] + 1)) //if hold_first is faster
 			(*q)->res = F_RA; //first is faster
 		else
 			(*q)->res = S_RRA; //second is faster
 	}
-	else if ((*q)->act_for_f == 0)
-		(*q)->res = ((*q)->place[1] == RA_IS) ? S_RA : S_RRA;
-	else if ((*q)->act_for_s == 0)
-		(*q)->res = ((*q)->place[0] == RA_IS) ? F_RA : F_RRA;
+	if ((*q)->act_for_f == DONT_LOOKIN_FOR &&
+		(*q)->act_for_s != DONT_LOOKIN_FOR)
+	{
+		if ((*q)->place[1] <= (*in).size_a / 2)
+			(*q)->res = S_RA;
+		else if ((*q)->place[1] > (*in).size_a / 2)
+			(*q)->res = S_RRA;
+	}
+	else if ((*q)->act_for_s == DONT_LOOKIN_FOR &&
+			 (*q)->act_for_f != DONT_LOOKIN_FOR)
+	{
+		if ((*q)->place[0] <= (*in).size_a / 2)
+			(*q)->res = F_RA;
+		else if ((*q)->place[0] > (*in).size_a / 2)
+			(*q)->res = F_RRA;
+	}
 }
 
 void	ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in)
