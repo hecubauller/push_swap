@@ -187,7 +187,8 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			ft_turn_begin(a);
 		}
 		ft_push_up(a, b, *in, q);
-		ft_check_b(a, b, in, q); //push to b
+		ft_pb(a, b, *in);
+		//ft_check_b(a, b, in, q); //push to b
 		if (cnt)
 			--cnt;
 		else
@@ -197,7 +198,8 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 			cnt = 9;
 		}
 	}
-	ft_push_a(a, b, *in);
+	push_back(a, b, in, q);
+	//ft_push_a(a, b, *in);
 }
 
 int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)

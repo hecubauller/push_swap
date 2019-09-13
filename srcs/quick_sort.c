@@ -12,6 +12,44 @@
 
 #include "checker.h"
 
+void 	push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
+{
+	int 	cnt;
+	int 	prev_max;
+
+	cnt = 0;
+	prev_max = (*q)->max;
+	while (*b)
+	{
+		(*q)->max = (*b)->nb;
+		while ((*b) && (*b)->next) //поиск максимума
+		{
+			((*b)->nb > (*q)->max) ? ((*q)->max = (*b)->nb) : 0;
+			((*b) = (*b)->next);
+		}
+		if ((*b) && ((*b)->nb > (*q)->max))
+			((*q)->max = (*b)->nb);
+		ft_turn_begin(b);
+		while ((*b) && (*b)->nb != (*q)->max)
+		{
+			(*b) = (*b)->next;
+			++cnt;
+		}
+		ft_turn_begin(b);
+		if (cnt != 0 && cnt <= ((*in)->size_b / 2))
+		{
+			while ((*b)->nb != (*q)->max)
+				ft_rb(b, *in);
+		}
+		else if (cnt > ((*in)->size_b / 2))
+		{
+			while ((*b) && (*b)->nb != (*q)->max)
+				ft_rrb(b, *in);
+		}
+		ft_pa(a, b, *in);
+	}
+}
+
 void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 {
 	int		cnt;

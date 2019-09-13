@@ -106,6 +106,8 @@ typedef struct			s_alg
  * FUNCTIONS
  */
 
+
+void 	push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
 void		ft_free_lsts(t_stack **a);
