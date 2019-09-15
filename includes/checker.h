@@ -102,12 +102,36 @@ typedef struct			s_alg
 
 }						t_alg;
 
+typedef struct 			s_sort
+{
+	int 				cmnd_a;
+	int 				cmnd_b;
+	int 				rr;
+	int 				rrr;
+	int 				ra;
+	int 				rra;
+	int 				rb;
+	int 				rrb;
+	int 				prev_cmnds; //amount of comands for prev nb
+	int 				prev_nb;
+	int 				push_nb;
+	int 				tot_cmnds;
+	int 				nb;
+	int 				min;
+}						t_sort;
 /*
  * FUNCTIONS
  */
 
-
-void 	push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
+void 		apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
+void		total_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
+void		cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
+void 		cnt_cmnds_b(t_stack **b, t_instr *in, t_sort **p);
+void		new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
+void 		finish_stack(t_stack **a, t_instr *in, t_sort **p);
+void 		create_min(t_stack **a, t_sort **p);
+void 		push_to_a(t_stack **a, t_stack **b, t_instr *in);
+void 		push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
 void		ft_put_result(int res);
 t_stack		*ft_turn_end(t_stack **x);
 void		ft_free_lsts(t_stack **a);

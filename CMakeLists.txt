@@ -141,4 +141,4 @@ add_executable(push_swap
         srcs/push_swap.c
         srcs/quick_sort.c
         srcs/reader_checker.c
-        srcs/visualizer.c)
+        srcs/visualizer.c srcs/new_algo.c)

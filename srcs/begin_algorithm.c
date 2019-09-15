@@ -368,6 +368,7 @@ int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
 		return (SUCCESS);
 	}
 	else
-		ft_alg_hundred(in, a, b);
+		push_to_a(a, b, in);
+		//ft_alg_hundred(in, a, b);
 	return (SUCCESS);
 }

@@ -47,7 +47,7 @@ INC1_NAME		=	checker.h
 
 SRC2_NAME		=	push_swap.c reader_checker.c get_instructions.c\
 				quick_sort.c begin_algorithm.c apply_instructions.c apply_instructions_2.c\
-					visualizer.c\
+					visualizer.c new_algo.c\
 
 OBJ2_NAME		=	$(SRC2_NAME:.c=.o)
 INC2_NAME		=	checker.h

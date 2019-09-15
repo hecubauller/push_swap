@@ -130,6 +130,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/srcs/quick_sort.c.o"
   "CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
   "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
+  "CMakeFiles/push_swap.dir/srcs/new_algo.c.o"
   "push_swap.pdb"
   "push_swap"
 )
