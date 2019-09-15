@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 06:28:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_rra(t_stack **x, t_instr *instr)
+void	rra(t_stack **x, t_instr *instr)
 {
 	int 		tmp;
 	t_stack		*tmp_s;
@@ -37,7 +37,7 @@ void	ft_rra(t_stack **x, t_instr *instr)
 	instr->push_swap ? ft_putstr("rra\n") : 0;
 }
 
-void	ft_rrb(t_stack **x, t_instr *instr)
+void	rrb(t_stack **x, t_instr *instr)
 {
 	int 		tmp;
 	t_stack		*tmp_s;
@@ -62,7 +62,7 @@ void	ft_rrb(t_stack **x, t_instr *instr)
 	instr->push_swap ? ft_putstr("rrb\n") : 0;
 }
 
-void	ft_rrr(t_stack **a, t_stack **b, t_instr *instr)
+void	rrr(t_stack **a, t_stack **b, t_instr *instr)
 {
 	int 		tmp;
 	t_stack		*tmp_s;
@@ -100,7 +100,7 @@ void	ft_rrr(t_stack **a, t_stack **b, t_instr *instr)
 
 }
 
-void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
+void	pa(t_stack **a, t_stack **b, t_instr *instr)
 {
 	t_stack		*tmp_s;
 
@@ -137,7 +137,7 @@ void	ft_pa(t_stack **a, t_stack **b, t_instr *instr)
 
 }
 
-void	ft_pb(t_stack **a, t_stack **b, t_instr *instr)
+void	pb(t_stack **a, t_stack **b, t_instr *instr)
 {
 	t_stack		*tmp_s;
 

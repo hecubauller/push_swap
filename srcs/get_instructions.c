@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_free_lsts(t_stack **a)
+void	free_lsts(t_stack **a)
 {
 	t_stack *tmp;
 
@@ -25,7 +25,7 @@ void	ft_free_lsts(t_stack **a)
 	free(*a);
 }
 
-int 	ft_int_checker(char *tmp, int nb)
+int 	int_checker(char *tmp, int nb)
 {
 	char	*res_nb;
 	int 	i;
@@ -47,7 +47,7 @@ int 	ft_int_checker(char *tmp, int nb)
 		if (tmp[i] == '-')
 			neg = -1;
 		if (pos && ((tmp[++i] == '-') || tmp[i] == '+'))
-			ft_put_result(ERROR);
+			put_result(ERROR);
 		while (tmp[i] == '0')
 			i++;
 		while (tmp[i] >= '0' && tmp[i] <= '9')
@@ -63,7 +63,7 @@ int 	ft_int_checker(char *tmp, int nb)
 	return (SUCCESS);
 }
 
-void	ft_put_result(int res)
+void	put_result(int res)
 {
 	if (res == ERROR)
 		ft_putstr("Error\n");
@@ -73,7 +73,7 @@ void	ft_put_result(int res)
 		ft_putstr("KO\n");
 }
 
-int 	ft_check_output(t_stack **a, t_instr *in)
+int 	check_output(t_stack **a, t_instr *in)
 {
 	if (!(in->size_b))
 	{
@@ -91,21 +91,21 @@ int 	ft_check_output(t_stack **a, t_instr *in)
 	return (KO);
 }
 
-int		ft_get_input(t_instr *in, t_stack **a, t_stack **b)
+int		get_input(t_instr *in, t_stack **a, t_stack **b)
 {
 	char 		*line;
 
-	(*in).viz ? ft_vizualize_init(a, b, in) : 0;
+	(*in).viz ? vizualize_init(a, b, in) : 0;
 	while (get_next_line(0, &line))
 	{
-		if ((ft_check_valid_instr(&line, in)) == ERROR)
+		if ((check_valid_instr(&line, in)) == ERROR)
 		{
-			ft_free_lsts(a);
-			ft_free_lsts(b);
-			ft_put_result(ERROR);
+			free_lsts(a);
+			free_lsts(b);
+			put_result(ERROR);
 			exit (0);
 		}
-		ft_appl_instr(in, a, b);
+		appl_instr(in, a, b);
 		free(line);
 	}
 	free(line);

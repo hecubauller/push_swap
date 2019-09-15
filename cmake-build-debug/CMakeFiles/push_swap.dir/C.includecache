@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../includes/checker.h
-stdlib.h
--
-stdio.h
--
-../libft/includes/libft.h
-../libft/includes/libft.h
-../includes/ft_printf.h
-../includes/ft_printf.h
-../includes/get_next_line.h
-../includes/get_next_line.h
-
 ../libft/includes/ft_printf.h
 stdarg.h
 -
@@ -46,19 +34,19 @@ unistd.h
 string.h
 -
 
-/home/anastasiia/Desktop/push_swap/includes/checker.h
+/Users/huller/Desktop/push_swap/includes/checker.h
 stdlib.h
 -
 stdio.h
 -
 ../libft/includes/libft.h
-/home/anastasiia/Desktop/push_swap/libft/includes/libft.h
+/Users/huller/Desktop/push_swap/libft/includes/libft.h
 ../includes/ft_printf.h
-/home/anastasiia/Desktop/push_swap/includes/ft_printf.h
+/Users/huller/Desktop/push_swap/includes/ft_printf.h
 ../includes/get_next_line.h
-/home/anastasiia/Desktop/push_swap/includes/get_next_line.h
+/Users/huller/Desktop/push_swap/includes/get_next_line.h
 
-/home/anastasiia/Desktop/push_swap/libft/includes/libft.h
+/Users/huller/Desktop/push_swap/libft/includes/libft.h
 stdlib.h
 -
 unistd.h
@@ -66,39 +54,7 @@ unistd.h
 string.h
 -
 
-/home/anastasiia/Desktop/push_swap/srcs/apply_instructions.c
+/Users/huller/Desktop/push_swap/srcs/new_algo.c
 ../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/apply_instructions_2.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/begin_algorithm.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/get_instructions.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/new_algo.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/push_swap.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/quick_sort.c
-checker.h
-/home/anastasiia/Desktop/push_swap/srcs/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/reader_checker.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
-
-/home/anastasiia/Desktop/push_swap/srcs/visualizer.c
-../includes/checker.h
-/home/anastasiia/Desktop/push_swap/includes/checker.h
+/Users/huller/Desktop/push_swap/includes/checker.h
 

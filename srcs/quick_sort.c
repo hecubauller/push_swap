@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 15:59:04 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,28 @@ void 	push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		}
 		if ((*b) && ((*b)->nb > (*q)->max))
 			((*q)->max = (*b)->nb);
-		ft_turn_begin(b);
+		turn_begin(b);
 		while ((*b) && (*b)->nb != (*q)->max)
 		{
 			(*b) = (*b)->next;
 			++cnt;
 		}
-		ft_turn_begin(b);
+		turn_begin(b);
 		if (cnt != 0 && cnt <= ((*in)->size_b / 2))
 		{
 			while ((*b)->nb != (*q)->max)
-				ft_rb(b, *in);
+				rb(b, *in);
 		}
 		else if (cnt > ((*in)->size_b / 2))
 		{
 			while ((*b) && (*b)->nb != (*q)->max)
-				ft_rrb(b, *in);
+				rrb(b, *in);
 		}
-		ft_pa(a, b, *in);
+		pa(a, b, *in);
 	}
 }
 
-void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
+void	create_maxs(t_alg **q, t_stack **a, t_instr **in)
 {
 	int		cnt;
 	int 	i;
@@ -66,8 +66,8 @@ void	ft_create_maxs(t_alg **q, t_stack **a, t_instr **in)
 		return ;
 	if (!((*q)->ar_of_mx = (int *)malloc(sizeof(int) * (*q)->chunks)))
 		return ;
-	ft_create_array(ar, a, q, in);
-	ft_quick_sort(ar, 0, (*in)->size_a);
+	create_array(ar, a, q, in);
+	quick_sort(ar, 0, (*in)->size_a);
 //	i = -1;
 //	ft_putstr(GRN"sorted array: "RESET);
 //	while (++i != 15)
@@ -106,7 +106,7 @@ void	cnt_place(t_stack **a, t_instr **in, t_alg **q)
 		cnt++;
 	}
 	(!(*a)->next && (*a)->nb != (*q)->hold_first) ? (cnt = NOT_IN_STACK) : 0;
-	ft_turn_end(a);
+	turn_end(a);
 	while ((*a) && (*a)->prev && (*a)->nb != (*q)->hold_second)
 	{
 		(*a) = (*a)->prev;
@@ -196,23 +196,23 @@ void 	how_long(t_instr *in, t_alg **q)
 	}
 }
 
-void	ft_create_array(int *ar, t_stack **a, t_alg **q, t_instr **in)
+void	create_array(int *ar, t_stack **a, t_alg **q, t_instr **in)
 {
 	int i;
 
 	i = -1;
-	ft_turn_begin(a);
+	turn_begin(a);
 	while ((*a) && (*a)->next)
 	{
 		ar[++i] = (*a)->nb;
 		(*a) = (*a)->next;
 	}
 	ar[++i] = (*a)->nb;
-	ft_turn_begin(a);
+	turn_begin(a);
 }
 
 
-int 	ft_partition(int l, int h, int *ar)
+int 	partition(int l, int h, int *ar)
 {
 	int pivot;
 	int i;
@@ -242,15 +242,15 @@ int 	ft_partition(int l, int h, int *ar)
 	return (j);
 }
 
-void	ft_quick_sort(int *ar, int l, int h)
+void	quick_sort(int *ar, int l, int h)
 {
 	int 	j; //end
 	int 	i; //beginning
 
 	if (l < h)
 	{
-		j = ft_partition(l, h, ar);
-		ft_quick_sort(ar, l, j);
-		ft_quick_sort(ar, j + 1, h);
+		j = partition(l, h, ar);
+		quick_sort(ar, l, j);
+		quick_sort(ar, j + 1, h);
 	}
 }

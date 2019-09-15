@@ -6,13 +6,13 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int 	ft_check_valid_instr(char **line, t_instr *in)
+int 	check_valid_instr(char **line, t_instr *in)
 {
 	if (!ft_strcmp(*line, "sa"))
 		in->inst |= SA;
@@ -41,7 +41,7 @@ int 	ft_check_valid_instr(char **line, t_instr *in)
 	return (SUCCESS);
 }
 
-void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
+void	add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 {
 	t_stack		*tmp2;
 	t_stack		*begin;
@@ -52,10 +52,10 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	{
 		tmp_str = argv[tmp];
 		(*a)->nb = ft_atoi(argv[tmp]);
-		if ((ft_int_checker(tmp_str, (*a)->nb) == ERROR))
+		if ((int_checker(tmp_str, (*a)->nb) == ERROR))
 		{
-			ft_free_lsts(a);
-			ft_put_result(ERROR);
+			free_lsts(a);
+			put_result(ERROR);
 			exit (FAIL);
 		}
 		in->size_a++;
@@ -74,14 +74,14 @@ void	ft_add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	}
 	if (in->size_a == 1)
 	{
-		ft_free_lsts(a);
-		ft_put_result(ERROR);
+		free_lsts(a);
+		put_result(ERROR);
 		exit (FAIL);
 	}
 	(*a) = begin;
 }
 
-int		ft_check_dubl(char **argv, int tmp)
+int		check_dubl(char **argv, int tmp)
 {
 	int 	cnt;
 	int 	cnst;
@@ -113,7 +113,7 @@ int		ft_check_dubl(char **argv, int tmp)
 	return (SUCCESS);
 }
 
-void	ft_newlist_ch(t_stack **a)
+void	newlist_ch(t_stack **a)
 {
 	if (!((*a) = (t_stack *)malloc(sizeof(t_stack))))
 		exit(FAIL);
@@ -121,7 +121,7 @@ void	ft_newlist_ch(t_stack **a)
 	(*a)->prev = NULL;
 }
 
-int		ft_reader_argv(t_stack **a, t_instr **in, char **argv)
+int		reader_argv(t_stack **a, t_instr **in, char **argv)
 {
 	int i;
 	int cnt;
@@ -146,9 +146,9 @@ int		ft_reader_argv(t_stack **a, t_instr **in, char **argv)
 		if (argv[cnt][i])
 			return (ERROR);
 	}
-	if ((ft_check_dubl(argv, tmp) == ERROR))
+	if ((check_dubl(argv, tmp) == ERROR))
 		return (ERROR);
-	ft_newlist_ch(a);
-	ft_add_nbrs(tmp, a, argv, *in);
+	newlist_ch(a);
+	add_nbrs(tmp, a, argv, *in);
 	return (SUCCESS);
 }

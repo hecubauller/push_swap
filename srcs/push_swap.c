@@ -6,20 +6,20 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 04:47:18 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-t_stack	*ft_turn_end(t_stack **x)
+t_stack	*turn_end(t_stack **x)
 {
 	while ((*x) && (*x)->next)
 		(*x) = (*x)->next;
 	return (*x);
 }
 
-t_stack	*ft_turn_begin(t_stack **x)
+t_stack	*turn_begin(t_stack **x)
 {
 	while ((*x) && (*x)->prev)
 		(*x) = (*x)->prev;
@@ -47,16 +47,16 @@ int main(int argc, char **argv)
 		av_str = ft_strsplit(argv[1], ' ');
 		in->split++;
 	}
-	if ((ft_reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
+	if ((reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
 	{
-		ft_free_lsts(&a);
+		free_lsts(&a);
 		ft_putstr("Error\n");
 		free(in);
 		return (0);
 	}
-	ft_algorithm(in, &a, &b);
-	ft_free_lsts(&a);
-	ft_free_lsts(&b);
+	algorithm(in, &a, &b);
+	free_lsts(&a);
+	free_lsts(&b);
 	free(in);
 	return (SUCCESS);
 }

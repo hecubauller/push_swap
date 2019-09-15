@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 04:39:47 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 14:40:49 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr)
+void	vizualize_init(t_stack **a, t_stack **b, t_instr *instr)
 {
 	t_stack		*tmp_a;
 	t_stack		*tmp_b;
@@ -48,7 +48,7 @@ void	ft_vizualize_init(t_stack **a, t_stack **b, t_instr *instr)
 	ft_printf(YEL"%18s %d\n\n"RESET, "SIZE:", instr->size_b);
 }
 
-void	ft_vizualize_check(t_stack **a, t_stack **b, t_instr *instr)
+void	vizualize_check(t_stack **a, t_stack **b, t_instr *instr)
 {
 	t_stack		*tmp_a;
 	t_stack		*tmp_b;

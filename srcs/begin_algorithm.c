@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/09/05 17:08:23 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/16 00:28:19 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
+void 	check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
 	int 	tmp;
 	t_stack	*tmp_s;
@@ -28,16 +28,16 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 	act = 0;
 	tmp_s = NULL;
 	if (!(*b)) //if 'b' is empty
-		ft_pb(a, b, in);
+		pb(a, b, in);
 	else if ((*b) && !(*b)->next) //if there is only one list
 	{
 		if ((*a) && (*b) && (*b)->nb > (*a)->nb) //number in 'b' is bigger
 		{
-			ft_pb(a, b, in);
-			ft_sb(b, in);
+			pb(a, b, in);
+			sb(b, in);
 		}
 		else //number in 'b' is smaller
-			ft_pb(a, b, in);
+			pb(a, b, in);
 	}
 	else //more than 1 list in stack 'b'
 	{
@@ -46,11 +46,11 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 			(*b) = (*b)->next;
 			tmp_s = (*b);
 		}
-		ft_turn_begin(b);
+		turn_begin(b);
 		if (tmp_s && tmp_s->next == NULL && tmp_s->nb > (*a)->nb) //если a->nb ньше всех в стеке b
 		{
-			ft_pb(a, b, in);
-			ft_rb(b, in);
+			pb(a, b, in);
+			rb(b, in);
 		}
 		else
 		{
@@ -62,54 +62,54 @@ void 	ft_check_b(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 				while ((*a)->nb < (*b)->nb)
 					(*b) = (*b)->next;
 				tmp2 = (*b)->nb; //push to
-				ft_turn_begin(b);
+				turn_begin(b);
 				while ((*b)->nb != tmp2)
-					ft_rb(b, in);
-				ft_pb(a, b, in);
+					rb(b, in);
+				pb(a, b, in);
 				while ((*b)->nb != tmp)
-					ft_rrb(b, in);
+					rrb(b, in);
 			}
 			else if ((*a) && (*b) && (*b)->nb > (*a)->nb &&
 				(!(*b)->next || (((*b)->next->nb < (*b)->nb &&
 				(*a)->nb > (*b)->next->nb))))
 			{
-				ft_rb(b, in);
-				ft_pb(a, b, in);
-				ft_rrb(b, in);
+				rb(b, in);
+				pb(a, b, in);
+				rrb(b, in);
 			}
 			else if ((*a) && (*b) && (*a)->nb > (*b)->nb)
-				ft_pb(a, b, in);
+				pb(a, b, in);
 		}
 	}
 }
 
-void	ft_push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
+void	push_up(t_stack **a, t_stack **b, t_instr *in, t_alg **q)
 {
 	if ((*q)->res == NTHNG)
 		;
 	else if ((*a) && ((*q)->res == F_RA || (*q)->res == F_RRA))
 	{
 		while (((*q)->res == F_RA) && (*a)->nb != (*q)->hold_first) //infinite loop
-			ft_ra(a, in);
+			ra(a, in);
 		while (((*q)->res == F_RRA) && (*a)->nb != (*q)->hold_first)
-			ft_rra(a, in);
+			rra(a, in);
 	}
 	else if ((*a) && ((*q)->res == S_RA || (*q)->res == S_RRA))
 	{
 		while (((*q)->res == S_RA) && (*a)->nb != (*q)->hold_second)
-			ft_ra(a, in);
+			ra(a, in);
 		while (((*q)->res == S_RRA) && (*a)->nb != (*q)->hold_second)
-			ft_rra(a, in);
+			rra(a, in);
 	}
 	(*q)->res = 0;
 }
 
-void	ft_push_a(t_stack **a, t_stack **b, t_instr *in)
+void	push_a(t_stack **a, t_stack **b, t_instr *in)
 {
-	ft_turn_begin(b);
+	turn_begin(b);
 	while ((*b))
-		ft_pa(a, b, in);
-	ft_free_lsts(a);
+		pa(a, b, in);
+	free_lsts(a);
 	exit(0);
 }
 
@@ -120,15 +120,15 @@ void	create_maxmin(t_stack **a, t_instr **in, t_alg **q)
 	(*q)->chunks = ((*in)->size_a % 10) ? (*in)->size_a / 10 + 1 :
 				   (*in)->size_a / 10; //количество чанков
 	(*q)->cnt_up = *a; //счетчик сверху
-	(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
-	ft_turn_begin(a);
+	(*q)->cnt_dwn = turn_end(a); //счетчик низу
+	turn_begin(a);
 	while ((*a) && (*a)->next) //поиск максимума
 	{
 		((*a)->nb > (*q)->max) ? ((*q)->max = (*a)->nb) : 0;
 		((*a) = (*a)->next);
 	}
 	((*a)->nb > (*q)->max) ? ((*q)->max = (*a)->nb) : 0;
-	ft_turn_begin(a);
+	turn_begin(a);
 	while ((*a) && (*a)->next)// поиск минимума
 	{
 		((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
@@ -137,7 +137,7 @@ void	create_maxmin(t_stack **a, t_instr **in, t_alg **q)
 	((*a)->nb < (*q)->min) ? ((*q)->min = (*a)->nb) : 0;
 }
 
-void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
+void	check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 {
 	int 	i;
 	int 	x;
@@ -151,16 +151,16 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	cnt = 9;
 	minimum = 0;
 	create_maxmin(a, in, q); //поиск максимума и минимума
-	ft_create_maxs(q, a, in); //создание max's чанков
+	create_maxs(q, a, in); //создание max's чанков
 	minimum = (*q)->min; //start from the smallest nb
 	while ((*a)) //пока стек А не будет пустым
 	{
 		x = 0;
 		y = 0;
-		ft_turn_begin(a);
+		turn_begin(a);
 		(*q)->cnt_up = (*a); //счетчик сверху
-		(*q)->cnt_dwn = ft_turn_end(a); //счетчик низу
-		ft_turn_begin(a);
+		(*q)->cnt_dwn = turn_end(a); //счетчик низу
+		turn_begin(a);
 		while ((*q)->cnt_up != (*q)->cnt_dwn && (!x || !y)) // пока счетчики не пересекутся
 		{
 			if ((*q)->cnt_up->nb >= minimum && (*q)->cnt_up->nb <=
@@ -184,10 +184,10 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 		{
 			cnt_place(a, in, q);
 			how_long(*in, q); //какое значение оптимальнее двигать вверх
-			ft_turn_begin(a);
+			turn_begin(a);
 		}
-		ft_push_up(a, b, *in, q);
-		ft_pb(a, b, *in);
+		push_up(a, b, *in, q);
+		pb(a, b, *in);
 		//ft_check_b(a, b, in, q); //push to b
 		if (cnt)
 			--cnt;
@@ -202,7 +202,7 @@ void	ft_check_size(t_stack **a, t_stack **b, t_instr **in, t_alg **q)
 	//ft_push_a(a, b, *in);
 }
 
-int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
+int		alg_hundred(t_instr *in, t_stack **a, t_stack **b)
 {
 	t_alg	*q;
 	int 	x;
@@ -219,7 +219,7 @@ int		ft_alg_hundred(t_instr *in, t_stack **a, t_stack **b)
 	q->hold_second = 0;
 	q->place[0] = -1;
 	q->place[1] = -1;
-	ft_check_size(a, b, &in, &q);
+	check_size(a, b, &in, &q);
 	return (SUCCESS);
 }
 
@@ -227,21 +227,21 @@ int 	alg_three(t_instr *in, t_stack **a)
 {
 	if ((*a)->nb < (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb &&
 			(*a)->next->next->nb < (*a)->nb)
-		ft_rra(a, in);
+		rra(a, in);
 	else if ((*a)->nb > (*a)->next->nb && (*a)->next->next->nb > (*a)->next->nb &&
 		(*a)->nb < (*a)->next->next->nb)
-		ft_sa(a, in);
+		sa(a, in);
 	else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb)
 	{
-		ft_sa(a, in);
-		ft_rra(a, in);
+		sa(a, in);
+		rra(a, in);
 	}
 	else if ((*a)->nb > (*a)->next->nb && (*a)->next->nb < (*a)->next->next->nb)
-		ft_ra(a, in);
+		ra(a, in);
 	else if ((*a)->nb < (*a)->next->nb && (*a)->next->next->nb < (*a)->next->nb)
 	{
-		ft_sa(a, in);
-		ft_ra(a, in);
+		sa(a, in);
+		ra(a, in);
 	}
 	return (SUCCESS);
 }
@@ -249,7 +249,7 @@ int 	alg_three(t_instr *in, t_stack **a)
 void	alg_two(t_instr *in, t_stack **a)
 {
 	if ((*a)->nb > (*a)->next->nb)
-		ft_sa(a, in);
+		sa(a, in);
 }
 
 int 	ft_is_sorted(t_instr *in, t_stack **a, t_stack **b)
@@ -258,12 +258,12 @@ int 	ft_is_sorted(t_instr *in, t_stack **a, t_stack **b)
 		(*a) = (*a)->next;
 	if ((*a)->prev && (*a)->nb > (*a)->prev->nb && !(*a)->next)
 	{
-		ft_turn_begin(a);
+		turn_begin(a);
 		return (SUCCESS);
 	}
 	else
 	{
-		ft_turn_begin(a);
+		turn_begin(a);
 		return (FAIL);
 	}
 }
@@ -274,65 +274,65 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 	int tmp2;
 
 	tmp = 0;
-	ft_pb(a, b, in);
-	ft_pb(a, b, in);
+	pb(a, b, in);
+	pb(a, b, in);
 	alg_three(in, a);
 	while ((*b))
 	{
 		if ((*b)->nb < (*a)->nb) // 'b' is smaller than all nbrs in 'a'
-			ft_pa(a, b, in);
+			pa(a, b, in);
 		else if ((*b)->nb > (*a)->next->next->nb && (!(*a)->next->next->next || (*b)->nb > (*a)->next->next->next->nb )) //'b->nb' is bigger than all nbrs in 'a'
 		{
 			tmp = (*a)->nb;
-			ft_pa(a, b, in);
+			pa(a, b, in);
 			if ((*b) && (*b)->nb < (*a)->nb && (((*b)->nb > (*a)->next->next->next->nb)))
 			{
-				ft_pa(a, b, in);
-				ft_ra(a, in);
+				pa(a, b, in);
+				ra(a, in);
 			}
 			while ((*a)->nb != tmp)
-				ft_ra(a, in);
+				ra(a, in);
 		}
 		else if ((*b)->nb > (*a)->nb && (*b)->nb < (*a)->next->nb)
 		{
-			ft_ra(a, in);
-			ft_pa(a, b, in);
-			ft_rra(a, in);
+			ra(a, in);
+			pa(a, b, in);
+			rra(a, in);
 		}
 		else if ((*b)->nb > (*a)->nb && (*b)->nb > (*a)->next->nb)
 		{
 			tmp = (*a)->nb;
 			if ((*b)->nb > (*a)->next->next->nb)
 			{
-				ft_rra(a, in);
-				ft_pa(a, b, in);
-				ft_ra(a, in);
-				ft_ra(a, in);
+				rra(a, in);
+				pa(a, b, in);
+				ra(a, in);
+				ra(a, in);
 			}
 			else
 			{
-				ft_ra(a, in);
-				ft_ra(a, in);
-				ft_pa(a, b, in);
+				ra(a, in);
+				ra(a, in);
+				pa(a, b, in);
 			}
 			if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb < (*a)->next->next->next->nb)
 			{
-				ft_rra(a, in);
-				ft_pa(a, b, in);
+				rra(a, in);
+				pa(a, b, in);
 			}
 			else if ((*b) && (*b)->nb > (*a)->nb && (*b)->nb < (*a)->next->next->next->nb
 				&& (*b)->nb > (*a)->next->nb && (*b)->nb > (*a)->next->next->nb)
 			{
-				ft_rra(a, in);
-				ft_pa(a, b, in);
-				ft_ra(a, in);
-				ft_ra(a, in);
+				rra(a, in);
+				pa(a, b, in);
+				ra(a, in);
+				ra(a, in);
 			}
 			else if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb > (*a)->next->next->next->nb
 				&& (*b)->nb > (*a)->next->next->nb && (*b)->nb > (*a)->next->nb)
-				ft_pa(a, b, in);
+				pa(a, b, in);
 			while ((*a)->nb != tmp)
-				ft_rra(a, in);
+				rra(a, in);
 		}
 		else if ((*b)->nb > (*a)->nb) //'b' is bigger than few nbrs
 		{
@@ -340,15 +340,15 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 			while ((*b)->nb > (*a)->nb)
 				(*a) = (*a)->next;
 			if ((*a)->next)
-			ft_pa(a, b, in);
+			pa(a, b, in);
 			while ((*a)->nb != tmp)
-				ft_ra(a, in);
+				ra(a, in);
 		}
 	}
 	return (SUCCESS);
 }
 
-int 	ft_algorithm(t_instr *in, t_stack **a, t_stack **b)
+int 	algorithm(t_instr *in, t_stack **a, t_stack **b)
 {
 	if (ft_is_sorted(in, a, b))
 		return (SUCCESS);
