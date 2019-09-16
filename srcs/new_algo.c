@@ -35,6 +35,9 @@ void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 		}
 		//сколько каких действий?
 	}
+	while ((*a) && )
+	pa(a, b, in);
+
 }
 
 void	total_cmnds(t_sort **p)
@@ -121,12 +124,15 @@ void	cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 			break;
 		}
 		(*a) = (*a)->next;
+		cnt++;
 	}
 	while ((*a)) //куда вставить число
 	{
 		if (((*a)->nb > (*b)->nb && (*a)->prev->nb < (*b)->nb) ||
 			((*a)->nb > (*b)->nb && !(*a)->prev && end < (*b)->nb))
+		{
 			break;
+		}
 		(*a) = (*a)->next;
 		cnt++;
 	}
@@ -169,7 +175,6 @@ void 	cnt_cmnds_b(t_stack **b, t_instr *in, t_sort **p)
 		(*p)->cmnd_b = ((*in).size_b - cnt);
 		(*p)->rrb = 1;
 	}
-	// куда записывать кол-во команд?
 }
 
 void	new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
