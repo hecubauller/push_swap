@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/16 00:14:12 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/17 20:52:26 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		main(int argc, char **argv)
 	}
 	else if (in->viz && argc > 3)
 		in->viz = 2;
-	if ((_reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
+	if ((reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
 	{
 		free_lsts(&a);
 		ft_putstr("Error\n");

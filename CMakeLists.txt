@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(push_swap C)
+project(push_swap)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 include_directories(includes)
 include_directories(libft/includes)
@@ -138,7 +138,9 @@ add_executable(push_swap
         srcs/apply_instructions_2.c
         srcs/begin_algorithm.c
         srcs/get_instructions.c
+        srcs/new_algo.c
         srcs/push_swap.c
         srcs/quick_sort.c
         srcs/reader_checker.c
-        srcs/visualizer.c srcs/new_algo.c)
+        srcs/visualizer.c
+        Makefile)

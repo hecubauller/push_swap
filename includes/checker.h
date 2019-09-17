@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/16 01:06:50 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/17 22:02:00 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,15 +120,17 @@ typedef struct 			s_sort
 	int 				p_rb;
 	int 				p_rrb;
 	int 				p_rra;
-	int 				push_nb;
+//	int 				push_nb;
 	int 				tot_cmnds;
 	int 				nb; //number now
 	int 				min;
+	int 				max;
 }						t_sort;
 /*
  * FUNCTIONS
  */
 
+void		compare_comands(t_sort **p);
 void 		apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void		total_cmnds(t_sort **p);
 void		cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
@@ -136,6 +138,7 @@ void 		cnt_cmnds_b(t_stack **b, t_instr *in, t_sort **p);
 void		new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void 		finish_stack(t_stack **a, t_instr *in, t_sort **p);
 void 		create_min(t_stack **a, t_sort **p);
+void 		create_max(t_stack **a, t_sort **p);
 void 		push_to_a(t_stack **a, t_stack **b, t_instr *in);
 void 		push_back(t_stack **a, t_stack **b, t_instr **in, t_alg **q);
 void		put_result(int res);
