@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/17 20:52:26 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/18 21:11:28 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	free_lsts(t_stack **a)
 {
 	t_stack *tmp;
 
-	while ((*a) && (*a)->next)
+	if ((*a))
 	{
-		tmp = *a;
-		(*a) = (*a)->next;
-		free(tmp);
+		while ((*a) && (*a)->next)
+		{
+			tmp = *a;
+			(*a)->next ? (*a) = (*a)->next : 0;
+			tmp ? free(tmp) : 0;
+		}
+		(*a) ? free(*a) : 0;
 	}
-	free(*a);
 }
 
 int 	int_checker(char *tmp, int nb)

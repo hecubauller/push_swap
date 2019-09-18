@@ -16,26 +16,8 @@ void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 {
 	turn_begin(a);
 	turn_begin(b);
-	while ((*b) && (*b)->nb != (*p)->prev_nb)
-	{
-		if ((*p)->p_rb)
-		{
-			rb(b, in);
-			(*p)->p_rb--;
-		}
-		if ((*p)->p_rrb)
-		{
-			rrb(b, in);
-			(*p)->p_rrb--;
-		}
-		if ((*p)->p_rrr)
-		{
-			rrr(a, b, in);
-			(*p)->p_rrr--;
-		}
-	}
 	while (((*p)->p_ra || (*p)->p_rr || (*p)->p_rb ||
-		(*p)->p_rra || (*p)->p_rrr || (*p)->p_rrb))
+			(*p)->p_rra || (*p)->p_rrr || (*p)->p_rrb))
 	{
 		if ((*p)->p_ra)
 		{
@@ -62,15 +44,13 @@ void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 			(*p)->p_rb--;
 			rb(b, in);
 		}
-		if ((*p)->p_rr)
+		if ((*p)->p_rrr)
 		{
 			(*p)->p_rrr--;
 			rrr(a, b, in);
 		}
-
 	}
 	pa(a, b, in);
-
 }
 
 void	total_cmnds(t_sort **p)
@@ -78,55 +58,57 @@ void	total_cmnds(t_sort **p)
 	(*p)->tot_cmnds = 0;
 	if ((*p)->rb && (*p)->ra)
 	{
-		if ((*p)->cmnd_a == (*p)->cmnd_b)
+		if ((*p)->ra == (*p)->rb)
 		{
-			(*p)->tot_cmnds = (*p)->cmnd_a;
-			(*p)->rr = (*p)->cmnd_a;
+			(*p)->tot_cmnds = (*p)->ra;
+			(*p)->rr = (*p)->ra;
 			(*p)->ra = 0;
 			(*p)->rb = 0;
 		}
-		else if ((*p)->cmnd_a > (*p)->cmnd_b)
+		else if ((*p)->ra > (*p)->rb)
 		{
-			(*p)->rb = 0;
-			(*p)->rr = (*p)->cmnd_b;
-			(*p)->ra = (*p)->cmnd_a - (*p)->cmnd_b;
+			(*p)->rr = (*p)->rb;
+			(*p)->ra = (*p)->ra - (*p)->rb;
 			(*p)->tot_cmnds = (*p)->cmnd_a;
+			(*p)->rb = 0;
 		}
-		else if ((*p)->cmnd_a < (*p)->cmnd_b)
+		else if ((*p)->ra < (*p)->rb)
 		{
+			(*p)->rr = (*p)->ra;
+			(*p)->rb = (*p)->rb - (*p)->ra;
 			(*p)->ra = 0;
-			(*p)->rr = (*p)->cmnd_b;
-			(*p)->rb = (*p)->cmnd_b - (*p)->cmnd_a;
 			(*p)->tot_cmnds = (*p)->cmnd_b;
 		}
 	}
 	else if ((*p)->rrb && (*p)->rra)
 	{
-		if ((*p)->cmnd_a == (*p)->cmnd_b)
+		if ((*p)->rra == (*p)->rrb)
 		{
-			(*p)->tot_cmnds = (*p)->cmnd_a;
-			(*p)->rrr = (*p)->cmnd_a;
+			(*p)->tot_cmnds = (*p)->rra;
+			(*p)->rrr = (*p)->rra;
 			(*p)->rra = 0;
 			(*p)->rrb = 0;
 		}
-		else if ((*p)->cmnd_a > (*p)->cmnd_b)
+		else if ((*p)->rra > (*p)->rrb)
 		{
+			(*p)->rrr = (*p)->rrb;
+			(*p)->rra = (*p)->rra - (*p)->rrb;
 			(*p)->rrb = 0;
-			(*p)->rrr = (*p)->cmnd_b;
-			(*p)->rra = (*p)->cmnd_a - (*p)->cmnd_b;
 			(*p)->tot_cmnds = (*p)->cmnd_a;
 		}
-		else if ((*p)->cmnd_a < (*p)->cmnd_b)
+		else if ((*p)->rra < (*p)->rrb)
 		{
+			(*p)->rrr = (*p)->rrb;
+			(*p)->rrb = (*p)->rrb - (*p)->rra;
 			(*p)->rra = 0;
-			(*p)->rrr = (*p)->cmnd_b;
-			(*p)->rrb = (*p)->cmnd_b - (*p)->cmnd_a;
 			(*p)->tot_cmnds = (*p)->cmnd_b;
 		}
 	}
 	else if (((*p)->rb && (*p)->rra) || ((*p)->rrb || (*p)->ra ||
 			(*p)->ra || (*p)->rra || (*p)->rb || (*p)->rrb))
+	{
 		(*p)->tot_cmnds = (*p)->cmnd_a + (*p)->cmnd_b;
+	}
 
 	if ((*p)->p_ra == -1)
 	{
@@ -182,15 +164,22 @@ void	cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 	turn_begin(a);
 	while ((*a)) //куда вставить число
 	{
-		if (!(*a)->prev && (*a)->nb == (*p)->max && (*b)->nb > (*p)->max)//WRONG!!!!!!!!!!
-		{
-			cnt ++;
-			break;
-		}
-		else if (((*a)->prev && (*a)->nb > (*b)->nb && (*a)->prev->nb < (*b)->nb)
+//		if ((*a)->nb == start && (*b)->nb > (*a)->nb && end > (*b)->nb)
+//			break;
+		if (((*a)->prev && (*a)->nb > (*b)->nb && (*a)->prev->nb < (*b)->nb)
 			|| ((*a)->nb > (*b)->nb && !(*a)->prev && end < (*b)->nb)
 			|| ((*a)->nb > (*b)->nb && (*a)->nb == start))
 		{
+			break;
+		}
+		else if ((!(*a)->prev && (*a)->nb == (*p)->max && (*b)->nb > (*p)->max))
+		{
+			cnt++;
+			break;
+		}
+		else if ((*a)->nb < (*b)->nb && (*a)->nb == (*p)->max)
+		{
+			cnt++;
 			break;
 		}
 		cnt++;
@@ -211,12 +200,12 @@ void	cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 	if (cnt && cnt <= ((*in).size_a / 2))
 	{
 		(*p)->cmnd_a = cnt;
-		(*p)->ra = 1;
+		(*p)->ra = cnt;
 	}
 	else if (cnt > ((*in).size_a / 2))
 	{
 		(*p)->cmnd_a = ((*in).size_a - cnt);
-		(*p)->rra = 1;
+		(*p)->rra = ((*in).size_a - cnt);
 	}
 	turn_begin(a);
 }
@@ -248,12 +237,12 @@ void 	cnt_cmnds_b(t_stack **b, t_instr *in, t_sort **p)
 	if (cnt && cnt <= ((*in).size_b / 2))
 	{
 		(*p)->cmnd_b = cnt;
-		(*p)->rb = 1;
+		(*p)->rb = cnt;
 	}
 	else if (cnt > ((*in).size_b / 2))
 	{
 		(*p)->cmnd_b = ((*in).size_b - cnt);
-		(*p)->rrb = 1;
+		(*p)->rrb = ((*in).size_b - cnt);
 	}
 }
 
@@ -268,6 +257,19 @@ void	compare_comands(t_sort **p)
 		(*p)->p_rr = (*p)->rr;
 		(*p)->p_rrr = (*p)->rrr;
 		(*p)->prev_nb = (*p)->nb;
+		(*p)->prev_cmnds = (*p)->tot_cmnds;
+	}
+}
+
+void	algo_loop(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
+{
+	while ((*b) && (*b)->next)
+	{
+		cnt_cmnds_b(b, in, p);
+		cnt_cmnds_a(a, b, in, p);
+		total_cmnds(p);
+		compare_comands(p);
+		(*b) = (*b)->next;
 	}
 }
 
@@ -283,14 +285,7 @@ void	new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 		(*p)->p_rrb = -1;
 		(*p)->p_rra = -1;
 		(*p)->prev_nb = (*b)->nb;
-		while ((*b) && (*b)->next)
-		{
-			cnt_cmnds_b(b, in, p);
-			cnt_cmnds_a(a, b, in, p);
-			total_cmnds(p);
-			compare_comands(p);
-			(*b) = (*b)->next;
-		}
+		algo_loop(a, b, in, p);
 		cnt_cmnds_b(b, in, p);
 		cnt_cmnds_a(a, b, in, p);
 		total_cmnds(p);
@@ -309,7 +304,8 @@ void 	create_min(t_stack **a, t_sort **p)
 		((*a)->nb < (*p)->min) ? ((*p)->min = (*a)->nb) : 0;
 		(*a) = (*a)->next;
 	}
-	(((*a) && (*a)->nb) < (*p)->min) ? ((*p)->min = (*a)->nb) : 0;
+	if ((*a)->nb < (*p)->min)
+		(*p)->min = (*a)->nb;
 }
 
 void 	finish_stack(t_stack **a, t_instr *in, t_sort **p)
@@ -318,16 +314,17 @@ void 	finish_stack(t_stack **a, t_instr *in, t_sort **p)
 
 	cnt = 0;
 	create_min(a, p);
+	turn_begin(a);
 	while ((*a) && (*a)->next && (*a)->nb != (*p)->min)
 	{
 		(*a) = (*a)->next;
 		cnt++;
 	}
-	if ((*a) && (*a)->nb == (*p)->min)
-	{
-		rra(a, in);
-		return ;
-	}
+//	if ((*a) && (*a)->nb == (*p)->min)
+//	{
+//		rra(a, in);
+//		return ;
+//	}
 	turn_begin(a);
 	if (cnt && cnt <= ((*in).size_a / 2))
 	{

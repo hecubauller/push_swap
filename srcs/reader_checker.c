@@ -98,7 +98,7 @@ int		check_dubl(char **argv, int tmp)
 	while (argv[tmp])
 	{
 		cnt = cnst;
-		while (argv[cnt] && cnt <= len)
+		while (cnt <= len && argv[cnt])
 		{
 			cnt == tmp ? ++cnt : 0;
 			if (argv[cnt])
