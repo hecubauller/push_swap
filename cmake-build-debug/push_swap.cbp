@@ -8,493 +8,495 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/huller/Desktop/push_swap/cmake-build-debug"/>
+				<Option working_dir="/home/huller/Desktop/push_swap/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/huller/Desktop/push_swap/cmake-build-debug"/>
+				<Option working_dir="/home/huller/Desktop/push_swap/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/huller/Desktop/push_swap/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="push_swap">
-				<Option output="/Users/huller/Desktop/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/huller/Desktop/push_swap/cmake-build-debug"/>
+				<Option output="/home/huller/Desktop/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/huller/Desktop/push_swap/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/huller/Desktop/push_swap/includes"/>
-					<Add directory="/Users/huller/Desktop/push_swap/libft/includes"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/huller/Desktop/push_swap/includes"/>
+					<Add directory="/home/huller/Desktop/push_swap/libft/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="push_swap/fast">
-				<Option output="/Users/huller/Desktop/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/huller/Desktop/push_swap/cmake-build-debug"/>
+				<Option output="/home/huller/Desktop/push_swap/cmake-build-debug/push_swap" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/huller/Desktop/push_swap/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/huller/Desktop/push_swap/includes"/>
-					<Add directory="/Users/huller/Desktop/push_swap/libft/includes"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/home/huller/Desktop/push_swap/includes"/>
+					<Add directory="/home/huller/Desktop/push_swap/libft/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 push_swap/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/huller/Desktop/push_swap/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/huller/Desktop/push_swap/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/huller/Desktop/push_swap/Makefile">
+		<Unit filename="/home/huller/Desktop/push_swap/Makefile">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/includes/checker.h">
+		<Unit filename="/home/huller/Desktop/push_swap/includes/checker.h">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/includes/ft_printf.h">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/includes/ft_printf.h">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/includes/get_next_line.h">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/includes/get_next_line.h">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/includes/libft.h">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/includes/libft.h">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/add_z.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/add_z.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/apply_flags.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/apply_flags.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/c_str.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/c_str.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_b.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_b.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_c.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_c.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_di.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_di.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_e.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_e.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_f.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_f.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_g.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_g.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_o.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_o.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_p.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_p.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_sr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_sr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_u.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_u.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_x.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_x.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/chck_xu.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/chck_xu.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/e_zrs.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/e_zrs.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/fld_edge.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/fld_edge.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/fr_p.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/fr_p.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_abs.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_abs.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_add_pl.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_add_pl.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_app_d_prs.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_app_d_prs.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_app_fl.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_app_fl.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_app_width.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_app_width.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_atoi.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_atoi.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_bufjoin.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_bufjoin.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_bzero.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_bzero.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_c.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_c.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_cycle6.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_cycle6.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_d.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_d.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_e.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_e.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_factorial.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_factorial.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_fld.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_fld.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_free_output.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_free_output.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_g.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_g.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_isalnum.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_isalnum.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_isalpha.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_isalpha.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_isascii.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_isascii.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_isdigit.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_isdigit.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_isprint.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_isprint.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_itoa.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_itoa.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_itoa_base.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_itoa_base.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_itoa_fp.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_itoa_fp.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstadd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstadd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstdel.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstdel.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstdelone.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstdelone.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstiter.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstiter.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstmap.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstmap.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_lstnew.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_lstnew.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memalloc.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memalloc.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memccpy.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memccpy.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memchr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memchr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memcmp.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memcmp.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memcpy.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memcpy.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memdel.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memdel.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memmove.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memmove.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_memset.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_memset.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_ox.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_ox.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_p.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_p.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_printf.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_printf.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_put_out.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_put_out.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_put_percent.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_put_percent.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putchar.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putchar.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putchar_fd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putchar_fd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putendl.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putendl.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putendl_fd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putendl_fd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putnbr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putnbr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putnbr_fd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putnbr_fd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putstr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putstr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_putstr_fd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_putstr_fd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_rg.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_rg.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_round.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_round.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_s.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_s.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_solver.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_solver.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_sqrt.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_sqrt.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strcat.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strcat.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strchr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strchr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strclr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strclr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strcmp.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strcmp.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strcpy.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strcpy.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strdel.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strdel.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strdup.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strdup.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strequ.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strequ.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_striter.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_striter.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_striteri.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_striteri.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strjoin.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strjoin.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strlcat.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strlcat.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strlen.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strlen.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strmap.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strmap.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strmapi.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strmapi.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strncat.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strncat.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strncmp.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strncmp.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strncpy.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strncpy.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strnequ.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strnequ.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strnew.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strnew.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strnstr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strnstr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strrchr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strrchr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strrev.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strrev.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strsplit.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strsplit.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strstr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strstr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strsub.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strsub.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_strtrim.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_strtrim.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_tolower.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_tolower.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_toupper.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_toupper.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/ft_u.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/ft_u.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/get_next_line.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/get_next_line.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/int_p.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/int_p.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/mantis.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/mantis.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/mexp.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/mexp.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/pw.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/pw.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/pw_to_str.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/pw_to_str.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/reader.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/reader.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/res_o_fr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/res_o_fr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/res_w_fr.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/res_w_fr.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/rnd.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/rnd.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/rnd_z.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/rnd_z.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/rndg.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/rndg.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/rndg_z.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/rndg_z.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/s_str.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/s_str.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/str_ad.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/str_ad.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/str_ml.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/str_ml.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/t_str.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/t_str.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/wzrs.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/wzrs.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/zrs.c">
+		<Unit filename="/home/huller/Desktop/push_swap/libft/sources/zrs.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/apply_instructions.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/apply_instructions.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/apply_instructions_2.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/apply_instructions_2.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/begin_algorithm.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/begin_algorithm.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/get_instructions.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/checker.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/new_algo.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/get_instructions.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/push_swap.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/new_algo.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/reader_checker.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/reader_checker.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/visualizer.c">
+		<Unit filename="/home/huller/Desktop/push_swap/srcs/visualizer.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/CMakeLists.txt">
+		<Unit filename="/home/huller/Desktop/push_swap/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

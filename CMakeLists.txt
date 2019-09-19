@@ -139,7 +139,7 @@ add_executable(push_swap
         srcs/begin_algorithm.c
         srcs/get_instructions.c
         srcs/new_algo.c
-        srcs/push_swap.c
+        srcs/checker.c
         srcs/reader_checker.c
         srcs/visualizer.c
         Makefile)

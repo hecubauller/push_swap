@@ -12,20 +12,6 @@
 
 #include "../includes/checker.h"
 
-t_stack	*turn_end(t_stack **x)
-{
-	while ((*x) && (*x)->next)
-		(*x) = (*x)->next;
-	return (*x);
-}
-
-t_stack	*turn_begin(t_stack **x)
-{
-	while ((*x) && (*x)->prev)
-		(*x) = (*x)->prev;
-	return (*x);
-}
-
 int main(int argc, char **argv)
 {
 	t_stack 	*a;
@@ -34,7 +20,6 @@ int main(int argc, char **argv)
 	char 		**av_str;
 	int 		i;
 
-	i = -1;
 	av_str = NULL;
 	b = NULL;
 	a = NULL;
@@ -57,7 +42,10 @@ int main(int argc, char **argv)
 	{
 		(a) ? (free_lsts(&a)) : 0;
 		ft_putstr("Error\n");
-		free(av_str);
+		i = -1;
+		while (av_str && av_str[++i])
+			free(av_str[i]);
+		av_str ? free(av_str) : 0;
 		free(in);
 		return (0);
 	}
@@ -65,12 +53,9 @@ int main(int argc, char **argv)
 	free_lsts(&a);
 	free_lsts(&b);
 	free(in);
+	i = -1;
 	while (av_str && av_str[++i])
 		free(av_str[i]);
-	while (*av_str)
-	{
-		free(*av_str);
-		av_str++;
-	}
+	av_str ? free(av_str) : 0;
 	return (SUCCESS);
 }

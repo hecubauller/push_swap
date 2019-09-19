@@ -12,6 +12,20 @@
 
 #include "../includes/checker.h"
 
+ t_stack	*turn_end(t_stack **x)
+ {
+	 while ((*x) && (*x)->next)
+		 (*x) = (*x)->next;
+	 return (*x);
+ }
+
+ t_stack	*turn_begin(t_stack **x)
+ {
+	 while ((*x) && (*x)->prev)
+		 (*x) = (*x)->prev;
+	 return (*x);
+ }
+
 void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 {
 	turn_begin(a);
