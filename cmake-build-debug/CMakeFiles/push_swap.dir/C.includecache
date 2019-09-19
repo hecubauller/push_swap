@@ -34,19 +34,19 @@ unistd.h
 string.h
 -
 
-/home/huller/Desktop/push_swap/includes/checker.h
+/Users/huller/Desktop/push_swap/includes/checker.h
 stdlib.h
 -
 stdio.h
 -
 ../libft/includes/libft.h
-/home/huller/Desktop/push_swap/libft/includes/libft.h
+/Users/huller/Desktop/push_swap/libft/includes/libft.h
 ../includes/ft_printf.h
-/home/huller/Desktop/push_swap/includes/ft_printf.h
+/Users/huller/Desktop/push_swap/includes/ft_printf.h
 ../includes/get_next_line.h
-/home/huller/Desktop/push_swap/includes/get_next_line.h
+/Users/huller/Desktop/push_swap/includes/get_next_line.h
 
-/home/huller/Desktop/push_swap/libft/includes/libft.h
+/Users/huller/Desktop/push_swap/libft/includes/libft.h
 stdlib.h
 -
 unistd.h
@@ -54,7 +54,7 @@ unistd.h
 string.h
 -
 
-/home/huller/Desktop/push_swap/srcs/new_algo.c
+/Users/huller/Desktop/push_swap/srcs/reader_checker.c
 ../includes/checker.h
-/home/huller/Desktop/push_swap/includes/checker.h
+/Users/huller/Desktop/push_swap/includes/checker.h
 

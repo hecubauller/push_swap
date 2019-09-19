@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/19 04:01:25 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 00:38:54 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ int 	check_valid_instr(char **line, t_instr *in)
 	return (SUCCESS);
 }
 
+void	add_nbrs_if( t_stack **a, t_stack *tmp2)
+{
+	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
+		exit(FAIL);
+	(*a) = (*a)->next;
+	(*a)->prev = tmp2;
+	(*a)->nb = 0;
+}
+
 int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 {
 	t_stack		*tmp2;
@@ -52,18 +61,12 @@ int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	{
 		tmp_str = argv[tmp];
 		(*a)->nb = ft_atoi(argv[tmp]);
-		if ((int_checker(tmp_str, (*a)->nb) == ERROR))
+		if (int_checker(tmp_str, (*a)->nb) == ERROR)
 			return (ERROR);
 		in->size_a++;
 		tmp2 = (*a);
 		if (argv[tmp + 1])
-		{
-			if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
-				exit(FAIL);
-			(*a) = (*a)->next;
-			(*a)->prev = tmp2;
-			(*a)->nb = 0;
-		}
+			add_nbrs_if(a, tmp2);
 		else
 			(*a)->next = NULL;
 		++tmp;

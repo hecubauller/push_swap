@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/18 21:11:28 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 00:37:18 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	free_lsts(t_stack **a)
 
 	if ((*a))
 	{
+		turn_begin(a);
 		while ((*a) && (*a)->next)
 		{
 			tmp = *a;
@@ -50,7 +51,11 @@ int 	int_checker(char *tmp, int nb)
 		if (tmp[i] == '-')
 			neg = -1;
 		if (pos && ((tmp[++i] == '-') || tmp[i] == '+'))
-			put_result(ERROR);
+		{
+			free(res_nb);
+			free(cmp_str);
+			return (ERROR);
+		}
 		while (tmp[i] == '0')
 			i++;
 		while (tmp[i] >= '0' && tmp[i] <= '9')
@@ -59,7 +64,11 @@ int 	int_checker(char *tmp, int nb)
 			i++;
 		}
 		if (ft_strcmp(res_nb, cmp_str))
+		{
+			free(res_nb);
+			free(cmp_str);
 			return (ERROR);
+		}
 	}
 	free(res_nb);
 	free(cmp_str);

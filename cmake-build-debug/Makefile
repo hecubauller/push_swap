@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/83/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/83/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/huller/Desktop/push_swap
+CMAKE_SOURCE_DIR = /Users/huller/Desktop/push_swap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/huller/Desktop/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/huller/Desktop/push_swap/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/huller/Desktop/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/83/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/83/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/huller/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles /home/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3444,6 +3444,33 @@ libft/sources/zrs.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/libft/sources/zrs.c.s
 .PHONY : libft/sources/zrs.c.s
 
+srcs/algorithm.o: srcs/algorithm.c.o
+
+.PHONY : srcs/algorithm.o
+
+# target to build an object file
+srcs/algorithm.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm.c.o
+.PHONY : srcs/algorithm.c.o
+
+srcs/algorithm.i: srcs/algorithm.c.i
+
+.PHONY : srcs/algorithm.i
+
+# target to preprocess a source file
+srcs/algorithm.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm.c.i
+.PHONY : srcs/algorithm.c.i
+
+srcs/algorithm.s: srcs/algorithm.c.s
+
+.PHONY : srcs/algorithm.s
+
+# target to generate assembly for a file
+srcs/algorithm.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm.c.s
+.PHONY : srcs/algorithm.c.s
+
 srcs/apply_instructions.o: srcs/apply_instructions.c.o
 
 .PHONY : srcs/apply_instructions.o
@@ -3525,33 +3552,6 @@ srcs/begin_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.s
 .PHONY : srcs/begin_algorithm.c.s
 
-srcs/checker.o: srcs/checker.c.o
-
-.PHONY : srcs/checker.o
-
-# target to build an object file
-srcs/checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.o
-.PHONY : srcs/checker.c.o
-
-srcs/checker.i: srcs/checker.c.i
-
-.PHONY : srcs/checker.i
-
-# target to preprocess a source file
-srcs/checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.i
-.PHONY : srcs/checker.c.i
-
-srcs/checker.s: srcs/checker.c.s
-
-.PHONY : srcs/checker.s
-
-# target to generate assembly for a file
-srcs/checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.s
-.PHONY : srcs/checker.c.s
-
 srcs/get_instructions.o: srcs/get_instructions.c.o
 
 .PHONY : srcs/get_instructions.o
@@ -3579,32 +3579,32 @@ srcs/get_instructions.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_instructions.c.s
 .PHONY : srcs/get_instructions.c.s
 
-srcs/new_algo.o: srcs/new_algo.c.o
+srcs/push_swap.o: srcs/push_swap.c.o
 
-.PHONY : srcs/new_algo.o
+.PHONY : srcs/push_swap.o
 
 # target to build an object file
-srcs/new_algo.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/new_algo.c.o
-.PHONY : srcs/new_algo.c.o
+srcs/push_swap.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/push_swap.c.o
+.PHONY : srcs/push_swap.c.o
 
-srcs/new_algo.i: srcs/new_algo.c.i
+srcs/push_swap.i: srcs/push_swap.c.i
 
-.PHONY : srcs/new_algo.i
+.PHONY : srcs/push_swap.i
 
 # target to preprocess a source file
-srcs/new_algo.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/new_algo.c.i
-.PHONY : srcs/new_algo.c.i
+srcs/push_swap.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/push_swap.c.i
+.PHONY : srcs/push_swap.c.i
 
-srcs/new_algo.s: srcs/new_algo.c.s
+srcs/push_swap.s: srcs/push_swap.c.s
 
-.PHONY : srcs/new_algo.s
+.PHONY : srcs/push_swap.s
 
 # target to generate assembly for a file
-srcs/new_algo.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/new_algo.c.s
-.PHONY : srcs/new_algo.c.s
+srcs/push_swap.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/push_swap.c.s
+.PHONY : srcs/push_swap.c.s
 
 srcs/reader_checker.o: srcs/reader_checker.c.o
 
@@ -3632,6 +3632,33 @@ srcs/reader_checker.s: srcs/reader_checker.c.s
 srcs/reader_checker.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_checker.c.s
 .PHONY : srcs/reader_checker.c.s
+
+srcs/reader_plus.o: srcs/reader_plus.c.o
+
+.PHONY : srcs/reader_plus.o
+
+# target to build an object file
+srcs/reader_plus.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_plus.c.o
+.PHONY : srcs/reader_plus.c.o
+
+srcs/reader_plus.i: srcs/reader_plus.c.i
+
+.PHONY : srcs/reader_plus.i
+
+# target to preprocess a source file
+srcs/reader_plus.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_plus.c.i
+.PHONY : srcs/reader_plus.c.i
+
+srcs/reader_plus.s: srcs/reader_plus.c.s
+
+.PHONY : srcs/reader_plus.s
+
+# target to generate assembly for a file
+srcs/reader_plus.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/reader_plus.c.s
+.PHONY : srcs/reader_plus.c.s
 
 srcs/visualizer.o: srcs/visualizer.c.o
 
@@ -3667,8 +3694,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... push_swap"
 	@echo "... edit_cache"
+	@echo "... push_swap"
 	@echo "... libft/sources/add_z.o"
 	@echo "... libft/sources/add_z.i"
 	@echo "... libft/sources/add_z.s"
@@ -4038,6 +4065,9 @@ help:
 	@echo "... libft/sources/zrs.o"
 	@echo "... libft/sources/zrs.i"
 	@echo "... libft/sources/zrs.s"
+	@echo "... srcs/algorithm.o"
+	@echo "... srcs/algorithm.i"
+	@echo "... srcs/algorithm.s"
 	@echo "... srcs/apply_instructions.o"
 	@echo "... srcs/apply_instructions.i"
 	@echo "... srcs/apply_instructions.s"
@@ -4047,18 +4077,18 @@ help:
 	@echo "... srcs/begin_algorithm.o"
 	@echo "... srcs/begin_algorithm.i"
 	@echo "... srcs/begin_algorithm.s"
-	@echo "... srcs/checker.o"
-	@echo "... srcs/checker.i"
-	@echo "... srcs/checker.s"
 	@echo "... srcs/get_instructions.o"
 	@echo "... srcs/get_instructions.i"
 	@echo "... srcs/get_instructions.s"
-	@echo "... srcs/new_algo.o"
-	@echo "... srcs/new_algo.i"
-	@echo "... srcs/new_algo.s"
+	@echo "... srcs/push_swap.o"
+	@echo "... srcs/push_swap.i"
+	@echo "... srcs/push_swap.s"
 	@echo "... srcs/reader_checker.o"
 	@echo "... srcs/reader_checker.i"
 	@echo "... srcs/reader_checker.s"
+	@echo "... srcs/reader_plus.o"
+	@echo "... srcs/reader_plus.i"
+	@echo "... srcs/reader_plus.s"
 	@echo "... srcs/visualizer.o"
 	@echo "... srcs/visualizer.i"
 	@echo "... srcs/visualizer.s"

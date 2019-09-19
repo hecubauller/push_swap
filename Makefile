@@ -6,7 +6,7 @@
 #    By: huller <huller@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/26 05:09:33 by huller            #+#    #+#              #
-#    Updated: 2019/09/17 20:52:26 by huller           ###   ########.fr        #
+#    Updated: 2019/09/19 22:40:22 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ LIB_INC_PATH	=	libft/includes/
 # CHECKER
 SRC1_NAME		=	checker.c apply_instructions.c apply_instructions_2.c\
 					visualizer.c get_instructions.c reader_checker.c\
+					algorithm.c begin_algorithm.c reader_plus.c\
 
 OBJ1_NAME		=	$(SRC1_NAME:.c=.o)
 INC1_NAME		=	checker.h
@@ -46,8 +47,8 @@ INC1_NAME		=	checker.h
 # PUSH_SWAP
 
 SRC2_NAME		=	push_swap.c reader_checker.c get_instructions.c\
-					begin_algorithm.c apply_instructions.c new_algo.c\
-					apply_instructions_2.c visualizer.c \
+					begin_algorithm.c apply_instructions.c algorithm.c\
+					apply_instructions_2.c visualizer.c reader_plus.c\
 
 OBJ2_NAME		=	$(SRC2_NAME:.c=.o)
 INC2_NAME		=	checker.h

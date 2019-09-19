@@ -17,11 +17,13 @@ int		main(int argc, char **argv)
 	int 		res;
 	t_stack 	*a;
 	t_stack 	*b;
+	int 		i;
 	t_instr		*in;
 	char 		**av_str;
 
 	a = NULL;
 	b = NULL;
+	i = -1;
 	res = 0;
 	av_str = NULL;
 	in = (t_instr *)malloc(sizeof(t_instr));
@@ -49,6 +51,9 @@ int		main(int argc, char **argv)
 	{
 		free_lsts(&a);
 		ft_putstr("Error\n");
+		while (av_str && av_str[++i])
+			free(av_str[i]);
+		av_str ? free(av_str) : 0;
 		free(in);
 		return (0);
 	}
@@ -57,7 +62,9 @@ int		main(int argc, char **argv)
 		ft_putstr("Error\n");
 		(a) ? (free_lsts(&a)) : 0;
 		free(in);
-		free(av_str);
+		while (av_str && av_str[++i])
+			free(av_str[i]);
+		av_str ? free(av_str) : 0;
 		return (0);
 	}
 	res = check_output(&a, in);
