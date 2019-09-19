@@ -133,7 +133,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/huller/Desktop/push_swap/srcs/get_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
   "/Users/huller/Desktop/push_swap/srcs/new_algo.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/new_algo.c.o"
   "/Users/huller/Desktop/push_swap/srcs/push_swap.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/push_swap.c.o"
-  "/Users/huller/Desktop/push_swap/srcs/quick_sort.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/quick_sort.c.o"
   "/Users/huller/Desktop/push_swap/srcs/reader_checker.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
   "/Users/huller/Desktop/push_swap/srcs/visualizer.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
   )

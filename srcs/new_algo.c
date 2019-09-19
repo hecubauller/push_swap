@@ -98,7 +98,7 @@ void	total_cmnds(t_sort **p)
 		}
 		else if ((*p)->rra < (*p)->rrb)
 		{
-			(*p)->rrr = (*p)->rrb;
+			(*p)->rrr = (*p)->rra;
 			(*p)->rrb = (*p)->rrb - (*p)->rra;
 			(*p)->rra = 0;
 			(*p)->tot_cmnds = (*p)->cmnd_b;
@@ -135,6 +135,25 @@ void	total_cmnds(t_sort **p)
 	 turn_begin(a);
  }
 
+int		search_beginning(t_stack **a, int end)
+ {
+	int 	start;
+
+	start = 0;
+	 while ((*a) && (*a)->next) //поиск начала стека
+	 {
+		 if (((*a)->prev && (*a)->nb < (*a)->prev->nb) ||
+			 (!(*a)->prev && end > (*a)->nb))
+		 {
+			 start = (*a)->nb;
+			 break;
+		 }
+		 (*a) = (*a)->next;
+	 }
+	 start = (*a)->nb;
+	 return (start);
+ }
+
 void	cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 {
 	int 	end;
@@ -142,30 +161,18 @@ void	cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 	int 	cnt;
 
 	cnt = 0;
+	end = 0;
 	(*p)->ra = 0;
 	(*p)->rra = 0;
 	(*p)->cmnd_a = 0;
 	create_max(a, p);
-	start = 0;
 	turn_end(a);
 	(*a) ? (end = (*a)->nb) : 0;
 	turn_begin(a);
-	while ((*a) && (*a)->next) //поиск начала стека
-	{
-		if (((*a)->prev && (*a)->nb < (*a)->prev->nb) ||
-			(!(*a)->prev && end > (*a)->nb))
-		{
-			start = (*a)->nb;
-			break;
-		}
-		(*a) = (*a)->next;
-	}
-	start = (*a)->nb;
+	start = search_beginning(a, end);
 	turn_begin(a);
 	while ((*a)) //куда вставить число
 	{
-//		if ((*a)->nb == start && (*b)->nb > (*a)->nb && end > (*b)->nb)
-//			break;
 		if (((*a)->prev && (*a)->nb > (*b)->nb && (*a)->prev->nb < (*b)->nb)
 			|| ((*a)->nb > (*b)->nb && !(*a)->prev && end < (*b)->nb)
 			|| ((*a)->nb > (*b)->nb && (*a)->nb == start))
@@ -273,18 +280,23 @@ void	algo_loop(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 	}
 }
 
+void	initialize(t_stack **b, t_sort **p)
+{
+	(*p)->tot_cmnds = -1;
+	(*p)->p_rr = -1;
+	(*p)->p_rrr = -1;
+	(*p)->p_ra = -1;
+	(*p)->p_rb = -1;
+	(*p)->p_rrb = -1;
+	(*p)->p_rra = -1;
+	(*p)->prev_nb = (*b)->nb;
+}
+
 void	new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 {
 	while ((*b))
 	{
-		(*p)->tot_cmnds = -1;
-		(*p)->p_rr = -1;
-		(*p)->p_rrr = -1;
-		(*p)->p_ra = -1;
-		(*p)->p_rb = -1;
-		(*p)->p_rrb = -1;
-		(*p)->p_rra = -1;
-		(*p)->prev_nb = (*b)->nb;
+		initialize(b, p);
 		algo_loop(a, b, in, p);
 		cnt_cmnds_b(b, in, p);
 		cnt_cmnds_a(a, b, in, p);
@@ -320,11 +332,6 @@ void 	finish_stack(t_stack **a, t_instr *in, t_sort **p)
 		(*a) = (*a)->next;
 		cnt++;
 	}
-//	if ((*a) && (*a)->nb == (*p)->min)
-//	{
-//		rra(a, in);
-//		return ;
-//	}
 	turn_begin(a);
 	if (cnt && cnt <= ((*in).size_a / 2))
 	{
@@ -336,6 +343,7 @@ void 	finish_stack(t_stack **a, t_instr *in, t_sort **p)
 		while ((*a)->nb != (*p)->min)
 			rra(a, in);
 	}
+	free(*p);
 }
 
 void 	push_to_a(t_stack **a, t_stack **b, t_instr *in)
@@ -344,9 +352,9 @@ void 	push_to_a(t_stack **a, t_stack **b, t_instr *in)
 
 	if (!(p = (t_sort *)malloc(sizeof(t_sort))))
 		return ;
-	while ((*in).size_a != 3) //push everything except 3 nbrs to 'b'
+	while ((*in).size_a != 3)
 		pb(a, b, in);
-	alg_three(in, a); //sort three numbers
+	alg_three(in, a);
 	new_algo(a, b, in, &p);
 	finish_stack(a, in, &p);
 }

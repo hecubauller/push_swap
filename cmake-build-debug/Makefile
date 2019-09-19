@@ -3606,33 +3606,6 @@ srcs/push_swap.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/push_swap.c.s
 .PHONY : srcs/push_swap.c.s
 
-srcs/quick_sort.o: srcs/quick_sort.c.o
-
-.PHONY : srcs/quick_sort.o
-
-# target to build an object file
-srcs/quick_sort.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/quick_sort.c.o
-.PHONY : srcs/quick_sort.c.o
-
-srcs/quick_sort.i: srcs/quick_sort.c.i
-
-.PHONY : srcs/quick_sort.i
-
-# target to preprocess a source file
-srcs/quick_sort.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/quick_sort.c.i
-.PHONY : srcs/quick_sort.c.i
-
-srcs/quick_sort.s: srcs/quick_sort.c.s
-
-.PHONY : srcs/quick_sort.s
-
-# target to generate assembly for a file
-srcs/quick_sort.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/quick_sort.c.s
-.PHONY : srcs/quick_sort.c.s
-
 srcs/reader_checker.o: srcs/reader_checker.c.o
 
 .PHONY : srcs/reader_checker.o
@@ -4083,9 +4056,6 @@ help:
 	@echo "... srcs/push_swap.o"
 	@echo "... srcs/push_swap.i"
 	@echo "... srcs/push_swap.s"
-	@echo "... srcs/quick_sort.o"
-	@echo "... srcs/quick_sort.i"
-	@echo "... srcs/quick_sort.s"
 	@echo "... srcs/reader_checker.o"
 	@echo "... srcs/reader_checker.i"
 	@echo "... srcs/reader_checker.s"

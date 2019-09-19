@@ -54,7 +54,7 @@ unistd.h
 string.h
 -
 
-/Users/huller/Desktop/push_swap/srcs/reader_checker.c
+/Users/huller/Desktop/push_swap/srcs/push_swap.c
 ../includes/checker.h
 /Users/huller/Desktop/push_swap/includes/checker.h
 

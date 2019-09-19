@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/17 20:52:26 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/19 04:20:27 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int		main(int argc, char **argv)
 	t_instr		*in;
 	char 		**av_str;
 
+	a = NULL;
+	b = NULL;
 	res = 0;
 	av_str = NULL;
-	b = NULL;
 	in = (t_instr *)malloc(sizeof(t_instr));
 	in->split = 0;
 	in->inst = 0;
@@ -54,14 +55,16 @@ int		main(int argc, char **argv)
 	if ((get_input(in, &a, &b) == ERROR))
 	{
 		ft_putstr("Error\n");
-		free_lsts(&a);
+		(a) ? (free_lsts(&a)) : 0;
 		free(in);
+		free(av_str);
 		return (0);
 	}
 	res = check_output(&a, in);
 	free_lsts(&a);
 	free_lsts(&b);
 	free(in);
+	free(av_str);
 	if (res == OK)
 		ft_putstr("OK\n");
 	if (res == KO)

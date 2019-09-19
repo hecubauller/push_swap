@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/17 20:52:26 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/19 04:01:25 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int 	check_valid_instr(char **line, t_instr *in)
 	return (SUCCESS);
 }
 
-void	add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
+int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 {
 	t_stack		*tmp2;
 	t_stack		*begin;
@@ -53,11 +53,7 @@ void	add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 		tmp_str = argv[tmp];
 		(*a)->nb = ft_atoi(argv[tmp]);
 		if ((int_checker(tmp_str, (*a)->nb) == ERROR))
-		{
-			free_lsts(a);
-			put_result(ERROR);
-			exit (FAIL);
-		}
+			return (ERROR);
 		in->size_a++;
 		tmp2 = (*a);
 		if (argv[tmp + 1])
@@ -73,12 +69,9 @@ void	add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 		++tmp;
 	}
 	if (in->size_a == 1)
-	{
-		free_lsts(a);
-		put_result(ERROR);
-		exit (FAIL);
-	}
+		return (ERROR);
 	(*a) = begin;
+	return (SUCCESS);
 }
 
 int		check_dubl(char **argv, int tmp)
@@ -128,8 +121,8 @@ int		reader_argv(t_stack **a, t_instr **in, char **argv)
 	int tmp;
 
 	i = 0;
-	cnt = 0;
-	tmp = (*in)->split ? 0 : 1;
+	cnt = ((*in)->split) ? 0 : 1;
+	tmp = ((*in)->split) ? 0 : 1;
 	if ((*in)->viz == 2)
 	{
 		++cnt;
@@ -137,18 +130,25 @@ int		reader_argv(t_stack **a, t_instr **in, char **argv)
 	}
 	(*in)->size_a = 0;
 	(*in)->size_b = 0;
-	while (argv[++cnt])
+	if (*argv)
 	{
-		i = 0;
-		while (argv[cnt][i] && ((argv[cnt][i] >= '0' && argv[cnt][i] <= '9') ||
-				argv[cnt][i] == '-' || argv[cnt][i] == '+'))
-			++i;
-		if (argv[cnt][i])
+		while (argv[cnt])
+		{
+			i = 0;
+			while (argv[cnt][i] &&
+				   ((argv[cnt][i] >= '0' && argv[cnt][i] <= '9') ||
+					argv[cnt][i] == '-' || argv[cnt][i] == '+'))
+				++i;
+			if (argv[cnt][i] || (cnt == 1 && !(*in)->split && i == 0))
+				return (ERROR);
+			cnt++;
+		}
+		if ((check_dubl(argv, tmp) == ERROR))
 			return (ERROR);
+		newlist_ch(a);
+		if ((add_nbrs(tmp, a, argv, *in)) == ERROR)
+			return (ERROR);
+		return (SUCCESS);
 	}
-	if ((check_dubl(argv, tmp) == ERROR))
-		return (ERROR);
-	newlist_ch(a);
-	add_nbrs(tmp, a, argv, *in);
-	return (SUCCESS);
+	return (ERROR);
 }

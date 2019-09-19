@@ -488,9 +488,6 @@
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/push_swap.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/huller/Desktop/push_swap/srcs/quick_sort.c">
-			<Option target="push_swap"/>
-		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/reader_checker.c">
 			<Option target="push_swap"/>
 		</Unit>

@@ -140,7 +140,6 @@ add_executable(push_swap
         srcs/get_instructions.c
         srcs/new_algo.c
         srcs/push_swap.c
-        srcs/quick_sort.c
         srcs/reader_checker.c
         srcs/visualizer.c
         Makefile)
