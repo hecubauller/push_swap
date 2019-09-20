@@ -86,14 +86,19 @@ int		alg_five(t_instr *in, t_stack **a, t_stack **b)
 int		algorithm(t_instr *in, t_stack **a, t_stack **b)
 {
 	if (is_sorted(a))
+	{
+		(*b) = NULL;
 		return (SUCCESS);
+	}
 	if ((*in).size_a == 2)
 	{
+		(*b) = NULL;
 		alg_two(in, a);
 		return (SUCCESS);
 	}
 	else if ((*in).size_a == 3)
 	{
+		(*b) = NULL;
 		alg_three(in, a);
 		return (SUCCESS);
 	}

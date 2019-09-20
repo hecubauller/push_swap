@@ -29,8 +29,8 @@ void	two(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 
 	i = -1;
 	algorithm(in, a, b);
-	free_lsts(a);
-	free_lsts(b);
+	(a) ? free_lsts(a) : 0;
+	(b) ? free_lsts(b) : 0;
 	free(in);
 	while (av_str && av_str[++i])
 		free(av_str[i]);

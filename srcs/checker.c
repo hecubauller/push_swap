@@ -55,10 +55,10 @@ int		check_res(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 
 void	freee(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 {
-	free_lsts(a);
-	free_lsts(b);
+	(a) ? free_lsts(a) : 0;
+	(b) ? free_lsts(b) : 0;
 	free(in);
-	free(av_str);
+	(av_str) ? free(av_str) : 0;
 }
 
 int		main(int argc, char **argv)
@@ -86,6 +86,6 @@ int		main(int argc, char **argv)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
-	freee(&a, &b, in, av_str);
+	freee(&a, &b, in, av_str); //неправильно фришится
 	return (0);
 }

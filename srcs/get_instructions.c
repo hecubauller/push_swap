@@ -79,12 +79,12 @@ int		get_input(t_instr *in, t_stack **a, t_stack **b)
 	{
 		if ((check_valid_instr(&line, in)) == ERROR)
 		{
-			free(line);
+			(line) ? free(line) : 0;
 			return (ERROR);
 		}
 		appl_instr(in, a, b);
 		free(line);
 	}
-	free(line);
+	(line) ? free(line) : 0;
 	return (SUCCESS);
 }

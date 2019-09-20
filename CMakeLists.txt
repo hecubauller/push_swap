@@ -134,15 +134,18 @@ add_executable(push_swap
         libft/sources/t_str.c
         libft/sources/wzrs.c
         libft/sources/zrs.c
+        srcs/alg_five.c
+        srcs/algorithm.c
         srcs/apply_instructions.c
         srcs/apply_instructions_2.c
         srcs/begin_algorithm.c
+        srcs/bonus_fnct.c
+        srcs/funct_three.c
+        srcs/funct_two.c
+        srcs/functions.c
         srcs/get_instructions.c
-        srcs/algorithm.c
-        srcs/push_swap.c
-        srcs/reader_plus.c
         srcs/checker.c
         srcs/reader_checker.c
+        srcs/reader_plus.c
         srcs/visualizer.c
-        srcs/bonus_fnct.c
-        srcs/reader_plus.c srcs/alg_five.c srcs/functions.c srcs/funct_two.c srcs/funct_three.c)
+        Makefile)
