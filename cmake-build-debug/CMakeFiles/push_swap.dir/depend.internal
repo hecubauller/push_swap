@@ -457,6 +457,13 @@ CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o
  /Users/huller/Desktop/push_swap/includes/checker.h
  /Users/huller/Desktop/push_swap/libft/includes/libft.h
  /Users/huller/Desktop/push_swap/srcs/begin_algorithm.c
+CMakeFiles/push_swap.dir/srcs/checker.c.o
+ ../libft/includes/ft_printf.h
+ ../libft/includes/get_next_line.h
+ ../libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/includes/checker.h
+ /Users/huller/Desktop/push_swap/libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/srcs/checker.c
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o
  ../libft/includes/ft_printf.h
  ../libft/includes/get_next_line.h
@@ -464,13 +471,6 @@ CMakeFiles/push_swap.dir/srcs/get_instructions.c.o
  /Users/huller/Desktop/push_swap/includes/checker.h
  /Users/huller/Desktop/push_swap/libft/includes/libft.h
  /Users/huller/Desktop/push_swap/srcs/get_instructions.c
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o
- ../libft/includes/ft_printf.h
- ../libft/includes/get_next_line.h
- ../libft/includes/libft.h
- /Users/huller/Desktop/push_swap/includes/checker.h
- /Users/huller/Desktop/push_swap/libft/includes/libft.h
- /Users/huller/Desktop/push_swap/srcs/push_swap.c
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o
  ../libft/includes/ft_printf.h
  ../libft/includes/get_next_line.h

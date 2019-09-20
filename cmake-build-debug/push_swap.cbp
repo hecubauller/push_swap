@@ -86,9 +86,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/huller/Desktop/push_swap/Makefile">
-			<Option target="push_swap"/>
-		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/includes/checker.h">
 			<Option target="push_swap"/>
 		</Unit>
@@ -470,6 +467,9 @@
 		<Unit filename="/Users/huller/Desktop/push_swap/libft/sources/zrs.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/alg_five.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/algorithm.c">
 			<Option target="push_swap"/>
 		</Unit>
@@ -480,6 +480,21 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/begin_algorithm.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/bonus_fnct.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/checker.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/funct_three.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/funct_two.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/functions.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/get_instructions.c">

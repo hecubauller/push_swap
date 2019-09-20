@@ -457,19 +457,19 @@ CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o: ../includes/checker.h
 CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o: ../srcs/begin_algorithm.c
 
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../includes/checker.h
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/checker.c.o: ../srcs/checker.c
+
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../includes/checker.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../srcs/get_instructions.c
-
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../libft/includes/ft_printf.h
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../libft/includes/libft.h
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../includes/checker.h
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../libft/includes/libft.h
-CMakeFiles/push_swap.dir/srcs/push_swap.c.o: ../srcs/push_swap.c
 
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/srcs/reader_checker.c.o: ../libft/includes/get_next_line.h

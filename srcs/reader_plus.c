@@ -6,13 +6,35 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 23:46:24 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 03:32:47 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 18:50:50 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int 	int_ch_2(t_ch **j, char *tmp)
+char	**getstring(int argc, char **argv, t_instr *in)
+{
+	char **av_str;
+
+	av_str = NULL;
+	if (!(ft_strcmp(argv[1], "-v")))
+		in->viz = 1;
+	if (argc == 2 && !in->viz && ft_strchr(argv[1], ' '))
+	{
+		av_str = ft_strsplit(argv[1], ' ');
+		in->split++;
+	}
+	else if (argc == 3 && in->viz && ft_strchr(argv[2], ' '))
+	{
+		av_str = ft_strsplit(argv[2], ' ');
+		in->split += 2;
+	}
+	else if (in->viz && argc > 3)
+		in->viz = 2;
+	return (av_str);
+}
+
+int		int_ch_2(t_ch **j, char *tmp)
 {
 	(*j)->pos = 0;
 	if (tmp[(*j)->i] == '+')

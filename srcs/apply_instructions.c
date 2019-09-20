@@ -5,66 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 05:41:06 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:59:20 by huller           ###   ########.fr       */
+/*   Created: 2019/09/20 19:52:42 by huller            #+#    #+#             */
+/*   Updated: 2019/09/20 19:53:48 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-
-void	rr(t_stack **a, t_stack **b, t_instr *instr)
-{
-	t_stack		*tmp_s;
-
-	instr->inst = 0;
-	if ((*a) && (*a)->next)
-	{
-		tmp_s = (*a);
-		(*a)->next->prev = NULL;
-		while ((*a)->next)
-			(*a) = (*a)->next;
-		(*a)->next = tmp_s;
-		(*a)->next->next = NULL;
-		(*a)->next->prev = (*a);
-		while ((*a) && (*a)->prev)
-			(*a) = (*a)->prev;
-	}
-	if ((*b) && (*b)->next)
-	{
-		tmp_s = (*b);
-		(*b)->next->prev = NULL;
-		while ((*b)->next)
-			(*b) = (*b)->next;
-		(*b)->next = tmp_s;
-		(*b)->next->next = NULL;
-		(*b)->next->prev = (*b);
-		while ((*b) && (*b)->prev)
-			(*b) = (*b)->prev;
-	}
-	instr->push_swap ? ft_putstr("rr\n") : 0;
-}
-
-void	ra(t_stack **x, t_instr *instr)
-{
-	t_stack		*tmp_s;
-
-	instr->inst = 0;
-	if ((*x) && (*x)->next)
-	{
-		tmp_s = (*x);
-		(*x)->next->prev = NULL;
-		while ((*x)->next)
-			(*x) = (*x)->next;
-		(*x)->next = tmp_s;
-		(*x)->next->next = NULL;
-		(*x)->next->prev = (*x);
-		while ((*x) && (*x)->prev)
-			(*x) = (*x)->prev;
-		while ((*x) && (*x)->prev)
-			(*x) = (*x)->prev;
-	}
-	instr->push_swap ? ft_putstr("ra\n") : 0;
-}
 
 void	rb(t_stack **x, t_instr *instr)
 {
@@ -90,7 +36,7 @@ void	rb(t_stack **x, t_instr *instr)
 
 void	ss(t_stack **a, t_stack **b, t_instr *instr)
 {
-	int 		tmp;
+	int		tmp;
 
 	tmp = 0;
 	instr->inst = 0;
@@ -120,6 +66,7 @@ void	sb(t_stack **x, t_instr *instr)
 {
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
+
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
@@ -141,6 +88,7 @@ void	sa(t_stack **x, t_instr *instr)
 {
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
+
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{

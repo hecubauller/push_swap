@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 06:28:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 17:25:55 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 20:03:25 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rra(t_stack **x, t_instr *instr)
 {
-	int 		tmp;
+	int			tmp;
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
 
@@ -39,11 +39,9 @@ void	rra(t_stack **x, t_instr *instr)
 
 void	rrb(t_stack **x, t_instr *instr)
 {
-	int 		tmp;
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
 
-	tmp = 0;
 	instr->inst = 0;
 	if ((*x) && (*x)->next)
 	{
@@ -64,12 +62,12 @@ void	rrb(t_stack **x, t_instr *instr)
 
 void	rrr(t_stack **a, t_stack **b, t_instr *instr)
 {
-	int 		tmp;
 	t_stack		*tmp_s;
 	t_stack		*tmp_s2;
 
-	tmp = 0;
 	instr->inst = 0;
+	tmp_s2 = NULL;
+	tmp_s = NULL;
 	if ((*a) && (*a)->next)
 	{
 		tmp_s = (*a);
@@ -84,20 +82,8 @@ void	rrr(t_stack **a, t_stack **b, t_instr *instr)
 			(*a) = (*a)->prev;
 	}
 	if ((*b) && (*b)->next)
-	{
-		tmp_s = (*b);
-		while ((*b)->next)
-			(*b) = (*b)->next;
-		(*b)->next = tmp_s;
-		(*b)->prev->next = NULL;
-		(*b)->prev = NULL;
-		tmp_s2 = (*b);
-		tmp_s->prev = tmp_s2;
-		while ((*b) && (*b)->prev)
-			(*b) = (*b)->prev;
-	}
+		rrr_two(b, tmp_s, tmp_s2);
 	instr->push_swap ? ft_putstr("rrr\n") : 0;
-
 }
 
 void	pa(t_stack **a, t_stack **b, t_instr *instr)
@@ -115,17 +101,9 @@ void	pa(t_stack **a, t_stack **b, t_instr *instr)
 			(*a) = tmp_s;
 			(*a)->next = NULL;
 			(*a)->prev = NULL;
-
 		}
 		else if (*a)
-		{
-			(*a)->prev = (*b);
-			tmp_s = (*b)->next;
-			(*a)->prev->next = (*a);
-			(*a) = (*a)->prev;
-			(*b) = tmp_s;
-			(*b) ? (*b)->prev = NULL : 0;
-		}
+			pb_two(b, a);
 		instr->size_a++;
 		instr->size_b--;
 		while ((*a) && (*a)->prev)
@@ -134,13 +112,13 @@ void	pa(t_stack **a, t_stack **b, t_instr *instr)
 			(*b) = (*b)->prev;
 	}
 	instr->push_swap ? ft_putstr("pa\n") : 0;
-
 }
 
 void	pb(t_stack **a, t_stack **b, t_instr *instr)
 {
 	t_stack		*tmp_s;
 
+	tmp_s = NULL;
 	instr->inst = 0;
 	if (*a)
 	{
@@ -152,17 +130,9 @@ void	pb(t_stack **a, t_stack **b, t_instr *instr)
 			(*b) = tmp_s;
 			(*b)->next = NULL;
 			(*b)->prev = NULL;
-
 		}
 		else if ((*b))
-		{
-			(*b)->prev = (*a);
-			tmp_s = (*a)->next;
-			(*b)->prev->next = (*b);
-			(*b) = (*b)->prev;
-			(*a) = tmp_s;
-			(*a) ? (*a)->prev = NULL : 0;
-		}
+			pb_two(a, b);
 		instr->size_b++;
 		instr->size_a--;
 		while ((*a) && (*a)->prev)

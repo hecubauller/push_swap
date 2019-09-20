@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 09:12:59 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:59:20 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:42:50 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int 	alg_three(t_instr *in, t_stack **a)
+int		alg_three(t_instr *in, t_stack **a)
 {
 	if ((*a)->nb < (*a)->next->nb && (*a)->next->nb > (*a)->next->next->nb &&
 			(*a)->next->next->nb < (*a)->nb)
@@ -41,7 +41,7 @@ void	alg_two(t_instr *in, t_stack **a)
 		sa(a, in);
 }
 
-int 	is_sorted(t_stack **a)
+int		is_sorted(t_stack **a)
 {
 	while ((*a) && (*a)->next && (*a)->nb < (*a)->next->nb)
 		(*a) = (*a)->next;
@@ -57,11 +57,8 @@ int 	is_sorted(t_stack **a)
 	}
 }
 
-int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
+int		alg_five(t_instr *in, t_stack **a, t_stack **b)
 {
-	int tmp;
-
-	tmp = 0;
 	pb(a, b, in);
 	pb(a, b, in);
 	alg_three(in, a);
@@ -70,19 +67,8 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 		if ((*b)->nb < (*a)->nb)
 			pa(a, b, in);
 		else if ((*b)->nb > (*a)->next->next->nb && (!(*a)->next->next->next ||
-			(*b)->nb > (*a)->next->next->next->nb ))
-		{
-			tmp = (*a)->nb;
-			pa(a, b, in);
-			if ((*b) && (*b)->nb < (*a)->nb && (((*b)->nb >
-				(*a)->next->next->next->nb)))
-			{
-				pa(a, b, in);
-				ra(a, in);
-			}
-			while ((*a)->nb != tmp)
-				ra(a, in);
-		}
+			(*b)->nb > (*a)->next->next->next->nb))
+			five_one(in, a, b);
 		else if ((*b)->nb > (*a)->nb && (*b)->nb < (*a)->next->nb)
 		{
 			ra(a, in);
@@ -90,57 +76,14 @@ int 	alg_five(t_instr *in, t_stack **a, t_stack **b)
 			rra(a, in);
 		}
 		else if ((*b)->nb > (*a)->nb && (*b)->nb > (*a)->next->nb)
-		{
-			tmp = (*a)->nb;
-			if ((*b)->nb > (*a)->next->next->nb)
-			{
-				rra(a, in);
-				pa(a, b, in);
-				ra(a, in);
-				ra(a, in);
-			}
-			else
-			{
-				ra(a, in);
-				ra(a, in);
-				pa(a, b, in);
-			}
-			if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb <
-				(*a)->next->next->next->nb)
-			{
-				rra(a, in);
-				pa(a, b, in);
-			}
-			else if ((*b) && (*b)->nb > (*a)->nb &&
-				(*b)->nb < (*a)->next->next->next->nb &&
-				(*b)->nb > (*a)->next->nb && (*b)->nb > (*a)->next->next->nb)
-			{
-				rra(a, in);
-				pa(a, b, in);
-				ra(a, in);
-				ra(a, in);
-			}
-			else if ((*b) && (*b)->nb < (*a)->nb && (*b)->nb > (*a)->next->next->next->nb
-				&& (*b)->nb > (*a)->next->next->nb && (*b)->nb > (*a)->next->nb)
-				pa(a, b, in);
-			while ((*a)->nb != tmp)
-				rra(a, in);
-		}
+			five_four(in, a, b);
 		else if ((*b)->nb > (*a)->nb)
-		{
-			tmp = (*a)->nb;
-			while ((*b)->nb > (*a)->nb)
-				(*a) = (*a)->next;
-			if ((*a)->next)
-			pa(a, b, in);
-			while ((*a)->nb != tmp)
-				ra(a, in);
-		}
+			five_three(in, a, b);
 	}
 	return (SUCCESS);
 }
 
-int 	algorithm(t_instr *in, t_stack **a, t_stack **b)
+int		algorithm(t_instr *in, t_stack **a, t_stack **b)
 {
 	if (is_sorted(a))
 		return (SUCCESS);

@@ -139,8 +139,10 @@ add_executable(push_swap
         srcs/begin_algorithm.c
         srcs/get_instructions.c
         srcs/algorithm.c
-        srcs/reader_plus.c
         srcs/push_swap.c
+        srcs/reader_plus.c
+        srcs/checker.c
         srcs/reader_checker.c
         srcs/visualizer.c
-        Makefile srcs/reader_plus.c)
+        srcs/bonus_fnct.c
+        srcs/reader_plus.c srcs/alg_five.c srcs/functions.c srcs/funct_two.c srcs/funct_three.c)

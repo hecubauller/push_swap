@@ -6,68 +6,54 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 03:44:47 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:13:09 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	free_lsts(t_stack **a)
+int		ret_fr(char *res_nb, char *cmp_str)
 {
-	t_stack *tmp;
+	free(res_nb);
+	free(cmp_str);
+	return (ERROR);
+}
 
-	tmp = NULL;
-	turn_begin(a);
-	while ((*a) && ((*a)->next))
+void	cycles_int(char *tmp, int *i, char *cmp_str)
+{
+	int	k;
+
+	k = -1;
+	while (tmp[(*i)] == '0')
+		(*i)++;
+	while (tmp[(*i)] >= '0' && tmp[(*i)] <= '9')
 	{
-		tmp = *a;
-		if ((*a)->next)
-			(*a) = (*a)->next;
-		tmp ? free(tmp) : 0;
+		cmp_str[++k] = tmp[(*i)];
+		(*i)++;
 	}
-	(*a) ? free(*a) : 0;
 }
 
 int		int_checker(char *tmp, int nb)
 {
 	char	*res_nb;
-	int 	i;
-	int 	k;
-	char 	*cmp_str;
+	int		i;
+	char	*cmp_str;
 	int		pos;
-	int 	neg;
 
 	i = 0;
-	k = -1;
+	pos = 0;
 	res_nb = ft_itoa(nb);
 	if (!(cmp_str = (char *)malloc(sizeof(char) * ft_strlen(tmp))))
 		exit(ERROR);
 	if (ft_strcmp(tmp, res_nb))
 	{
-		pos = 0;
 		if (tmp[i] == '+')
 			pos = 1;
-		if (tmp[i] == '-')
-			neg = -1;
 		if (pos && ((tmp[++i] == '-') || tmp[i] == '+'))
-		{
-			free(res_nb);
-			free(cmp_str);
-			return (ERROR);
-		}
-		while (tmp[i] == '0')
-			i++;
-		while (tmp[i] >= '0' && tmp[i] <= '9')
-		{
-			cmp_str[++k] = tmp[i];
-			i++;
-		}
+			return (ret_fr(res_nb, cmp_str));
+		cycles_int(tmp, &i, cmp_str);
 		if (ft_strcmp(res_nb, cmp_str))
-		{
-			free(res_nb);
-			free(cmp_str);
-			return (ERROR);
-		}
+			return (ret_fr(res_nb, cmp_str));
 	}
 	free(res_nb);
 	free(cmp_str);
@@ -84,27 +70,9 @@ void	put_result(int res)
 		ft_putstr("KO\n");
 }
 
-int 	check_output(t_stack **a, t_instr *in)
-{
-	if (!(in->size_b))
-	{
-		while ((*a)->prev)
-			(*a) = (*a)->prev;
-		while ((*a)->next)
-		{
-			if ((*a)->nb < (*a)->next->nb)
-				(*a) = (*a)->next;
-			else
-				return (KO);
-		}
-		return (OK);
-	}
-	return (KO);
-}
-
 int		get_input(t_instr *in, t_stack **a, t_stack **b)
 {
-	char 		*line;
+	char	*line;
 
 	(*in).viz ? vizualize_init(a, b, in) : 0;
 	while (get_next_line(0, &line))

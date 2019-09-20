@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 17:12:51 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 20:11:29 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,11 @@ typedef struct			s_ch
  */
 
 void		put_result(int res);
+void		cmnds_two(t_sort **p);
 int 		is_sorted(t_stack **a);
 t_stack		*turn_end(t_stack **x);
 void		free_lsts(t_stack **a);
+void		cmnd_three(t_sort **p);
 void		total_cmnds(t_sort **p);
 void		newlist_ch(t_stack **a);
 t_stack		*turn_begin(t_stack **x);
@@ -122,9 +124,12 @@ void		ra(t_stack **x, t_instr *instr);
 void		rb(t_stack **x, t_instr *instr);
 int			check_dubl(char **argv, int tmp);
 void		rrb(t_stack **x, t_instr *instr);
+void		pb_two(t_stack **a, t_stack **b);
 void		rra(t_stack **x, t_instr *instr);
 void		alg_two(t_instr *in, t_stack **a);
 void		initialize(t_stack **b, t_sort **p);
+int			ret_fr(char *res_nb, char *cmp_str);
+void		rr_two(t_stack **b, t_stack *tmp_s);
 void 		create_min(t_stack **a, t_sort **p);
 void 		create_max(t_stack **a, t_sort **p);
 int		 	alg_three(t_instr *in, t_stack **a);
@@ -135,25 +140,36 @@ int 		check_valid_instr(char **line, t_instr *in);
 void		ss(t_stack **a, t_stack **b, t_instr *instr);
 void		rr(t_stack **a, t_stack **b, t_instr *instr);
 void		pa(t_stack **a, t_stack **b, t_instr *instr);
+void		cycles_int(char *tmp, int *i, char *cmp_str);
 void		pb(t_stack **a, t_stack **b, t_instr *instr);
 void		ch_dbl_cycle(char **argv, int *len, int *tmp);
 void		rrr(t_stack **a, t_stack **b, t_instr *instr);
 void		in_swap(t_instr *in, t_stack **a, t_stack **b);
+void		five_one(t_instr *in, t_stack **a, t_stack **b);
+int			five_two(t_instr *in, t_stack **a, t_stack **b);
 void		in_check(t_instr *in, t_stack **a, t_stack **b);
+int		 	getint(t_stack **a, t_instr *in, char **av_str);
+char		**getstring(int argc, char **argv, t_instr *in);
 int 		alg_five(t_instr *in, t_stack **a, t_stack **b);
+void		five_four(t_instr *in, t_stack **a, t_stack **b);
 int 		algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			get_input(t_instr *in, t_stack **a, t_stack **b);
 void 		push_to_a(t_stack **a, t_stack **b, t_instr *in);
+void		five_three(t_instr *in, t_stack **a, t_stack **b);
 void 		cnt_cmnds_b(t_stack **b, t_instr *in, t_sort **p);
 void		appl_instr(t_instr *in, t_stack **a, t_stack **b);
 void 		finish_stack(t_stack **a, t_instr *in, t_sort **p);
 int			reader_argv(t_stack **a, t_instr **in, char **argv);
+void		innn(t_stack **a, t_sort **p, int *end, int *start);
+int			 geint_two(t_stack **a, t_instr *in, char **av_str);
+void		rrr_two(t_stack **b, t_stack *tmp_s, t_stack *tmp_s2);
 void		vizualize_1(t_stack **a, t_stack **b, t_instr *instr);
 void		vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 int			add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
 void		vizualize_check(t_stack **a, t_stack **b, t_instr *instr);
+void		two(t_stack **a, t_stack **b, t_instr *in, char **av_str);
 int			reader_cycle(char **argv, int *i, int *cnt, t_instr **in);
-int		 	swap_2(int argc, char **argv, t_instr **in, char **av_str);
+void		freee(t_stack **a, t_stack **b, t_instr *in, char **av_str);
 void		new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void 		apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void		cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p);

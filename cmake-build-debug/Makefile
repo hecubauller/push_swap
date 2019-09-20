@@ -3444,6 +3444,33 @@ libft/sources/zrs.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/libft/sources/zrs.c.s
 .PHONY : libft/sources/zrs.c.s
 
+srcs/alg_five.o: srcs/alg_five.c.o
+
+.PHONY : srcs/alg_five.o
+
+# target to build an object file
+srcs/alg_five.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/alg_five.c.o
+.PHONY : srcs/alg_five.c.o
+
+srcs/alg_five.i: srcs/alg_five.c.i
+
+.PHONY : srcs/alg_five.i
+
+# target to preprocess a source file
+srcs/alg_five.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/alg_five.c.i
+.PHONY : srcs/alg_five.c.i
+
+srcs/alg_five.s: srcs/alg_five.c.s
+
+.PHONY : srcs/alg_five.s
+
+# target to generate assembly for a file
+srcs/alg_five.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/alg_five.c.s
+.PHONY : srcs/alg_five.c.s
+
 srcs/algorithm.o: srcs/algorithm.c.o
 
 .PHONY : srcs/algorithm.o
@@ -3551,6 +3578,141 @@ srcs/begin_algorithm.s: srcs/begin_algorithm.c.s
 srcs/begin_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.s
 .PHONY : srcs/begin_algorithm.c.s
+
+srcs/bonus_fnct.o: srcs/bonus_fnct.c.o
+
+.PHONY : srcs/bonus_fnct.o
+
+# target to build an object file
+srcs/bonus_fnct.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/bonus_fnct.c.o
+.PHONY : srcs/bonus_fnct.c.o
+
+srcs/bonus_fnct.i: srcs/bonus_fnct.c.i
+
+.PHONY : srcs/bonus_fnct.i
+
+# target to preprocess a source file
+srcs/bonus_fnct.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/bonus_fnct.c.i
+.PHONY : srcs/bonus_fnct.c.i
+
+srcs/bonus_fnct.s: srcs/bonus_fnct.c.s
+
+.PHONY : srcs/bonus_fnct.s
+
+# target to generate assembly for a file
+srcs/bonus_fnct.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/bonus_fnct.c.s
+.PHONY : srcs/bonus_fnct.c.s
+
+srcs/checker.o: srcs/checker.c.o
+
+.PHONY : srcs/checker.o
+
+# target to build an object file
+srcs/checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.o
+.PHONY : srcs/checker.c.o
+
+srcs/checker.i: srcs/checker.c.i
+
+.PHONY : srcs/checker.i
+
+# target to preprocess a source file
+srcs/checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.i
+.PHONY : srcs/checker.c.i
+
+srcs/checker.s: srcs/checker.c.s
+
+.PHONY : srcs/checker.s
+
+# target to generate assembly for a file
+srcs/checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/checker.c.s
+.PHONY : srcs/checker.c.s
+
+srcs/funct_three.o: srcs/funct_three.c.o
+
+.PHONY : srcs/funct_three.o
+
+# target to build an object file
+srcs/funct_three.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_three.c.o
+.PHONY : srcs/funct_three.c.o
+
+srcs/funct_three.i: srcs/funct_three.c.i
+
+.PHONY : srcs/funct_three.i
+
+# target to preprocess a source file
+srcs/funct_three.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_three.c.i
+.PHONY : srcs/funct_three.c.i
+
+srcs/funct_three.s: srcs/funct_three.c.s
+
+.PHONY : srcs/funct_three.s
+
+# target to generate assembly for a file
+srcs/funct_three.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_three.c.s
+.PHONY : srcs/funct_three.c.s
+
+srcs/funct_two.o: srcs/funct_two.c.o
+
+.PHONY : srcs/funct_two.o
+
+# target to build an object file
+srcs/funct_two.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_two.c.o
+.PHONY : srcs/funct_two.c.o
+
+srcs/funct_two.i: srcs/funct_two.c.i
+
+.PHONY : srcs/funct_two.i
+
+# target to preprocess a source file
+srcs/funct_two.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_two.c.i
+.PHONY : srcs/funct_two.c.i
+
+srcs/funct_two.s: srcs/funct_two.c.s
+
+.PHONY : srcs/funct_two.s
+
+# target to generate assembly for a file
+srcs/funct_two.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/funct_two.c.s
+.PHONY : srcs/funct_two.c.s
+
+srcs/functions.o: srcs/functions.c.o
+
+.PHONY : srcs/functions.o
+
+# target to build an object file
+srcs/functions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/functions.c.o
+.PHONY : srcs/functions.c.o
+
+srcs/functions.i: srcs/functions.c.i
+
+.PHONY : srcs/functions.i
+
+# target to preprocess a source file
+srcs/functions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/functions.c.i
+.PHONY : srcs/functions.c.i
+
+srcs/functions.s: srcs/functions.c.s
+
+.PHONY : srcs/functions.s
+
+# target to generate assembly for a file
+srcs/functions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/functions.c.s
+.PHONY : srcs/functions.c.s
 
 srcs/get_instructions.o: srcs/get_instructions.c.o
 
@@ -4065,6 +4227,9 @@ help:
 	@echo "... libft/sources/zrs.o"
 	@echo "... libft/sources/zrs.i"
 	@echo "... libft/sources/zrs.s"
+	@echo "... srcs/alg_five.o"
+	@echo "... srcs/alg_five.i"
+	@echo "... srcs/alg_five.s"
 	@echo "... srcs/algorithm.o"
 	@echo "... srcs/algorithm.i"
 	@echo "... srcs/algorithm.s"
@@ -4077,6 +4242,21 @@ help:
 	@echo "... srcs/begin_algorithm.o"
 	@echo "... srcs/begin_algorithm.i"
 	@echo "... srcs/begin_algorithm.s"
+	@echo "... srcs/bonus_fnct.o"
+	@echo "... srcs/bonus_fnct.i"
+	@echo "... srcs/bonus_fnct.s"
+	@echo "... srcs/checker.o"
+	@echo "... srcs/checker.i"
+	@echo "... srcs/checker.s"
+	@echo "... srcs/funct_three.o"
+	@echo "... srcs/funct_three.i"
+	@echo "... srcs/funct_three.s"
+	@echo "... srcs/funct_two.o"
+	@echo "... srcs/funct_two.i"
+	@echo "... srcs/funct_two.s"
+	@echo "... srcs/functions.o"
+	@echo "... srcs/functions.i"
+	@echo "... srcs/functions.s"
 	@echo "... srcs/get_instructions.o"
 	@echo "... srcs/get_instructions.i"
 	@echo "... srcs/get_instructions.s"
