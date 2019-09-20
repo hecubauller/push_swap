@@ -6,13 +6,13 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 04:47:18 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 02:53:50 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 17:54:22 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int 	swap_2(int argc, char **argv, t_instr **in, char **av_str)
+int		swap_2(int argc, char **argv, t_instr **in, char **av_str)
 {
 	if (argc == 1)
 	{
@@ -35,6 +35,7 @@ void	in_swap(t_instr *in, t_stack **a, t_stack **b)
 	in->inst = 0;
 	in->viz = 0;
 	in->push_swap = 1;
+	in->size_b = 0;
 }
 
 int		main(int argc, char **argv)
@@ -46,7 +47,8 @@ int		main(int argc, char **argv)
 	int				i;
 
 	av_str = NULL;
-	in = (t_instr *)malloc(sizeof(t_instr));
+	if (!(in = (t_instr *)malloc(sizeof(t_instr))))
+		return (ERROR);
 	in_swap(in, &a, &b);
 	if (argc == 1)
 	{
@@ -58,10 +60,9 @@ int		main(int argc, char **argv)
 		av_str = ft_strsplit(argv[1], ' ');
 		in->split++;
 	}
-//	if (!(swap_2(argc, argv, &in, av_str)))
-//		return (0);
 	if ((reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
 	{
+		newlist_ch(&a);
 		(a) ? (free_lsts(&a)) : 0;
 		ft_putstr("Error\n");
 		i = -1;

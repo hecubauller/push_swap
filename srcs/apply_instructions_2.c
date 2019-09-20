@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 06:28:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 02:26:08 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 17:25:55 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	pa(t_stack **a, t_stack **b, t_instr *instr)
 	instr->inst = 0;
 	if (*b)
 	{
-		if (!(*a) && (*b))
+		if (!(*instr).size_a)
 		{
 			tmp_s = (*b);
 			(*b) = (*b)->next;
@@ -144,7 +144,7 @@ void	pb(t_stack **a, t_stack **b, t_instr *instr)
 	instr->inst = 0;
 	if (*a)
 	{
-		if (!(*b) && (*a))
+		if (!(*instr).size_b)
 		{
 			tmp_s = (*a);
 			(*a) = (*a)->next;
@@ -154,7 +154,7 @@ void	pb(t_stack **a, t_stack **b, t_instr *instr)
 			(*b)->prev = NULL;
 
 		}
-		else if (*b)
+		else if ((*b))
 		{
 			(*b)->prev = (*a);
 			tmp_s = (*a)->next;

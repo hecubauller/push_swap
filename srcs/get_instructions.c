@@ -66,13 +66,11 @@ int		int_checker(char *tmp, int nb)
 		{
 			free(res_nb);
 			free(cmp_str);
-			//free(j);
 			return (ERROR);
 		}
 	}
 	free(res_nb);
 	free(cmp_str);
-	//free(j);
 	return (SUCCESS);
 }
 

@@ -6,33 +6,40 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 01:35:11 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 17:57:03 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
+void	in_check(t_instr *in, t_stack **a, t_stack **b)
+{
+	a = NULL;
+	b = NULL;
+	in->split = 0;
+	in->inst = 0;
+	in->viz = 0;
+	in->push_swap = 0;
+}
+
 int		main(int argc, char **argv)
 {
-	int 		res;
 	t_stack 	*a;
 	t_stack 	*b;
 	int 		i;
 	t_instr		*in;
 	char 		**av_str;
 
-	a = NULL;
-	b = NULL;
 	i = -1;
-	res = 0;
 	av_str = NULL;
-	in = (t_instr *)malloc(sizeof(t_instr));
-	in->split = 0;
-	in->inst = 0;
-	in->viz = 0;
-	in->push_swap = 0;
+	if (!(in = (t_instr *)malloc(sizeof(t_instr))))
+		return (ERROR);
+	in_check(in, &a, &b);
 	if (argc == 1)
+	{
+		free(in);
 		return (0);
+	}
 	if (!(ft_strcmp(argv[1], "-v")))
 		in->viz = 1;
 	if (argc == 2 && !in->viz && ft_strchr(argv[1], ' '))
@@ -49,7 +56,8 @@ int		main(int argc, char **argv)
 		in->viz = 2;
 	if ((reader_argv(&a, &in, (av_str ? av_str : argv)) == ERROR))
 	{
-		free_lsts(&a);
+		newlist_ch(&a);
+		(a) ? (free_lsts(&a)) : 0;
 		ft_putstr("Error\n");
 		while (av_str && av_str[++i])
 			free(av_str[i]);
@@ -61,21 +69,21 @@ int		main(int argc, char **argv)
 	{
 		ft_putstr("Error\n");
 		(a) ? (free_lsts(&a)) : 0;
-		(b) ? free_lsts(&b) : 0;
+		newlist_ch(&b);
+		(b) ? (free_lsts(&b)) : 0;
 		free(in);
 		while (av_str && av_str[++i])
 			free(av_str[i]);
 		av_str ? free(av_str) : 0;
 		return (0);
 	}
-	res = check_output(&a, in);
+	if (check_output(&a, in) == OK)
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
 	free_lsts(&a);
 	free_lsts(&b);
 	free(in);
 	free(av_str);
-	if (res == OK)
-		ft_putstr("OK\n");
-	if (res == KO)
-		ft_putstr("KO\n");
 	return (0);
 }

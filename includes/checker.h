@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 03:24:04 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 17:12:51 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct			s_instr
 	int 				size_b;
 	unsigned short int	inst;
 	int 				split;
-	struct s_stack		*next;
+//	struct s_stack		*next;
 }						t_instr;
 
 typedef struct 			s_sort
@@ -139,6 +139,7 @@ void		pb(t_stack **a, t_stack **b, t_instr *instr);
 void		ch_dbl_cycle(char **argv, int *len, int *tmp);
 void		rrr(t_stack **a, t_stack **b, t_instr *instr);
 void		in_swap(t_instr *in, t_stack **a, t_stack **b);
+void		in_check(t_instr *in, t_stack **a, t_stack **b);
 int 		alg_five(t_instr *in, t_stack **a, t_stack **b);
 int 		algorithm(t_instr *in, t_stack **a, t_stack **b);
 int			get_input(t_instr *in, t_stack **a, t_stack **b);

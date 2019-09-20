@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 02:34:22 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 17:34:33 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	add_nbrs_if(t_stack **a, t_stack *tmp2)
 	(*a) = (*a)->next;
 	(*a)->prev = tmp2;
 	(*a)->nb = 0;
+	(*a)->next = NULL;
 }
 
 int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
