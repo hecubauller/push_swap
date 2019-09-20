@@ -26,6 +26,25 @@
 	 return (*x);
  }
 
+ void 	apply_cmnds2(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
+ {
+	 if ((*p)->p_rrb)
+	 {
+		 (*p)->p_rrb--;
+		 rrb(b, in);
+	 }
+	 if ((*p)->p_rb)
+	 {
+		 (*p)->p_rb--;
+		 rb(b, in);
+	 }
+	 if ((*p)->p_rrr)
+	 {
+		 (*p)->p_rrr--;
+		 rrr(a, b, in);
+	 }
+ }
+
 void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 {
 	turn_begin(a);
@@ -48,21 +67,7 @@ void 	apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p)
 			(*p)->p_rr--;
 			rr(a, b, in);
 		}
-		if ((*p)->p_rrb)
-		{
-			(*p)->p_rrb--;
-			rrb(b, in);
-		}
-		if ((*p)->p_rb)
-		{
-			(*p)->p_rb--;
-			rb(b, in);
-		}
-		if ((*p)->p_rrr)
-		{
-			(*p)->p_rrr--;
-			rrr(a, b, in);
-		}
+		apply_cmnds2(a, b, in, p);
 	}
 	pa(a, b, in);
 }

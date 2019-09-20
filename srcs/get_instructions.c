@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:37:18 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 03:44:47 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@ void	free_lsts(t_stack **a)
 {
 	t_stack *tmp;
 
-	if ((*a))
+	tmp = NULL;
+	turn_begin(a);
+	while ((*a) && ((*a)->next))
 	{
-		turn_begin(a);
-		while ((*a) && (*a)->next)
-		{
-			tmp = *a;
-			(*a)->next ? (*a) = (*a)->next : 0;
-			tmp ? free(tmp) : 0;
-		}
-		(*a) ? free(*a) : 0;
+		tmp = *a;
+		if ((*a)->next)
+			(*a) = (*a)->next;
+		tmp ? free(tmp) : 0;
 	}
+	(*a) ? free(*a) : 0;
 }
 
-int 	int_checker(char *tmp, int nb)
+int		int_checker(char *tmp, int nb)
 {
 	char	*res_nb;
 	int 	i;
@@ -67,11 +66,13 @@ int 	int_checker(char *tmp, int nb)
 		{
 			free(res_nb);
 			free(cmp_str);
+			//free(j);
 			return (ERROR);
 		}
 	}
 	free(res_nb);
 	free(cmp_str);
+	//free(j);
 	return (SUCCESS);
 }
 
@@ -112,10 +113,8 @@ int		get_input(t_instr *in, t_stack **a, t_stack **b)
 	{
 		if ((check_valid_instr(&line, in)) == ERROR)
 		{
-			free_lsts(a);
-			free_lsts(b);
-			put_result(ERROR);
-			exit (0);
+			free(line);
+			return (ERROR);
 		}
 		appl_instr(in, a, b);
 		free(line);

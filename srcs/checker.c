@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/19 04:20:27 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 01:35:11 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		main(int argc, char **argv)
 	{
 		ft_putstr("Error\n");
 		(a) ? (free_lsts(&a)) : 0;
+		(b) ? free_lsts(&b) : 0;
 		free(in);
 		while (av_str && av_str[++i])
 			free(av_str[i]);
@@ -76,5 +77,5 @@ int		main(int argc, char **argv)
 		ft_putstr("OK\n");
 	if (res == KO)
 		ft_putstr("KO\n");
-	return (SUCCESS);
+	return (0);
 }

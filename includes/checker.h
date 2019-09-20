@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:03:38 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 03:24:04 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,6 @@
 # include "../includes/ft_printf.h"
 # include "../includes/get_next_line.h"
 
-# define NO_NBRS -90
-# define DONT_LOOKIN_FOR -30
-# define NOT_IN_STACK -20
-# define NTHNG 10
-# define F_RA 9
-# define F_RRA 8
-# define S_RA 7
-# define S_RRA 6
-
-# define RA_IS 5
-# define RRA_IS 4
 # define OK 2
 # define KO 3
 # define ERROR -1
@@ -37,11 +26,8 @@
 # define FAIL 0
 # define CYN   "\x1B[36m"
 # define RED   "\x1B[31m"
-# define GRN   "\x1B[32m"
 # define YEL   "\x1B[33m"
-# define BLU   "\x1B[34m"
 # define MAG   "\x1B[35m"
-# define WHT   "\033[1;30m"
 # define RESET "\x1B[0m"
 
 /*
@@ -59,9 +45,6 @@
 # define RRA	(1u << 8u)
 # define RRB	(1u << 9u)
 # define RRR	(1u << 10u)
-
-# define MAX_INTEGER 2147483647
-# define MIN_INTEGER -2147483648
 
 /*
  * STRUCTURES
@@ -109,6 +92,16 @@ typedef struct 			s_sort
 	int 				max;
 }						t_sort;
 
+typedef struct			s_ch
+{
+	char				*res_nb;
+	int 				i;
+	int 				k;
+	char			 	*cmp_str;
+	int					pos;
+	int 				neg;
+}						t_ch;
+
 /*
  * FUNCTIONS
  */
@@ -121,6 +114,7 @@ void		total_cmnds(t_sort **p);
 void		newlist_ch(t_stack **a);
 t_stack		*turn_begin(t_stack **x);
 void		compare_comands(t_sort **p);
+int 		int_ch_2(t_ch **j, char *tmp);
 int			int_checker(char *tmp, int nb);
 void		sa(t_stack **x, t_instr *instr);
 void		sb(t_stack **x, t_instr *instr);
@@ -142,6 +136,7 @@ void		ss(t_stack **a, t_stack **b, t_instr *instr);
 void		rr(t_stack **a, t_stack **b, t_instr *instr);
 void		pa(t_stack **a, t_stack **b, t_instr *instr);
 void		pb(t_stack **a, t_stack **b, t_instr *instr);
+void		ch_dbl_cycle(char **argv, int *len, int *tmp);
 void		rrr(t_stack **a, t_stack **b, t_instr *instr);
 void		in_swap(t_instr *in, t_stack **a, t_stack **b);
 int 		alg_five(t_instr *in, t_stack **a, t_stack **b);
@@ -156,9 +151,12 @@ void		vizualize_1(t_stack **a, t_stack **b, t_instr *instr);
 void		vizualize_init(t_stack **a, t_stack **b, t_instr *instr);
 int			add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in);
 void		vizualize_check(t_stack **a, t_stack **b, t_instr *instr);
+int			reader_cycle(char **argv, int *i, int *cnt, t_instr **in);
+int		 	swap_2(int argc, char **argv, t_instr **in, char **av_str);
 void		new_algo(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void 		apply_cmnds(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void		cnt_cmnds_a(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
+void	 	apply_cmnds2(t_stack **a, t_stack **b, t_instr *in, t_sort **p);
 void		vizua_2(t_stack **a, t_stack **b, t_stack **tmp_a, t_stack **tmp_b);
 
 #endif

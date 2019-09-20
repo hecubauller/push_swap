@@ -6,42 +6,13 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:38:54 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/20 02:34:22 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int 	check_valid_instr(char **line, t_instr *in)
-{
-	if (!ft_strcmp(*line, "sa"))
-		in->inst |= SA;
-	else if (!ft_strcmp(*line, "sb"))
-		in->inst |= SB;
-	else if (!ft_strcmp(*line, "ss"))
-		in->inst |= SS;
-	else if (!ft_strcmp(*line, "ra"))
-		in->inst |= RA;
-	else if (!ft_strcmp(*line, "rb"))
-		in->inst |= RB;
-	else if (!ft_strcmp(*line, "rr"))
-		in->inst |= RR;
-	else if (!ft_strcmp(*line, "rra"))
-		in->inst |= RRA;
-	else if (!ft_strcmp(*line, "rrb"))
-		in->inst |= RRB;
-	else if (!ft_strcmp(*line, "rrr"))
-		in->inst |= RRR;
-	else if (!ft_strcmp(*line, "pa"))
-		in->inst |= PA;
-	else if (!ft_strcmp(*line, "pb"))
-		in->inst |= PB;
-	else
-		return (ERROR);
-	return (SUCCESS);
-}
-
-void	add_nbrs_if( t_stack **a, t_stack *tmp2)
+void	add_nbrs_if(t_stack **a, t_stack *tmp2)
 {
 	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
 		exit(FAIL);
@@ -54,7 +25,7 @@ int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 {
 	t_stack		*tmp2;
 	t_stack		*begin;
-	char 		*tmp_str;
+	char		*tmp_str;
 
 	begin = (*a);
 	while (argv[tmp])
@@ -79,17 +50,13 @@ int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 
 int		check_dubl(char **argv, int tmp)
 {
-	int 	cnt;
-	int 	cnst;
-	int 	len;
+	int			cnt;
+	int			cnst;
+	int			len;
 
 	cnst = tmp;
 	len = 0;
-	while (argv[tmp])
-	{
-		len++;
-		tmp++;
-	}
+	ch_dbl_cycle(argv, &len, &tmp);
 	tmp = cnst;
 	while (argv[tmp])
 	{
@@ -115,6 +82,7 @@ void	newlist_ch(t_stack **a)
 		exit(FAIL);
 	(*a)->nb = 0;
 	(*a)->prev = NULL;
+	(*a)->next = NULL;
 }
 
 int		reader_argv(t_stack **a, t_instr **in, char **argv)
@@ -133,25 +101,14 @@ int		reader_argv(t_stack **a, t_instr **in, char **argv)
 	}
 	(*in)->size_a = 0;
 	(*in)->size_b = 0;
-	if (*argv)
-	{
-		while (argv[cnt])
-		{
-			i = 0;
-			while (argv[cnt][i] &&
-				   ((argv[cnt][i] >= '0' && argv[cnt][i] <= '9') ||
-					argv[cnt][i] == '-' || argv[cnt][i] == '+'))
-				++i;
-			if (argv[cnt][i] || (cnt == 1 && !(*in)->split && i == 0))
-				return (ERROR);
-			cnt++;
-		}
-		if ((check_dubl(argv, tmp) == ERROR))
-			return (ERROR);
-		newlist_ch(a);
-		if ((add_nbrs(tmp, a, argv, *in)) == ERROR)
-			return (ERROR);
-		return (SUCCESS);
-	}
-	return (ERROR);
+	if (!*argv)
+		return (ERROR);
+	if (reader_cycle(argv, &i, &cnt, in) == ERROR)
+		return (ERROR);
+	if ((check_dubl(argv, tmp) == ERROR))
+		return (ERROR);
+	newlist_ch(a);
+	if ((add_nbrs(tmp, a, argv, *in)) == ERROR)
+		return (ERROR);
+	return (SUCCESS);
 }
