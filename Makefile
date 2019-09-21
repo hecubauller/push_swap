@@ -41,7 +41,7 @@ SRC1_NAME		=	checker.c apply_instructions.c apply_instructions_2.c\
 					visualizer.c get_instructions.c reader_checker.c\
 					algorithm.c begin_algorithm.c reader_plus.c\
 					bonus_fnct.c alg_five.c functions.c funct_two.c\
-					funct_three.c\
+					funct_three.c algorithm_two.c\
 
 OBJ1_NAME		=	$(SRC1_NAME:.c=.o)
 INC1_NAME		=	checker.h
@@ -52,7 +52,7 @@ SRC2_NAME		=	push_swap.c reader_checker.c get_instructions.c\
 					begin_algorithm.c apply_instructions.c algorithm.c\
 					apply_instructions_2.c visualizer.c reader_plus.c\
 					bonus_fnct.c alg_five.c functions.c funct_two.c\
-					funct_three.c\
+					funct_three.c algorithm_two.c\
 
 OBJ2_NAME		=	$(SRC2_NAME:.c=.o)
 INC2_NAME		=	checker.h

@@ -129,6 +129,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/huller/Desktop/push_swap/libft/sources/zrs.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/sources/zrs.c.o"
   "/Users/huller/Desktop/push_swap/srcs/alg_five.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/alg_five.c.o"
   "/Users/huller/Desktop/push_swap/srcs/algorithm.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/algorithm.c.o"
+  "/Users/huller/Desktop/push_swap/srcs/algorithm_two.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o"
   "/Users/huller/Desktop/push_swap/srcs/apply_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o"
   "/Users/huller/Desktop/push_swap/srcs/apply_instructions_2.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o"
   "/Users/huller/Desktop/push_swap/srcs/begin_algorithm.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o"

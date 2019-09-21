@@ -3498,6 +3498,33 @@ srcs/algorithm.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm.c.s
 .PHONY : srcs/algorithm.c.s
 
+srcs/algorithm_two.o: srcs/algorithm_two.c.o
+
+.PHONY : srcs/algorithm_two.o
+
+# target to build an object file
+srcs/algorithm_two.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o
+.PHONY : srcs/algorithm_two.c.o
+
+srcs/algorithm_two.i: srcs/algorithm_two.c.i
+
+.PHONY : srcs/algorithm_two.i
+
+# target to preprocess a source file
+srcs/algorithm_two.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm_two.c.i
+.PHONY : srcs/algorithm_two.c.i
+
+srcs/algorithm_two.s: srcs/algorithm_two.c.s
+
+.PHONY : srcs/algorithm_two.s
+
+# target to generate assembly for a file
+srcs/algorithm_two.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/algorithm_two.c.s
+.PHONY : srcs/algorithm_two.c.s
+
 srcs/apply_instructions.o: srcs/apply_instructions.c.o
 
 .PHONY : srcs/apply_instructions.o
@@ -4206,6 +4233,9 @@ help:
 	@echo "... srcs/algorithm.o"
 	@echo "... srcs/algorithm.i"
 	@echo "... srcs/algorithm.s"
+	@echo "... srcs/algorithm_two.o"
+	@echo "... srcs/algorithm_two.i"
+	@echo "... srcs/algorithm_two.s"
 	@echo "... srcs/apply_instructions.o"
 	@echo "... srcs/apply_instructions.i"
 	@echo "... srcs/apply_instructions.s"

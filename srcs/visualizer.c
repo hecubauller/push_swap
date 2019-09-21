@@ -6,11 +6,39 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 04:39:47 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 00:59:20 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/21 21:01:39 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
+
+int		cycle_cmnd_a(t_stack **a, t_stack **b, t_sort **p)
+{
+	int		cnt;
+
+	cnt = 0;
+	while ((*a))
+	{
+		if (get_boolean(a, b, p)
+			break ;
+		else if (get_boolean_two(a, b, p))
+		{
+			cnt++;
+			break ;
+		}
+		cnt++;
+		if ((*a)->next)
+			(*a) = (*a)->next;
+		else if ((*b)->nb > (*a)->nb && !(*a)->next)
+		{
+			cnt = 0;
+			break ;
+		}
+		else
+			cnt = else_cmd(a);
+	}
+	return (cnt);
+}
 
 void	vizua_2(t_stack **a, t_stack **b, t_stack **tmp_a, t_stack **tmp_b)
 {
