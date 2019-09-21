@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:00:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 19:53:18 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/21 04:24:19 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,16 @@ void	free_lsts(t_stack **a)
 	t_stack *tmp;
 
 	tmp = NULL;
-	turn_begin(a);
-	while ((*a) && ((*a)->next))
+	if ((*a) && (a))
 	{
-		tmp = *a;
-		if ((*a)->next)
-			(*a) = (*a)->next;
-		tmp ? free(tmp) : 0;
+		turn_begin(a);
+		while ((*a) && ((*a)->next))
+		{
+			tmp = *a;
+			if ((*a)->next)
+				(*a) = (*a)->next;
+			tmp ? free(tmp) : 0;
+		}
+		(*a) ? free(*a) : 0;
 	}
-	(*a) ? free(*a) : 0;
 }

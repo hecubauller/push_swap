@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 19:44:56 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 19:48:31 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/21 04:05:54 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ int		check_output(t_stack **a, t_instr *in)
 {
 	if (!(in->size_b))
 	{
-		while ((*a)->prev)
-			(*a) = (*a)->prev;
-		while ((*a)->next)
+		turn_begin(a);
+		while ((*a) && (*a)->next)
 		{
 			if ((*a)->nb < (*a)->next->nb)
-				(*a) = (*a)->next;
+				(*a)->next ? (*a) = (*a)->next : 0;
 			else
 				return (KO);
 		}

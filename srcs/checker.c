@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 18:49:32 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/21 04:30:34 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	in_check(t_instr *in, t_stack **a, t_stack **b)
 {
-	a = NULL;
-	b = NULL;
+	(*a) = NULL;
+	(*b) = NULL;
 	in->split = 0;
 	in->inst = 0;
 	in->viz = 0;
 	in->push_swap = 0;
+	in->size_b = 0;
 }
 
 int		geint_two(t_stack **a, t_instr *in, char **av_str)
@@ -55,10 +56,15 @@ int		check_res(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 
 void	freee(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 {
-	(a) ? free_lsts(a) : 0;
-	(b) ? free_lsts(b) : 0;
+	int	i;
+
+	i = -1;
+	free_lsts(a);
+	free_lsts(b);
 	free(in);
-	(av_str) ? free(av_str) : 0;
+	while (av_str && av_str[++i])
+		free(av_str[i]);
+	av_str ? free(av_str) : 0;
 }
 
 int		main(int argc, char **argv)
@@ -86,6 +92,6 @@ int		main(int argc, char **argv)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
-	freee(&a, &b, in, av_str); //неправильно фришится
+	freee(&a, &b, in, av_str);
 	return (0);
 }

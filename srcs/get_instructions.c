@@ -6,11 +6,17 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/20 19:13:09 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/21 03:24:22 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
+
+int		get_free(t_stack **a)
+{
+	free_lsts(a);
+	return (ERROR);
+}
 
 int		ret_fr(char *res_nb, char *cmp_str)
 {
@@ -60,16 +66,6 @@ int		int_checker(char *tmp, int nb)
 	return (SUCCESS);
 }
 
-void	put_result(int res)
-{
-	if (res == ERROR)
-		ft_putstr("Error\n");
-	if (res == OK)
-		ft_putstr("OK\n");
-	if (res == KO)
-		ft_putstr("KO\n");
-}
-
 int		get_input(t_instr *in, t_stack **a, t_stack **b)
 {
 	char	*line;
@@ -83,7 +79,7 @@ int		get_input(t_instr *in, t_stack **a, t_stack **b)
 			return (ERROR);
 		}
 		appl_instr(in, a, b);
-		free(line);
+		(line) ? free(line) : 0;
 	}
 	(line) ? free(line) : 0;
 	return (SUCCESS);
