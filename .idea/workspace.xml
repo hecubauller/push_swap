@@ -13,158 +13,32 @@
   <component name="ChangeListManager">
     <list default="true" id="734c04e9-49c1-4e81-b909-66c32ecb2ca0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/push_swap.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/push_swap.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker.dSYM/Contents/Resources/DWARF/checker" beforeDir="false" afterPath="$PROJECT_DIR$/checker.dSYM/Contents/Resources/DWARF/checker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/alg_five.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/alg_five.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/algorithm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/algorithm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/apply_instructions_2.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/begin_algorithm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/bonus_fnct.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/bonus_fnct.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/checker.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/checker.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_three.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_three.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_two.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_two.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/functions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/functions.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_instructions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_instructions.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_checker.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_checker.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_plus.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_plus.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/visualizer.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/visualizer.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/push_swap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/push_swap.dSYM/Contents/Resources/DWARF/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/push_swap.dSYM/Contents/Resources/DWARF/push_swap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/checker.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/checker.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/add_z.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/apply_flags.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/c_str.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_b.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_di.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_e.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_f.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_g.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_o.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_p.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_sr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_u.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_x.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/chck_xu.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/e_zrs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/fld_edge.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/fr_p.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_abs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_add_pl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_app_d_prs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_app_fl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_app_width.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_atoi.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_bufjoin.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_bzero.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_cycle6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_e.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_factorial.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_fld.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_free_output.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_g.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_isalnum.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_isalpha.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_isascii.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_isdigit.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_isprint.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_itoa.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_itoa_base.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_itoa_fp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstadd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstdelone.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstiter.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstmap.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_lstnew.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memalloc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memccpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memcmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memcpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memmove.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_memset.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_ox.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_p.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_printf.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_put_out.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_put_percent.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putchar.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putchar_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putendl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putendl_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putnbr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putnbr_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_putstr_fd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_rg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_round.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_s.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_solver.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_sqrt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strcat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strclr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strcmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strcpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strdel.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strdup.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strequ.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_striter.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_striteri.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strjoin.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strlcat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strlen.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strmap.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strmapi.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strncat.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strncmp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strncpy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strnequ.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strnew.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strnstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strrchr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strrev.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strsplit.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strstr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strsub.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_strtrim.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_tolower.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_toupper.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/ft_u.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/get_next_line.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/int_p.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/mantis.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/mexp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/pw.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/pw_to_str.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/reader.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/res_o_fr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/res_w_fr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/rnd.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/rnd_z.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/rndg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/rndg_z.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/s_str.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/str_ad.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/str_ml.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/t_str.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/wzrs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/objects/zrs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/push_swap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/algorithm.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/algorithm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/sources/ft_itoa.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/sources/ft_itoa.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/algorithm_two.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/algorithm_two.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/funct_three.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/funct_three.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/alg_five.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/algorithm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/apply_instructions.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/apply_instructions_2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/begin_algorithm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/bonus_fnct.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/checker.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/funct_three.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/funct_two.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/functions.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/get_instructions.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/push_swap.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/reader_checker.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/reader_plus.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/obj/visualizer.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/get_instructions.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/get_instructions.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/reader_checker.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/reader_checker.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/visualizer.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/visualizer.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -199,14 +73,59 @@
     <favorites_list name="push_swap" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4496">
+    <splitter split-orientation="horizontal" split-proportion="0.70528185">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/srcs/algorithm.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="10" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/srcs/get_instructions.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="532">
+                  <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/srcs/checker.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="813">
+                  <caret line="97" selection-start-line="97" selection-end-line="97" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/libft/sources/ft_strcmp.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/libft/sources/ft_strlen.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="21" selection-start-line="21" selection-end-line="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/srcs/reader_checker.c">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="503">
+                  <caret line="47" selection-start-line="47" selection-end-line="47" />
                 </state>
               </provider>
             </entry>
@@ -214,21 +133,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/checker.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="821">
-                  <caret line="160" column="52" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/srcs/visualizer.c">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="515">
-                  <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+                <state relative-caret-position="707">
+                  <caret line="161" column="76" selection-start-line="161" selection-start-column="76" selection-end-line="161" selection-end-column="76" />
+                  <folding>
+                    <element signature="e#931#951#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -252,19 +165,20 @@
       <list>
         <option value="$PROJECT_DIR$/srcs/functions.c" />
         <option value="$PROJECT_DIR$/srcs/apply_instructions_2.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/srcs/reader_checker.c" />
         <option value="$PROJECT_DIR$/srcs/alg_five.c" />
         <option value="$PROJECT_DIR$/srcs/bonus_fnct.c" />
         <option value="$PROJECT_DIR$/srcs/push_swap.c" />
         <option value="$PROJECT_DIR$/srcs/checker.c" />
-        <option value="$PROJECT_DIR$/srcs/get_instructions.c" />
         <option value="$PROJECT_DIR$/Makefile" />
-        <option value="$PROJECT_DIR$/srcs/funct_three.c" />
-        <option value="$PROJECT_DIR$/srcs/algorithm_two.c" />
         <option value="$PROJECT_DIR$/srcs/algorithm.c" />
         <option value="$PROJECT_DIR$/srcs/visualizer.c" />
+        <option value="$PROJECT_DIR$/srcs/algorithm_two.c" />
+        <option value="$PROJECT_DIR$/srcs/funct_three.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/srcs/reader_checker.c" />
+        <option value="$PROJECT_DIR$/libft/sources/ft_itoa.c" />
         <option value="$PROJECT_DIR$/includes/checker.h" />
+        <option value="$PROJECT_DIR$/srcs/get_instructions.c" />
       </list>
     </option>
   </component>
@@ -281,7 +195,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1554" />
+    <option name="width" value="1400" />
     <option name="height" value="1353" />
   </component>
   <component name="ProjectId" id="1PNdKHWz5CrY7PRmf31jU2IBB6C" />
@@ -304,6 +218,17 @@
               <item name="push_swap" type="b2602c69:ProjectViewProjectNode" />
               <item name="push_swap" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="push_swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="push_swap" type="462c0819:PsiDirectoryNode" />
+              <item name="libft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="push_swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="push_swap" type="462c0819:PsiDirectoryNode" />
+              <item name="libft" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="push_swap" type="b2602c69:ProjectViewProjectNode" />
@@ -331,7 +256,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.quicklists" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -351,7 +276,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="push_swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="0 02147483647" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="push_swap" RUN_TARGET_NAME="push_swap">
+    <configuration name="push_swap" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="0 000002147483647" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="push_swap" RUN_TARGET_NAME="push_swap">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -437,12 +362,13 @@
       <workItem from="1569009203420" duration="18000" />
       <workItem from="1569009249117" duration="1432000" />
       <workItem from="1569021454210" duration="9687000" />
-      <workItem from="1569077789718" duration="6158000" />
+      <workItem from="1569077789718" duration="6467000" />
+      <workItem from="1569106298028" duration="6017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15845000" />
+    <option name="totallyTimeSpent" value="22171000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,15 +380,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1554" height="1353" extended-state="0" />
+    <frame x="0" y="23" width="1400" height="1353" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17328042" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19513991" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29483038" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29402262" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -520,8 +446,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/get_instructions.c</url>
-          <line>51</line>
-          <option name="timeStamp" value="5" />
+          <line>69</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -531,20 +457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libft/sources/ft_strlen.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
-          <caret line="146" column="31" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -559,13 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/algorithm_two.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -593,20 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/checker.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/funct_three.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/srcs/funct_two.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -617,20 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/get_instructions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/reader_checker.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1359">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/srcs/reader_plus.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -638,24 +515,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/algorithm.c">
+    <entry file="file://$PROJECT_DIR$/srcs/visualizer.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="427">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/visualizer.c">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="639">
+          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/funct_three.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/algorithm_two.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/sources/ft_strlen.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/algorithm.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/sources/ft_itoa.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/sources/ft_strcmp.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libft/sources/ft_bzero.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/reader_checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/checker.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="160" column="52" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
+        <state relative-caret-position="707">
+          <caret line="161" column="76" selection-start-line="161" selection-start-column="76" selection-end-line="161" selection-end-column="76" />
+          <folding>
+            <element signature="e#931#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/get_instructions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
         </state>
       </provider>
     </entry>

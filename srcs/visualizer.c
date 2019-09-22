@@ -19,7 +19,7 @@ int		cycle_cmnd_a(t_stack **a, t_stack **b, t_sort **p)
 	cnt = 0;
 	while ((*a))
 	{
-		if (get_boolean(a, b, p)
+		if (get_boolean(a, b, p))
 			break ;
 		else if (get_boolean_two(a, b, p))
 		{

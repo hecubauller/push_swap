@@ -138,6 +138,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/huller/Desktop/push_swap/srcs/funct_three.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_three.c.o"
   "/Users/huller/Desktop/push_swap/srcs/funct_two.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/funct_two.c.o"
   "/Users/huller/Desktop/push_swap/srcs/functions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/functions.c.o"
+  "/Users/huller/Desktop/push_swap/srcs/get_act.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_act.c.o"
   "/Users/huller/Desktop/push_swap/srcs/get_instructions.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/get_instructions.c.o"
   "/Users/huller/Desktop/push_swap/srcs/reader_checker.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_checker.c.o"
   "/Users/huller/Desktop/push_swap/srcs/reader_plus.c" "/Users/huller/Desktop/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/srcs/reader_plus.c.o"

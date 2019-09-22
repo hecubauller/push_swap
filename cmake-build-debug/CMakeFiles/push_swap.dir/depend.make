@@ -443,6 +443,13 @@ CMakeFiles/push_swap.dir/srcs/algorithm.c.o: ../includes/checker.h
 CMakeFiles/push_swap.dir/srcs/algorithm.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/algorithm.c.o: ../srcs/algorithm.c
 
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../includes/checker.h
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o: ../srcs/algorithm_two.c
+
 CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o: ../libft/includes/libft.h

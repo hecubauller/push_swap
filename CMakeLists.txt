@@ -149,4 +149,4 @@ add_executable(push_swap
 		srcs/reader_checker.c
 		srcs/reader_plus.c
 		srcs/visualizer.c
-		Makefile srcs/algorithm_two.c)
+		Makefile srcs/algorithm_two.c srcs/get_act.c)

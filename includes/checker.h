@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/21 21:00:47 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/22 03:28:36 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ typedef struct			s_sort
 	int					nb;
 	int					min;
 	int					max;
-	int 				end;
-	int 				start;
+	int					end;
+	int					start;
 }						t_sort;
 
 typedef struct			s_ch
@@ -133,8 +133,8 @@ int						check_valid_instr(char **line, t_instr *in);
 void					ss(t_stack **a, t_stack **b, t_instr *instr);
 void					rr(t_stack **a, t_stack **b, t_instr *instr);
 void					pa(t_stack **a, t_stack **b, t_instr *instr);
-void					cycles_int(char *tmp, int *i, char *cmp_str);
 void					pb(t_stack **a, t_stack **b, t_instr *instr);
+void					sign_nb(char *tmp, int i, int *neg, int *pos);
 void					ch_dbl_cycle(char **argv, int *len, int *tmp);
 void					rrr(t_stack **a, t_stack **b, t_instr *instr);
 void					in_swap(t_instr *in, t_stack **a, t_stack **b);
@@ -160,9 +160,9 @@ int						cycle_cmnd_a(t_stack **a, t_stack **b, t_sort **p);
 int						reader_argv(t_stack **a, t_instr **in, char **argv);
 void					innn(t_stack **a, t_sort **p);
 int						geint_two(t_stack **a, t_instr *in, char **av_str);
+void					cycles_int(char *tmp, int *i, char *cmp_str, int neg);
 bool					get_boolean_two(t_stack **a, t_stack **b, t_sort **p);
-bool					get_boolean(t_stack **a, t_stack **b, int end,
-						int start);
+bool					get_boolean(t_stack **a, t_stack **b, t_sort **p);
 void					rrr_two(t_stack **b, t_stack *tmp_s, t_stack *tmp_s2);
 void					vizualize_1(t_stack **a, t_stack **b, t_instr *instr);
 void					vizualize_init(t_stack **a, t_stack **b,

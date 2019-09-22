@@ -503,6 +503,9 @@
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/functions.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/huller/Desktop/push_swap/srcs/get_act.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/huller/Desktop/push_swap/srcs/get_instructions.c">
 			<Option target="push_swap"/>
 		</Unit>

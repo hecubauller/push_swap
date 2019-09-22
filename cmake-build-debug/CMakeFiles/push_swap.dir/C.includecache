@@ -39,6 +39,8 @@ stdlib.h
 -
 stdio.h
 -
+stdbool.h
+-
 ../libft/includes/libft.h
 /Users/huller/Desktop/push_swap/libft/includes/libft.h
 ../includes/ft_printf.h

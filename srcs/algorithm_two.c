@@ -18,11 +18,11 @@ bool	get_boolean_two(t_stack **a, t_stack **b, t_sort **p)
 	|| ((*a)->nb < (*b)->nb && (*a)->nb == (*p)->max);
 }
 
-bool	get_boolean(t_stack **a, t_stack **b, int end, int start)
+bool	get_boolean(t_stack **a, t_stack **b, t_sort **p)
 {
 	return ((*a)->prev && (*a)->nb > (*b)->nb && (*a)->prev->nb < (*b)->nb)
-	|| ((*a)->nb > (*b)->nb && !(*a)->prev && end < (*b)->nb)
-	|| ((*a)->nb > (*b)->nb && (*a)->nb == start);
+	|| ((*a)->nb > (*b)->nb && !(*a)->prev && (*p)->end < (*b)->nb)
+	|| ((*a)->nb > (*b)->nb && (*a)->nb == (*p)->start);
 }
 
 int		else_cmd(t_stack **a)

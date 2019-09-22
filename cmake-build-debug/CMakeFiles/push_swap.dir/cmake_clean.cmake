@@ -137,6 +137,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/srcs/reader_plus.c.o"
   "CMakeFiles/push_swap.dir/srcs/visualizer.c.o"
   "CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o"
+  "CMakeFiles/push_swap.dir/srcs/get_act.c.o"
   "push_swap.pdb"
   "push_swap"
 )

@@ -88,15 +88,15 @@ int		cmnd_b_two(t_stack **b, t_sort **p)
 	return (tmp);
 }
 
-void	innn(t_stack **a, t_sort **p, int *end, int *start)
+void	innn(t_stack **a, t_sort **p)
 {
 	(*p)->ra = 0;
 	(*p)->rra = 0;
 	(*p)->cmnd_a = 0;
 	create_max(a, p);
 	turn_end(a);
-	(*a) ? ((*end) = (*a)->nb) : 0;
+	(*a) ? (((*p)->end) = (*a)->nb) : 0;
 	turn_begin(a);
-	(*start) = search_beginning(a, (*end));
+	((*p)->start) = search_beginning(a, ((*p)->end));
 	turn_begin(a);
 }

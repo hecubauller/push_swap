@@ -443,6 +443,13 @@ CMakeFiles/push_swap.dir/srcs/algorithm.c.o
  /Users/huller/Desktop/push_swap/includes/checker.h
  /Users/huller/Desktop/push_swap/libft/includes/libft.h
  /Users/huller/Desktop/push_swap/srcs/algorithm.c
+CMakeFiles/push_swap.dir/srcs/algorithm_two.c.o
+ ../libft/includes/ft_printf.h
+ ../libft/includes/get_next_line.h
+ ../libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/includes/checker.h
+ /Users/huller/Desktop/push_swap/libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/srcs/algorithm_two.c
 CMakeFiles/push_swap.dir/srcs/apply_instructions.c.o
  ../libft/includes/ft_printf.h
  ../libft/includes/get_next_line.h

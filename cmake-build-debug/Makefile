@@ -3741,6 +3741,33 @@ srcs/functions.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/functions.c.s
 .PHONY : srcs/functions.c.s
 
+srcs/get_act.o: srcs/get_act.c.o
+
+.PHONY : srcs/get_act.o
+
+# target to build an object file
+srcs/get_act.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_act.c.o
+.PHONY : srcs/get_act.c.o
+
+srcs/get_act.i: srcs/get_act.c.i
+
+.PHONY : srcs/get_act.i
+
+# target to preprocess a source file
+srcs/get_act.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_act.c.i
+.PHONY : srcs/get_act.c.i
+
+srcs/get_act.s: srcs/get_act.c.s
+
+.PHONY : srcs/get_act.s
+
+# target to generate assembly for a file
+srcs/get_act.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/srcs/get_act.c.s
+.PHONY : srcs/get_act.c.s
+
 srcs/get_instructions.o: srcs/get_instructions.c.o
 
 .PHONY : srcs/get_instructions.o
@@ -4260,6 +4287,9 @@ help:
 	@echo "... srcs/functions.o"
 	@echo "... srcs/functions.i"
 	@echo "... srcs/functions.s"
+	@echo "... srcs/get_act.o"
+	@echo "... srcs/get_act.i"
+	@echo "... srcs/get_act.s"
 	@echo "... srcs/get_instructions.o"
 	@echo "... srcs/get_instructions.i"
 	@echo "... srcs/get_instructions.s"

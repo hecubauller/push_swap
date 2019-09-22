@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/21 03:38:31 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/22 02:12:39 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
 	t_stack		*tmp2;
 	char		*tmp_str;
 
+	tmp_str = NULL;
 	newlist_ch(a);
 	while (argv[tmp])
 	{
@@ -92,6 +93,7 @@ int		reader_argv(t_stack **a, t_instr **in, char **argv)
 	int tmp;
 
 	i = 0;
+	tmp = 0;
 	cnt = ((*in)->split) ? 0 : 1;
 	tmp = ((*in)->split) ? 0 : 1;
 	if ((*in)->viz == 2)
