@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 03:37:19 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 03:37:33 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/22 03:38:05 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		int_checker(char *tmp, int nb)
 	pos = 0;
 	neg = 0;
 	res_nb = ft_itoa(nb);
-	if (!(cmp_str = (char *)malloc(sizeof(char) * ft_strlen(tmp))))
+	if (!(cmp_str = (char *)malloc(sizeof(char) * (ft_strlen(tmp) + 1))))
 		exit(ERROR);
 	if (ft_strcmp(tmp, res_nb))
 	{

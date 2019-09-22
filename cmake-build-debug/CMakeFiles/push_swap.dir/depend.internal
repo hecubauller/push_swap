@@ -506,6 +506,13 @@ CMakeFiles/push_swap.dir/srcs/functions.c.o
  /Users/huller/Desktop/push_swap/includes/checker.h
  /Users/huller/Desktop/push_swap/libft/includes/libft.h
  /Users/huller/Desktop/push_swap/srcs/functions.c
+CMakeFiles/push_swap.dir/srcs/get_act.c.o
+ ../libft/includes/ft_printf.h
+ ../libft/includes/get_next_line.h
+ ../libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/includes/checker.h
+ /Users/huller/Desktop/push_swap/libft/includes/libft.h
+ /Users/huller/Desktop/push_swap/srcs/get_act.c
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o
  ../libft/includes/ft_printf.h
  ../libft/includes/get_next_line.h

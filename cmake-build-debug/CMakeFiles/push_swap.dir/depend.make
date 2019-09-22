@@ -506,6 +506,13 @@ CMakeFiles/push_swap.dir/srcs/functions.c.o: ../includes/checker.h
 CMakeFiles/push_swap.dir/srcs/functions.c.o: ../libft/includes/libft.h
 CMakeFiles/push_swap.dir/srcs/functions.c.o: ../srcs/functions.c
 
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../libft/includes/ft_printf.h
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../includes/checker.h
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../libft/includes/libft.h
+CMakeFiles/push_swap.dir/srcs/get_act.c.o: ../srcs/get_act.c
+
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/ft_printf.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/push_swap.dir/srcs/get_instructions.c.o: ../libft/includes/libft.h

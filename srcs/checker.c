@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/21 04:30:34 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/22 04:08:54 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		check_res(t_stack **a, t_stack **b, t_instr *in, char **av_str)
 	i = -1;
 	ft_putstr("Error\n");
 	(*a) ? (free_lsts(a)) : 0;
-	newlist_ch(b);
 	(*b) ? (free_lsts(b)) : 0;
 	free(in);
 	while (av_str && av_str[++i])

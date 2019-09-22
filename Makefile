@@ -6,7 +6,7 @@
 #    By: huller <huller@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/26 05:09:33 by huller            #+#    #+#              #
-#    Updated: 2019/09/20 20:09:21 by huller           ###   ########.fr        #
+#    Updated: 2019/09/22 03:58:03 by huller           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,7 @@ $(NAME1):			$(LIB) $(OBJ1)
 $(NAME2):			$(LIB) $(OBJ2)
 					@gcc -Wall -Wextra -Werror \
 						$(OBJ2) -L $(LIB_PATH) -lft -o $(NAME2)
-					@echo "$(GRN)'Push Swap' is ready.$(RES)"
+					@echo "$(MAG)'Push Swap' is ready.$(RES)"
 
 # LIBFT
 
