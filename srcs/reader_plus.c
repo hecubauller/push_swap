@@ -69,15 +69,6 @@ int		reader_cycle(char **argv, int *i, int *cnt, t_instr **in)
 	return (SUCCESS);
 }
 
-void	ch_dbl_cycle(char **argv, int *len, int *tmp)
-{
-	while (argv[*tmp])
-	{
-		(*len)++;
-		(*tmp)++;
-	}
-}
-
 int		check_valid_instr(char **line, t_instr *in)
 {
 	if (!ft_strcmp(*line, "sa"))

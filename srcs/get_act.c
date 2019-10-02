@@ -6,11 +6,48 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 03:37:19 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 03:38:05 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/25 10:38:40 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
+
+int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
+{
+	t_stack		*tmp2;
+	char		*tmp_str;
+
+	tmp_str = NULL;
+	newlist_ch(a);
+	while (argv[tmp])
+	{
+		tmp_str = argv[tmp];
+		(*a)->nb = ft_atoi(argv[tmp]);
+		if (int_checker(tmp_str, (*a)->nb) == ERROR)
+			return (ERROR);
+		in->size_a++;
+		tmp2 = (*a);
+		if (argv[tmp + 1])
+			add_nbrs_if(a, tmp2);
+		else
+			(*a)->next = NULL;
+		++tmp;
+	}
+	if (in->size_a == 1)
+		return (ERROR);
+	turn_begin(a);
+	return (SUCCESS);
+}
+
+void	add_nbrs_if(t_stack **a, t_stack *tmp2)
+{
+	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
+		exit(FAIL);
+	(*a) = (*a)->next;
+	(*a)->prev = tmp2;
+	(*a)->nb = 0;
+	(*a)->next = NULL;
+}
 
 int		int_checker(char *tmp, int nb)
 {

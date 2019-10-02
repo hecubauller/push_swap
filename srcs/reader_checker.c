@@ -6,73 +6,36 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 20:26:13 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 02:12:39 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/25 10:40:08 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	add_nbrs_if(t_stack **a, t_stack *tmp2)
+int		check_dubl(int *arr, t_instr **in)
 {
-	if (!((*a)->next = (t_stack *)malloc(sizeof(t_stack))))
-		exit(FAIL);
-	(*a) = (*a)->next;
-	(*a)->prev = tmp2;
-	(*a)->nb = 0;
-	(*a)->next = NULL;
-}
-
-int		add_nbrs(int tmp, t_stack **a, char **argv, t_instr *in)
-{
-	t_stack		*tmp2;
-	char		*tmp_str;
-
-	tmp_str = NULL;
-	newlist_ch(a);
-	while (argv[tmp])
-	{
-		tmp_str = argv[tmp];
-		(*a)->nb = ft_atoi(argv[tmp]);
-		if (int_checker(tmp_str, (*a)->nb) == ERROR)
-			return (get_free(a));
-		in->size_a++;
-		tmp2 = (*a);
-		if (argv[tmp + 1])
-			add_nbrs_if(a, tmp2);
-		else
-			(*a)->next = NULL;
-		++tmp;
-	}
-	if (in->size_a == 1)
-		return (get_free(a));
-	turn_begin(a);
-	return (SUCCESS);
-}
-
-int		check_dubl(char **argv, int tmp)
-{
+	int			i;
+	int			end;
 	int			cnt;
 	int			cnst;
 	int			len;
 
-	cnst = tmp;
-	len = 0;
-	ch_dbl_cycle(argv, &len, &tmp);
-	tmp = cnst;
-	while (argv[tmp])
+	i = 0;
+	cnst = 0;
+	end = (*in)->size_a;
+	len = (*in)->size_a;
+	while (--len)
 	{
-		cnt = cnst;
-		while (cnt <= len && argv[cnt])
+		cnt = 0;
+		cnst = arr[i];
+		while (cnt <= end)
 		{
-			cnt == tmp ? ++cnt : 0;
-			if (argv[cnt])
-			{
-				if (!(ft_strcmp(argv[tmp], argv[cnt])))
-					return (ERROR);
-			}
+			cnt == i ? ++i : 0;
+			if (i < end && arr[i] == cnst)
+				return (ERROR);
 			++cnt;
 		}
-		++tmp;
+		++i;
 	}
 	return (SUCCESS);
 }
@@ -86,30 +49,60 @@ void	newlist_ch(t_stack **a)
 	(*a)->next = NULL;
 }
 
+int		*create_arr(t_stack **a, t_instr **in)
+{
+	int i;
+	int *arr;
+
+	i = -1;
+	if (!(arr = (int *)malloc(sizeof(int) * (*in)->size_a)))
+		exit(-1);
+	turn_begin(a);
+	while ((*a) && (*a)->next)
+	{
+		arr[++i] = (*a)->nb;
+		(*a) = (*a)->next;
+	}
+	(*a) ? arr[++i] = (*a)->nb : 0;
+	turn_begin(a);
+	return (arr);
+}
+
+void	init_read(t_instr **in, int *i, int *cnt, int *tmp)
+{
+	(*i) = 0;
+	(*tmp) = 0;
+	(*cnt) = ((*in)->split) ? 0 : 1;
+	(*tmp) = ((*in)->split) ? 0 : 1;
+	if ((*in)->viz == 2)
+	{
+		++(*cnt);
+		++(*tmp);
+	}
+	(*in)->size_a = 0;
+	(*in)->size_b = 0;
+}
+
 int		reader_argv(t_stack **a, t_instr **in, char **argv)
 {
 	int i;
 	int cnt;
 	int tmp;
+	int *arr;
 
-	i = 0;
-	tmp = 0;
-	cnt = ((*in)->split) ? 0 : 1;
-	tmp = ((*in)->split) ? 0 : 1;
-	if ((*in)->viz == 2)
-	{
-		++cnt;
-		++tmp;
-	}
-	(*in)->size_a = 0;
-	(*in)->size_b = 0;
+	init_read(in, &i, &cnt, &tmp);
 	if (!*argv)
 		return (ERROR);
 	if (reader_cycle(argv, &i, &cnt, in) == ERROR)
 		return (ERROR);
-	if ((check_dubl(argv, tmp) == ERROR))
-		return (ERROR);
 	if ((add_nbrs(tmp, a, argv, *in)) == ERROR)
 		return (ERROR);
+	arr = create_arr(a, in);
+	if ((check_dubl(arr, in) == ERROR))
+	{
+		free(arr);
+		return (ERROR);
+	}
+	free(arr);
 	return (SUCCESS);
 }

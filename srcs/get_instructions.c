@@ -6,17 +6,11 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 01:03:23 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 03:36:25 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/25 09:46:25 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-
-int		get_free(t_stack **a)
-{
-	free_lsts(a);
-	return (ERROR);
-}
 
 int		ret_fr(char *res_nb, char *cmp_str)
 {

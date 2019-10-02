@@ -6,7 +6,7 @@
 /*   By: huller <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 18:13:58 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 04:08:54 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/25 10:28:19 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		geint_two(t_stack **a, t_instr *in, char **av_str)
 	int i;
 
 	i = -1;
-	newlist_ch(a);
 	(*a) ? (free_lsts(a)) : 0;
 	ft_putstr("Error\n");
 	while (av_str && av_str[++i])

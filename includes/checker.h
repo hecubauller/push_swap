@@ -6,7 +6,7 @@
 /*   By: huller <huller@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 13:24:52 by huller            #+#    #+#             */
-/*   Updated: 2019/09/22 03:28:36 by huller           ###   ########.fr       */
+/*   Updated: 2019/09/25 10:33:17 by huller           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ typedef struct			s_ch
 }						t_ch;
 
 void					cmnds_two(t_sort **p);
-int						get_free(t_stack **a);
 int						is_sorted(t_stack **a);
 t_stack					*turn_end(t_stack **x);
 void					free_lsts(t_stack **a);
@@ -114,7 +113,7 @@ void					sa(t_stack **x, t_instr *instr);
 void					sb(t_stack **x, t_instr *instr);
 void					ra(t_stack **x, t_instr *instr);
 void					rb(t_stack **x, t_instr *instr);
-int						check_dubl(char **argv, int tmp);
+int						check_dubl(int *arr, t_instr **in);
 void					rrb(t_stack **x, t_instr *instr);
 void					pb_two(t_stack **a, t_stack **b);
 void					rra(t_stack **x, t_instr *instr);
@@ -126,6 +125,7 @@ void					rr_two(t_stack **b, t_stack *tmp_s);
 void					create_min(t_stack **a, t_sort **p);
 void					create_max(t_stack **a, t_sort **p);
 int						alg_three(t_instr *in, t_stack **a);
+int						*create_arr(t_stack **a, t_instr **in);
 int						check_output(t_stack **a, t_instr *in);
 int						search_beginning(t_stack **a, int end);
 void					add_nbrs_if(t_stack **a, t_stack *tmp2);
@@ -135,7 +135,6 @@ void					rr(t_stack **a, t_stack **b, t_instr *instr);
 void					pa(t_stack **a, t_stack **b, t_instr *instr);
 void					pb(t_stack **a, t_stack **b, t_instr *instr);
 void					sign_nb(char *tmp, int i, int *neg, int *pos);
-void					ch_dbl_cycle(char **argv, int *len, int *tmp);
 void					rrr(t_stack **a, t_stack **b, t_instr *instr);
 void					in_swap(t_instr *in, t_stack **a, t_stack **b);
 void					five_one(t_instr *in, t_stack **a, t_stack **b);
@@ -158,6 +157,7 @@ void					appl_instr(t_instr *in, t_stack **a, t_stack **b);
 void					finish_stack(t_stack **a, t_instr *in, t_sort **p);
 int						cycle_cmnd_a(t_stack **a, t_stack **b, t_sort **p);
 int						reader_argv(t_stack **a, t_instr **in, char **argv);
+void					init_read(t_instr **in, int *i, int *cnt, int *tmp);
 void					innn(t_stack **a, t_sort **p);
 int						geint_two(t_stack **a, t_instr *in, char **av_str);
 void					cycles_int(char *tmp, int *i, char *cmp_str, int neg);
